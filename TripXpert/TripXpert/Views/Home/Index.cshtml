@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@(Html.Kendo().ComboBox()
+            .Name("productComboBox") //The name of the ComboBox is mandatory. It specifies the "id" attribute of the widget.
+            .DataTextField("Title") //Specify which property of the Product to be used by the ComboBox as a text.
+            .DataValueField("Title") //Specify which property of the Product to be used by the ComboBox as a value.
+            .DataSource(source =>
+            {
+                source.Read(read =>
+                {
+                    read.Action("GetProducts", "Home"); //Set the Action and Controller names.
+                });
+            })
+            .SelectedIndex(0) //Select the first item.
+)

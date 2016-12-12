@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.3.1118/styles/kendo.common-bootstrap.min.css" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.3.1118/styles/kendo.bootstrap.min.css" />
+    <script src="http://kendo.cdn.telerik.com/2016.3.1118/js/jquery.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2016.3.1118/js/kendo.all.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2016.3.1118/js/kendo.timezones.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2016.3.1118/js/kendo.aspnetmvc.min.js"></script>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="@Url.Content("~/Images/App/trip_xpert_logo.png")" , alt="tripxpert logo" />
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Destinations", "Destinations", "Destinations")</li>
+                    <li>@Html.ActionLink("Attractions", "Attractions", "Attractions")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Contact")</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("About this Sample App", "About", "About")</li>
+                    <li><a href="http://demos.telerik.com/aspnet-ajax/imagegallery/ImageGallerySource.zip"><span class="tx_icon tx_download_icon"></span>Download Source Code</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>Copyright  &copy; @DateTime.Now.Year, Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
