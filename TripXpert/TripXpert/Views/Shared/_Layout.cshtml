@@ -15,7 +15,7 @@
 
 </head>
 <body>
-    <div class="container-fluid">
+    <div id="wrapper" class="container-fluid" style="position: relative;">
         <div id="header" class="row">
             <div class="col-sm-12">
                 <div class="navbar">
@@ -41,10 +41,17 @@
         </div>
         <div id="main-content" class="row">
             <div class="col-sm-12 tx-col">
-                <div class="body-content" style="overflow: hidden;">
-                    @RenderBody()
-                    <img src="http://demos.telerik.com/aspnet-ajax/imagegallery/images/gallery/The%20best%20of%20Japan/2000x1125/Kinkaku-ji-Temple_Ivan-zhekov_Attraction.JPG" />
-
+                <div class="body-content">
+                    <div class="tx-home-image-wrapper" style="height: 900px; background-image:url(http://demos.telerik.com/aspnet-ajax/imagegallery/images/gallery/The%20best%20of%20Japan/2000x1125/Kinkaku-ji-Temple_Ivan-zhekov_Attraction.JPG");">
+                        <!--<img src="http://demos.telerik.com/aspnet-ajax/imagegallery/images/gallery/The%20best%20of%20Japan/2000x1125/Kinkaku-ji-Temple_Ivan-zhekov_Attraction.JPG" />-->
+                        <div class="tx-home-search-wrapper">
+                            @RenderBody()
+                        </div>
+                    </div>
+                    <div class="tx-description-box" style="display: block;">
+                        <h4 class="tx-description-title">Brazil and Argentina Iguazu Falls - Cristo Redentor (Christ the Redeemer)</h4>
+                        <p class="tx-description">A world famous symbol of the city, Christo Redentor towers 710m over the city as an ever present reminder of its heritage.</p>
+                    </div>
                 </div>
             </div>
         </div>
