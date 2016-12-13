@@ -1,24 +1,178 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿.rigActiveImage img {
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+/*@font-face {
+  font-family: 'WebComponentsIcons';
+  src:  url('../fonts/WebComponentsIcons.eot?gedxeo');
+  src:  url('../fonts/WebComponentsIcons.eot?gedxeo#iefix') format('embedded-opentype'),
+    url('../fonts/WebComponentsIcons.ttf?gedxeo') format('truetype'),
+    url('../fonts/WebComponentsIcons.woff?gedxeo') format('woff'),
+    url('../fonts/WebComponentsIcons.svg?gedxeo#WebComponentsIcons') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.k-icon {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    vertical-align: middle;
+    background-image: none;
+    font: 16px/1 'WebComponentsIcons';
+    speak: none;
+    font-variant: normal;
+    text-transform: none;
+    text-indent: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
+.k-icon:before {
+    width: initial;
+    height: initial;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto 0;
+    height: 1em;
+    line-height: 1;
+}*/
+
+/*>> Reset*/
+
+body {
+	font: normal 14px "Segoe UI", Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+	font-weight: lighter;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	border: 0 none;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
 input,
-select,
 textarea {
-    max-width: 280px;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
 }
+
+/*<< Reset*/
+
+
+/*>> Common*/
+#header {
+    margin: 0;
+}
+
+#header .navbar {
+    margin: 0;
+    padding: 0 20px 0 0;
+    min-height: initial;
+    border: 0;
+}
+
+#header .navbar-header {
+    margin: 24px 90px 0 5px;
+}
+
+#header .main-nav {
+    font-size: 1.429em;
+}
+
+#header .main-nav li {
+    height: 3.28em;
+    padding: .65em .5em .5em;
+}
+
+#header .main-nav .te-selected {
+    height: 4.98em;
+    padding: 1.2em 1.25em .5em;
+    background-color: #25a0da;
+}
+
+#header .main-nav .te-selected a,
+#header .main-nav .te-selected a:hover,
+#header .main-nav .te-selected a:focus {
+    padding: 0;
+    line-height: normal;
+    color: #fff;
+}
+
+#header .main-nav a {
+    display: block;
+    height: 1.45em;
+    border-top: 2px solid #fff;
+    margin-top: -2px;
+    color: #000;
+}
+
+#header .main-nav a:hover {
+    color: #25a0da;
+    background-color: transparent;
+}
+
+.nav-add-info a {
+    font-size: 12px;
+    color: #aeaeae;
+}
+
+#header .nav-add-info a:hover,
+#header .nav-add-info a:focus {
+    background-color: transparent;
+    color: #25a0da;
+}
+
+#main-content {
+    margin: -20px 0 0;
+    padding: 40px 0 0;
+}
+
+#main-content .tx-col {
+    padding: 0;
+}
+
+#footer {
+    margin: 0;
+    background-color: #000;
+    color: #818692;
+    font-size: 11px;
+    height: 40px;
+    line-height: 1.4em;
+    overflow: hidden;
+    padding: 5px 0 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

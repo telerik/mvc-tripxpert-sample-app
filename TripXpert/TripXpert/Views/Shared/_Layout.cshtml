@@ -15,35 +15,47 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a href="@Url.Action("Index", "Home")">
-                    <img src="@Url.Content("~/Images/App/trip_xpert_logo.png")" , alt="tripxpert logo" />
-                </a>
+    <div class="container-fluid">
+        <div id="header" class="row">
+            <div class="col-sm-12">
+                <div class="navbar">
+                        <div class="navbar-header">
+                            <a href="@Url.Action("Index", "Home")">
+                                <img src="@Url.Content("~/Images/App/trip_xpert_logo.png")" , alt="tripxpert logo" />
+                            </a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav main-nav">
+                                <li class="te-selected">@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Destinations", "Destinations", "Destinations")</li>
+                                <li>@Html.ActionLink("Attractions", "Attractions", "Attractions")</li>
+                                <li>@Html.ActionLink("Contact", "Contact", "Contact")</li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right nav-add-info">
+                                <li><span class="k-icon k-icon-delete"></span>@Html.ActionLink("About this Sample App", "About", "About")</li>
+                                <li><span class="k-icon k-icon-delete"></span><a href="http://demos.telerik.com/aspnet-ajax/imagegallery/ImageGallerySource.zip"><span class="tx_icon tx_download_icon"></span>Download Source Code</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div id="main-content" class="row">
+            <div class="col-sm-12 tx-col">
+                <div class="body-content" style="overflow: hidden;">
+                    @RenderBody()
+                    <img src="http://demos.telerik.com/aspnet-ajax/imagegallery/images/gallery/The%20best%20of%20Japan/2000x1125/Kinkaku-ji-Temple_Ivan-zhekov_Attraction.JPG" />
+
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Destinations", "Destinations", "Destinations")</li>
-                    <li>@Html.ActionLink("Attractions", "Attractions", "Attractions")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Contact")</li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("About this Sample App", "About", "About")</li>
-                    <li><a href="http://demos.telerik.com/aspnet-ajax/imagegallery/ImageGallerySource.zip"><span class="tx_icon tx_download_icon"></span>Download Source Code</a></li>
-                </ul>
+        </div>
+        <div id="footer" class="row">
+            <div class="col-sm-12">
+                <footer>
+                    <p>Copyright  &copy; @DateTime.Now.Year, Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+                </footer>
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>Copyright  &copy; @DateTime.Now.Year, Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
-        </footer>
-    </div>
-
     @RenderSection("scripts", required: false)
 </body>
 </html>
