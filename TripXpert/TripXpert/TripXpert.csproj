@@ -188,6 +188,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\kendo\2017.1.14\kendo.bootstrap.min.css" />
+    <Content Include="Content\kendo\2017.1.14\kendo.common-bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -202,6 +204,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\kendo\2017.1.14\jquery.min.js" />
+    <Content Include="Scripts\kendo\2017.1.14\kendo.all.min.js" />
+    <Content Include="Scripts\kendo\2017.1.14\kendo.aspnetmvc.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -226,6 +231,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\kendo\2017.1.14\fonts\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
