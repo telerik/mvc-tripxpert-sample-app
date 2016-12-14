@@ -19,7 +19,19 @@
         <div id="header" class="row">
             <div class="col-sm-12">
                 <div class="navbar">
-                        <div class="navbar-header">
+                    @(Html.Kendo().ToolBar()
+                    .Name("NavigationToolBar")
+                    .Items(items =>
+                    {
+                        items.Add().Type(CommandType.Button).Text("Home").Overflow(ShowInOverflowPopup.Auto); ;
+                        items.Add().Type(CommandType.Button).Text("Destinations").Overflow(ShowInOverflowPopup.Auto);
+                        items.Add().Type(CommandType.Button).Text("Attractions").Overflow(ShowInOverflowPopup.Auto);
+                        items.Add().Type(CommandType.Button).Text("Contact").Overflow(ShowInOverflowPopup.Auto);
+                        items.Add().Type(CommandType.Button).Text("About this Sample App").Overflow(ShowInOverflowPopup.Auto).Template("<span>test</span>").Id("divid");
+                        items.Add().Type(CommandType.Button).Text("Download Source Code").Overflow(ShowInOverflowPopup.Auto).Template("<span>test</span>");
+                    })
+                    )
+                        @*<div class="navbar-header">
                             <a href="@Url.Action("Index", "Home")">
                                 <img src="@Url.Content("~/Images/App/trip_xpert_logo.png")" , alt="tripxpert logo" />
                             </a>
@@ -35,7 +47,7 @@
                                 <li><span class="k-icon k-i-information"></span>@Html.ActionLink("About this Sample App", "About", "About")</li>
                                 <li><span class="k-icon k-i-download"></span><a href="http://demos.telerik.com/aspnet-ajax/imagegallery/ImageGallerySource.zip"><span class="tx_icon tx_download_icon"></span>Download Source Code</a></li>
                             </ul>
-                        </div>
+                        </div>*@
                     </div>
                 </div>
         </div>
