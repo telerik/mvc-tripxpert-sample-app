@@ -1,48 +1,6 @@
 ﻿.rigActiveImage img {
 }
 
-/*@font-face {
-  font-family: 'WebComponentsIcons';
-  src:  url('../fonts/WebComponentsIcons.eot?gedxeo');
-  src:  url('../fonts/WebComponentsIcons.eot?gedxeo#iefix') format('embedded-opentype'),
-    url('../fonts/WebComponentsIcons.ttf?gedxeo') format('truetype'),
-    url('../fonts/WebComponentsIcons.woff?gedxeo') format('woff'),
-    url('../fonts/WebComponentsIcons.svg?gedxeo#WebComponentsIcons') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.k-icon {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    width: 1em;
-    height: 1em;
-    text-align: center;
-    vertical-align: middle;
-    background-image: none;
-    font: 16px/1 'WebComponentsIcons';
-    speak: none;
-    font-variant: normal;
-    text-transform: none;
-    text-indent: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.k-icon:before {
-    width: initial;
-    height: initial;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto 0;
-    height: 1em;
-    line-height: 1;
-}*/
-
 /*>> Reset*/
 
 body {
@@ -138,8 +96,16 @@ textarea {
     background-color: transparent;
 }
 
-.nav-add-info a {
-    font-size: 12px;
+#header .nav-add-info {
+    position: absolute;
+    top: 1.9em;
+    right: 1.42em;
+}
+
+#header .nav-add-info a {
+    display: inline-block;
+    padding: 0 0 0 .5em;
+    font-size: .857em;
     color: #aeaeae;
 }
 
@@ -147,6 +113,15 @@ textarea {
 #header .nav-add-info a:focus {
     background-color: transparent;
     color: #25a0da;
+}
+
+#header .nav-add-info li:first-child a {
+    padding: 0 3em 0 .5em;
+}
+
+#header .nav-add-info .k-icon {
+    font-size: 2em;
+    color: #aeaeae;
 }
 
 #main-content {
@@ -195,19 +170,3 @@ textarea {
     overflow: hidden;
     padding: 5px 0 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
