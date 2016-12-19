@@ -1,17 +1,141 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<div class="container-fluid tx-contact">
+    <div class="row tx-h2">
+        <div class="col-sm-12">
+            <h2>@ViewBag.Title</h2>
+        </div>
+    </div>
+    <div class="row">
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+        <div class="col-xs-12 col-md-8 tx-left-content">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label>First Name *</label>
+                            <input type="text" class="k-input" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label>Last Name *</label>
+                            <input type="text" class="k-input" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label>Email *</label>
+                            <input type="text" class="k-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label>Phone </label>
+                            <input type="text" class="k-input" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label>Mobile *</label>
+                            <input type="text" class="k-input" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label>Where are you from *</label>
+                            @(Html.Kendo().DropDownList()
+                              .Name("color")
+                              .DataTextField("Text")
+                              .DataValueField("Value")
+                              .BindTo(new List<SelectListItem>() {
+                                  new SelectListItem() {
+                                      Text = "Black",
+                                      Value = "1"
+                                  },
+                                  new SelectListItem() {
+                                      Text = "Orange",
+                                      Value = "2"
+                                  },
+                                  new SelectListItem() {
+                                      Text = "Grey",
+                                      Value = "3"
+                                  }
+                              })
+                              .Value("1")
+                              .HtmlAttributes(new { style = "width: 100%" })
+                            )
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 tx-textarea-wrapper">
+                    <label>Comments *</label>
+                    <textarea></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 tx-textarea-wrapper">
+                    <button class="k-button tx-send-button">Send</button>
+                </div>
+            </div>
+        </div>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+        <div class="col-xs-6 col-md-4 tx-right-content">
+            <div class="row">
+                <div class="col-xs-12 tx-address">
+                    <strong class="tx-address-line">Phone & Fax</strong>
+                    <span class="tx-address-line">P: +359 2 8099850</span>
+                    <span class="tx-address-line">F: +1 617 249 2116</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 tx-address">
+                    <strong class="tx-address-line">Phone & Fax</strong>
+                    <span class="tx-address-line">P: +359 2 8099850</span>
+                    <span class="tx-address-line">F: +1 617 249 2116</span>
+                </div>
+                <div class="col-xs-6 tx-address">
+                    <strong class="tx-address-line">Phone & Fax</strong>
+                    <span class="tx-address-line">P: +359 2 8099850</span>
+                    <span class="tx-address-line">F: +1 617 249 2116</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 tx-address">
+                   @(Html.Kendo().Map()
+                    .Name("map")
+                    .Center(30.268107, -97.744821)
+                    .Zoom(3)
+                    .Layers(layers =>
+                    {
+                        layers.Add()
+                            .Type(MapLayerType.Tile)
+                            .UrlTemplate("http://#= subdomain #.tile.openstreetmap.org/#= zoom #/#= x #/#= y #.png")
+                            .Subdomains("a", "b", "c")
+                            .Attribution("&copy; <a href='http://osm.org/copyright'>OpenStreetMap contributors</a>");
+                    })
+                    .Markers(markers =>
+                    {
+                        markers.Add()
+                            .Location(30.268107, -97.744821)
+                            .Shape(MapMarkersShape.PinTarget)
+                            .Tooltip(tooltip => tooltip.Content("Austin, TX"));
+                    })
+                )
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 tx-address">
+                    <a href="" class="tx-larger-map">view larger map</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

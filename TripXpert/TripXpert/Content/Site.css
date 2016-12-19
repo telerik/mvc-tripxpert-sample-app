@@ -4,10 +4,11 @@
 /*>> Reset*/
 
 body {
-	font: normal 14px "Segoe UI", Arial, sans-serif;
+	font: normal 14px "Segoe UI",Arial,sans-serif;
 }
 
 h1, h2, h3, h4 {
+    font-family: "Segoe UI",Arial,sans-serif;
 	font-weight: lighter;
 	margin: 0;
 	padding: 0;
@@ -60,77 +61,93 @@ textarea {
     margin: 24px 90px 0 5px;
 }
 
-#header .main-nav {
+    #header .tx-logo {
+        width: 150px;
+        margin: 20px 90px 0 5px;
+    }
+
+#header .k-toolbar {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+#header .k-toolbar .k-button {
+    height: 4em;
+    margin: 0;
+    padding: 1.05em 1.25em .5em;
+    vertical-align: top;
+    background-color: transparent;
+    border: 0;
     font-size: 1.429em;
+    border-radius: 0;
+    box-shadow: none;
 }
 
-#header .main-nav li {
-    height: 3.28em;
-    padding: .65em .5em .5em;
+#header .k-toolbar .k-button:hover {
+    color: #25a0da;
 }
 
-#header .main-nav .te-selected {
-    height: 4.98em;
-    padding: 1.2em 1.25em .5em;
+#header .k-toolbar .k-button-selected,
+#header .k-toolbar .k-button-selected:hover {
+    height: 5em;
+    color: #fff;
     background-color: #25a0da;
 }
 
-#header .main-nav .te-selected a,
-#header .main-nav .te-selected a:hover,
-#header .main-nav .te-selected a:focus {
-    padding: 0;
-    line-height: normal;
-    color: #fff;
+#header .k-toolbar .k-button-selected span {
+    border-top: 2px solid #fff;
 }
 
-#header .main-nav a {
-    display: block;
-    height: 1.45em;
-    border-top: 2px solid #fff;
-    margin-top: -2px;
+#tx-about-app {
+    position: absolute;
+    top: .9em;
+    right: -1.2em;
+}
+
+#tx-about-app.k-button-group .k-icon {
+    margin: 0 .3em 0 0;
+    color: #aeaeae;
+    font-size: 2.5em;
+}
+
+#tx-about-app.k-button-group .k-button {
+    color: #aeaeae;
+    font-size: .85em;
+}
+
+#tx-about-app.k-button-group .k-button:hover,
+#tx-about-app.k-button-group .k-button:hover .k-icon {
+    color: #25a0da;
+    text-decoration: none;
+}
+
+div.k-overflow-wrapper .k-list-container {
+    border-radius: 0;
+    border-color: transparent;
+}
+
+div.k-overflow-wrapper .k-list-container .k-item {
+     border-color: #efefef;
+}
+
+div.k-overflow-wrapper .k-list-container .k-item .k-button {
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    background-color: #fff;
     color: #000;
 }
 
-#header .main-nav a:hover {
-    color: #25a0da;
-    background-color: transparent;
-}
-
-#header .nav-add-info {
-    position: absolute;
-    top: 1.9em;
-    right: 1.42em;
-}
-
-#header .nav-add-info a {
-    display: inline-block;
-    padding: 0 0 0 .5em;
-    font-size: .857em;
-    color: #aeaeae;
-}
-
-#header .nav-add-info a:hover,
-#header .nav-add-info a:focus {
-    background-color: transparent;
-    color: #25a0da;
-}
-
-#header .nav-add-info li:first-child a {
-    padding: 0 3em 0 .5em;
-}
-
-#header .nav-add-info .k-icon {
-    font-size: 2em;
-    color: #aeaeae;
-}
-
-#header .nav-add-info li:hover .k-icon {
-    color: #25a0da;
+div.k-overflow-wrapper .k-list-container .k-item .k-button:hover,
+div.k-overflow-wrapper .k-list-container .k-item .k-button:hover .k-icon {
+    background-color: #25a0da;
+    color: #fff;
 }
 
 #main-content {
     margin: 0;
-    padding: 80px 0 0;
+    padding: 5.71em 0 0;
 }
 
 #main-content .tx-col {
@@ -141,36 +158,154 @@ textarea {
     overflow: hidden;
 }
 
-.tx-home-search-wrapper {
-    padding: 48px 20px 20px;
+#main-content h2 {
+    color: #858585;
+    font-size: 2.14em;
+    margin: 1.25em 1em;
+    padding: 0;
 }
+
+#main-content .row {
+    margin: 0;
+}
+
+/*.tx-home-search-wrapper {
+    padding: 3.42em 1.42em 1.42em;
+}*/
 
 .tx-description-box {
     position: absolute;
     width: 100%;
     height: 100px;
-    padding: 20px;
+    padding: 1.42em;
     background-color: rgba(255, 255, 255, 0.7);
     bottom: 0;
 }
 
 .tx-description-title {
     font-size: 1.143em;
-    margin: 0 0 10px;
+    margin: 0 0 .71em;
 }
 
 .tx-description {
-    font-size: 16px;
-    margin: 0 0 10px;
+    font-size: 1.14em;
+    margin: 0 0 .71em;
+}
+
+.tx-h2 {
+    background-color: #efefef;
+}
+
+/* Contanct */
+.tx-contact {
+    padding: 0 0 50px;
+}
+
+.tx-left-content,
+.tx-right-content {
+    padding: 15px;
+    background-color: #fff;
+}
+
+.tx-contact label {
+    display: block;
+    padding: 5px 10px 5px 0;
+    font-size: 1.14em;
+    font-weight: normal;
+    color: #666;
+}
+
+.tx-contact .k-input,
+.tx-contact textarea {
+    width: 100%;
+    height: 36px;
+    margin: 0 0 13px;
+    padding: 4px 10px;
+    background-color: #efefef;
+    color: #000;
+    border-color: rgba(0, 0, 0, 0);
+    outline: medium none;
+}
+.tx-textarea-wrapper {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.tx-contact textarea {
+    box-sizing: border-box;
+    height: 168px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.tx-contact .k-input:hover,
+.tx-contact textarea:hover {
+    background-color: #fff;
+    border-color: #cfcfcf;
+}
+.tx-contact .k-input:focus,
+.tx-contact .k-input:active,
+.tx-contact textarea:focus,
+.tx-contact textarea:active,
+.tx-contanct .k-dropdown-wrap.k-state-active {
+    background-color: #fff;
+    border-color: #25a0da;
+    box-shadow: none;
+}
+
+.k-popup .k-list li.k-item,
+.tx-contact .k-dropdown.k-widget .k-dropdown-wrap {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.k-button.tx-send-button {
+    background-color: #95d43a;
+    border: 0 none;
+    border-radius: 0;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    height: 3.125em;
+    width: 10em;
+    transition: all 0.3s ease 0s;
+}
+
+.k-button.tx-send-button:hover {
+    background-color: #25a0da;
+    color: #fff;
+}
+
+.tx-address {
+    padding: 0 0 15px;
+}
+
+.tx-address .tx-address-line {
+    display: block;
+    font-size: 1.14em;
+    font-weight: normal;
+    color: #666;
+}
+
+.tx-address strong {
+    padding: 0 0 5px;
+    color: #000;
+}
+
+.tx-larger-map {
+    display: inline-block;
+    font-size: 1.14em;
+    color: #7fc914;
 }
 
 #footer {
     margin: 0;
     background-color: #000;
     color: #818692;
-    font-size: 11px;
-    height: 40px;
+    font-size: .78em;
+    height: 3.63em;
     line-height: 1.4em;
     overflow: hidden;
-    padding: 5px 0 5px;
+    padding: .55em 0 .55em;
 }

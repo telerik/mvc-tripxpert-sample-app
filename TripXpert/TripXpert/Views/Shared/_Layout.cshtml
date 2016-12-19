@@ -19,51 +19,42 @@
         <div id="header" class="row">
             <div class="col-sm-12">
                 <div class="navbar">
+                    <div class="navbar-header">
+                        <a href="@Url.Action("Index", "Home")">
+                            <img src="@Url.Content("~/Images/App/trip_xpert_logo.png")" , alt="tripxpert logo" />
+                        </a>
+                    </div>
                     @(Html.Kendo().ToolBar()
                     .Name("NavigationToolBar")
                     .Items(items =>
                     {
-                        items.Add().Type(CommandType.Button).Text("Home").Overflow(ShowInOverflowPopup.Auto); ;
-                        items.Add().Type(CommandType.Button).Text("Destinations").Overflow(ShowInOverflowPopup.Auto);
-                        items.Add().Type(CommandType.Button).Text("Attractions").Overflow(ShowInOverflowPopup.Auto);
-                        items.Add().Type(CommandType.Button).Text("Contact").Overflow(ShowInOverflowPopup.Auto);
-                        items.Add().Type(CommandType.Button).Text("About this Sample App").Overflow(ShowInOverflowPopup.Auto).Template("<span>test</span>").Id("divid");
-                        items.Add().Type(CommandType.Button).Text("Download Source Code").Overflow(ShowInOverflowPopup.Auto).Template("<span>test</span>");
+                        items.Add().Type(CommandType.Button).Text("<span>Home</span>").Overflow(ShowInOverflowPopup.Auto).HtmlAttributes(new { @class = "k-button-selected" });
+                        items.Add().Type(CommandType.Button).Text("<span>Destinations</span>").Overflow(ShowInOverflowPopup.Auto);
+                        items.Add().Type(CommandType.Button).Text("<span>Attractions</span>").Overflow(ShowInOverflowPopup.Auto);
+                        items.Add().Type(CommandType.Button).Text("<span>Contact</span>").Overflow(ShowInOverflowPopup.Auto);
+                        items.Add().Type(CommandType.ButtonGroup).Id("tx-about-app").Overflow(ShowInOverflowPopup.Auto).Buttons(buttons =>
+                        {
+                            buttons.Add().Text("About this Sample App").Group("about-app").SpriteCssClass("k-icon k-i-information");
+                            buttons.Add().Text("Download Source Code").Group("about-app").SpriteCssClass("k-icon k-icon k-i-download");
+                        });
                     })
                     )
-                        @*<div class="navbar-header">
-                            <a href="@Url.Action("Index", "Home")">
-                                <img src="@Url.Content("~/Images/App/trip_xpert_logo.png")" , alt="tripxpert logo" />
-                            </a>
-                        </div>
-                        <div class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav main-nav">
-                                <li class="te-selected">@Html.ActionLink("Home", "Index", "Home")</li>
-                                <li>@Html.ActionLink("Destinations", "Destinations", "Destinations")</li>
-                                <li>@Html.ActionLink("Attractions", "Attractions", "Attractions")</li>
-                                <li>@Html.ActionLink("Contact", "Contact", "Contact")</li>
-                            </ul>
-                            <ul class="nav navbar-nav navbar-right nav-add-info">
-                                <li><span class="k-icon k-i-information"></span>@Html.ActionLink("About this Sample App", "About", "About")</li>
-                                <li><span class="k-icon k-i-download"></span><a href="http://demos.telerik.com/aspnet-ajax/imagegallery/ImageGallerySource.zip"><span class="tx_icon tx_download_icon"></span>Download Source Code</a></li>
-                            </ul>
-                        </div>*@
                     </div>
                 </div>
         </div>
         <div id="main-content" class="row">
             <div class="col-sm-12 tx-col">
                 <div class="body-content">
-                    <div class="tx-home-image-wrapper" style="height: 900px; background-image:url(http://demos.telerik.com/aspnet-ajax/imagegallery/images/gallery/The%20best%20of%20Japan/2000x1125/Kinkaku-ji-Temple_Ivan-zhekov_Attraction.JPG");">
+                    <div class="tx-home-image-wrapper" style="height: 400px;">
                         <!--<img src="http://demos.telerik.com/aspnet-ajax/imagegallery/images/gallery/The%20best%20of%20Japan/2000x1125/Kinkaku-ji-Temple_Ivan-zhekov_Attraction.JPG" />-->
                         <div class="tx-home-search-wrapper">
                             @RenderBody()
                         </div>
                     </div>
-                    <div class="tx-description-box" style="display: block;">
+                    @*<div class="tx-description-box" style="display: block;">
                         <h4 class="tx-description-title">Brazil and Argentina Iguazu Falls - Cristo Redentor (Christ the Redeemer)</h4>
                         <p class="tx-description">A world famous symbol of the city, Christo Redentor towers 710m over the city as an ever present reminder of its heritage.</p>
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>
