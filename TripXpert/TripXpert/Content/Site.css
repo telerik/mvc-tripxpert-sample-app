@@ -66,13 +66,19 @@ textarea {
         margin: 20px 90px 0 5px;
     }
 
-#header .k-toolbar {
+#header .k-menu  {
     background-color: transparent;
     box-shadow: none;
     border: none;
 }
 
-#header .k-toolbar .k-button {
+#header .k-menu .k-link
+{
+    padding:4px 0 0;
+    color:black;
+}
+
+#header .k-menu .k-item {
     height: 4em;
     margin: 0;
     padding: 1.05em 1.25em .5em;
@@ -84,19 +90,49 @@ textarea {
     box-shadow: none;
 }
 
-#header .k-toolbar .k-button:hover {
+#header .k-menu .k-link:hover {
     color: #25a0da;
+    background-color:white;
 }
 
-#header .k-toolbar .k-button-selected,
-#header .k-toolbar .k-button-selected:hover {
-    height: 5em;
+
+#header .k-menu .k-state-highlight:not(.rightAlignedItem) ,
+#header .k-menu .k-state-highlight:not(.rightAlignedItem):hover {
+    height: 3.45em;
     color: #fff;
     background-color: #25a0da;
 }
 
-#header .k-toolbar .k-button-selected span {
+#header .k-menu .k-state-highlight:not(.rightAlignedItem) .k-link {
     border-top: 2px solid #fff;
+    color:white;
+    margin-top:1px;
+    padding-top:1px;
+     background-color: #25a0da;
+}
+
+#header .k-menu .k-item.rightAlignedItem
+{
+    float:right;
+    background-color:white;
+    font-size:1em;
+    padding-top:20px;
+    height:auto;
+    color:#aeaeae;
+}
+    #header .k-menu .k-item.rightAlignedItem:hover {
+        color:#25a0da;
+    }
+
+#header .k-menu .k-item.rightAlignedItem a,
+#header .k-menu .k-item.rightAlignedItem span
+{
+     color:inherit;
+}
+#header .k-menu .k-item.rightAlignedItem .k-icon
+{
+    font-size:2.1em;
+     margin-right:5px;
 }
 
 #tx-about-app {
@@ -308,4 +344,7 @@ div.k-overflow-wrapper .k-list-container .k-item .k-button:hover .k-icon {
     line-height: 1.4em;
     overflow: hidden;
     padding: .55em 0 .55em;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
 }

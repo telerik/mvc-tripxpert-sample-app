@@ -14,6 +14,12 @@ namespace TripXpert
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "Home",
+                "Home",
+                new { controller = "Home", action = "Index" }
+            );
+
+            routes.MapRoute(
                 "About",
                 "About",
                 new { controller = "About", action = "About" }

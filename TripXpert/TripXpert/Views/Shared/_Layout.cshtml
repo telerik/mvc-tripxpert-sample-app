@@ -24,23 +24,22 @@
                             <img src="@Url.Content("~/Images/App/trip_xpert_logo.png")" , alt="tripxpert logo" />
                         </a>
                     </div>
-                    @(Html.Kendo().ToolBar()
-                    .Name("NavigationToolBar")
-                    .Items(items =>
-                    {
-                        items.Add().Type(CommandType.Button).Text("<span>Home</span>").Overflow(ShowInOverflowPopup.Auto).HtmlAttributes(new { @class = "k-button-selected" });
-                        items.Add().Type(CommandType.Button).Text("<span>Destinations</span>").Overflow(ShowInOverflowPopup.Auto);
-                        items.Add().Type(CommandType.Button).Text("<span>Attractions</span>").Overflow(ShowInOverflowPopup.Auto);
-                        items.Add().Type(CommandType.Button).Text("<span>Contact</span>").Overflow(ShowInOverflowPopup.Auto);
-                        items.Add().Type(CommandType.ButtonGroup).Id("tx-about-app").Overflow(ShowInOverflowPopup.Auto).Buttons(buttons =>
-                        {
-                            buttons.Add().Text("About this Sample App").Group("about-app").SpriteCssClass("k-icon k-i-information");
-                            buttons.Add().Text("Download Source Code").Group("about-app").SpriteCssClass("k-icon k-icon k-i-download");
-                        });
-                    })
+                    @(Html.Kendo().Menu()
+                       .Name("Menu1")
+                       .Items(items =>
+                       {
+                           items.Add().Text("Home").Route("Home");
+                           items.Add().Text("Destinations").Route("Destinations");
+                           items.Add().Text("Attractions").Route("Attractions");
+                           items.Add().Text("Contact").Route("Contact");
+                           items.Add().Text("Download Source Code").SpriteCssClasses("k-icon k-i-download")
+                           .HtmlAttributes(new { @class = "rightAlignedItem" });
+                           items.Add().Text("About this Sample App").Route("About").SpriteCssClasses("k-icon k-i-information")
+                            .HtmlAttributes(new { @class = "rightAlignedItem" });
+                       })
                     )
-                    </div>
                 </div>
+            </div>
         </div>
         <div id="main-content" class="row">
             <div class="col-sm-12 tx-col">
@@ -52,9 +51,9 @@
                         </div>
                     </div>
                     @*<div class="tx-description-box" style="display: block;">
-                        <h4 class="tx-description-title">Brazil and Argentina Iguazu Falls - Cristo Redentor (Christ the Redeemer)</h4>
-                        <p class="tx-description">A world famous symbol of the city, Christo Redentor towers 710m over the city as an ever present reminder of its heritage.</p>
-                    </div>*@
+                            <h4 class="tx-description-title">Brazil and Argentina Iguazu Falls - Cristo Redentor (Christ the Redeemer)</h4>
+                            <p class="tx-description">A world famous symbol of the city, Christo Redentor towers 710m over the city as an ever present reminder of its heritage.</p>
+                        </div>*@
                 </div>
             </div>
         </div>
