@@ -4,4 +4,58 @@
 }
 
 <h2>Attractions</h2>
+<script>
 
+
+</script>
+<script type="text/x-kendo-tmpl" id="template">
+    <li>
+        <img src="#:ImageURL#" alt="#:ImageID# image" style="height:140px;width:140px; float: left; cursor:pointer" onclick="TX.showDialog(this)" />
+    </li>
+</script>
+
+<script type="text/x-kendo-tmpl" id="AttractionInfoTemplate">
+    <li>
+        <img src="#:ImageURL#" alt="#:ImageID# image" style="height:320px;width:320px;" />
+        <h3>#:DestinationTitle#</h3>
+        <h4>Location</h4>
+        <strong>
+            #:Location#
+        </strong>
+        <p>
+            #:Description#
+        </p>
+        <a href='@Url.Action("MyAction", "MyController" , new {id = "1"})'>
+            <span class="tx_icon tx_marker_icon"></span>#:DestinationTitle#
+        </a>
+    </li>
+</script>
+
+@(Html.Kendo().ListView<TripXpert.DAL.Image>()
+        .Name("AttractionImages")
+        .TagName("ul")
+        .ClientTemplateId("template")
+        .DataSource(dataSource =>
+        {
+            dataSource.Read(read => read.Action("AttractionImages_Read", "Attractions"));
+        })
+)
+
+@(Html.Kendo().Dialog()
+        .Name("dialog")
+        .Title("Grand Canal")
+        .Visible(false)
+        .Content(
+            Html.Kendo().ListView<TripXpert.DAL.Image>()
+            .Name("AttractionInfoListView")
+            .TagName("ul")
+            .Events(ev=>ev.DataBound("TX.listViewDataBound"))
+            .ClientTemplateId("AttractionInfoTemplate")
+            .DataSource(dataSource =>
+            {
+                dataSource.Read(read => read.Action("AttractionInfoListView_Read", "Attractions").Data("TX.imageInfo"));
+            }).ToHtmlString()
+        )
+        .Width(800)
+        .Modal(true)
+    )
