@@ -14,7 +14,7 @@
         var dialog = $("#dialog").data("kendoDialog");
         if (this.dataSource.data().length != 0) {
             dialog.center();
-            dialog.title(this.dataSource.data()[0].DestinationTitle);
+            dialog.title(this.dataSource.data()[0].AttractionTitle);
         }
     }
 

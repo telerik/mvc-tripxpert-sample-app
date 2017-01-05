@@ -501,6 +501,84 @@ div.k-overflow-wrapper .k-list-container {
     width: 1em;
 }
 
+.tx-img-wrapper {
+    padding-left: 0;
+    background: #000000;
+}
+
+.tx-img-wrapper .k-listview {
+    border: 0;
+}
+
+.tx-img-wrapper .k-listview:hover img {
+    opacity: .33;
+}
+
+.tx-img-wrapper .k-listview:hover li:hover img {
+    opacity: 1;
+}
+
+#dialog {
+    background-color: #efefef;
+}
+
+#AttractionInfoListView {
+    border: 0;
+    box-shadow: none;
+    color: #333333;
+}
+
+.tx-details,
+div.k-window-titlebar.k-dialog-titlebar {
+    background-color: #efefef;
+}
+
+.tx-details-img,
+.tx-details-title {
+    display: inline-block;
+    vertical-align: top;
+    padding-bottom: 10px;
+}
+
+.tx-details-title {
+    padding-left: 20px;
+}
+
+    .tx-details-title h4 {
+        font-size: 1.15em;
+        padding-bottom: 5px;
+    }
+
+    .tx-details-title strong {
+        font-weight: normal;
+        text-transform: capitalize;
+    }
+
+.tx-details-desc {
+    font-size: 1.07em;
+}
+
+.tx-details a,
+.tx-details a .k-icon {
+    color: #6eaf46;
+    font-size: 1.1em;
+}
+
+.tx-details a {
+    display: inline-block;
+    min-height: 20px;
+}
+
+    .tx-details a:hover,
+    .tx-details a:hover .k-icon {
+        text-decoration: none;
+        color: #25a0da;
+    }
+
+    .tx-details a .k-icon {
+        font-size: 1.3em;
+    }
+
 #footer {
     margin: 0;
     background-color: #000;
