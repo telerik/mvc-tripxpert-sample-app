@@ -2,7 +2,7 @@
 @font-face {
     font-family: 'widgets';
     src: url('../../fonts/widgets-v4.eot');
-    src: url('../fonts/widgets-v4.eot?#iefix') format('embedded-opentype'), url('../../fonts/widgets-v4.woff') format('woff'), url('../../fonts/widgets-v4.ttf') format('truetype'), url('fonts/widgets-v4.svg') format('svg');
+    src: url('../fonts/widgets.eot?#iefix') format('embedded-opentype'), url('../../fonts/widgets.woff') format('woff'), url('../../fonts/widgets.ttf') format('truetype'), url('fonts/widgets.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -406,7 +406,7 @@ div.k-overflow-wrapper .k-list-container {
 
 .tx-control-icon {
     font-family: "widgets";
-    font-size: 1.49em;
+    font-size: 1.8em;
     speak: none;
     display: inline-block;
     width: 1em;
@@ -415,6 +415,7 @@ div.k-overflow-wrapper .k-list-container {
     text-transform: none;
     line-height: 1em;
     color: #00B312;
+    position: absolute;
 }
 
     .tx-control-icon:before {
@@ -429,12 +430,52 @@ div.k-overflow-wrapper .k-list-container {
         color: #00B312;
     }
 
-.tx-autocomplete-icon:before {
-    content: "\e803";
+.tx-dropdownlist-icon:before {
+    content: "\e813";
 }
 
-.tx-color-picker-icon:before {
-    content: "\e80c";
+.tx-mediaplayer-icon:before {
+    content: "\e858";
+}
+
+.tx-map-icon:before {
+    content: "\e81d";
+}
+
+.tx-dialog-icon:before {
+    content: "\e857";
+}
+
+.tx-menu-icon:before {
+    content: "\e81f";
+}
+
+.tx-listview-icon:before {
+    content: "\e81c";
+}
+
+.tx-calendar-icon:before {
+    content: "\e80b";
+}
+
+.tx-upload-icon:before {
+    content: "\e840";
+}
+
+.tx-tabstrip-icon:before {
+    content: "\e83a";
+}
+
+.tx-combobox-icon:before {
+    content: "\e848";
+}
+
+.tx-responsivepanel-icon:before {
+    content: "\e849";
+}
+
+.tx-validator-icon:before {
+    content: "\e841";
 }
 
 .tx-support {
@@ -598,4 +639,14 @@ input.k-input.k-invalid {
 
 .k-invalid-msg {
     display: none !important;
+}
+.tx-controls-list
+{
+    margin-left: 0.5em;
+    font-size: 1.02em;
+}
+.tx-controls-list li span:not(.tx-control-icon)
+{
+    padding-left: 2.5em;
+    line-height: 1.8em;
 }
