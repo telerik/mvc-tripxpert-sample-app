@@ -14,11 +14,22 @@ namespace TripXpert.Controllers
         {
             return View();
         }
-
-        public JsonResult GetProducts()
+        
+        public JsonResult GetDestinations()
         {
+            //TripXpertDAL.GetSpecialDestinations()
             List<Destination> data = TripXpertDAL.GetAllDestinations();
+            foreach (Destination item in data)
+            {
+                item.DefaultImage = TripXpertDAL.GetDestinationDefaultImage(item.DestinationID, 'S');
+                item.LowestPrice = TripXpertDAL.GetLowestPriceForDestination(item.DestinationID, null, null);
+            }
             return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetSpecialDestinations()
+        {
+            return Json(TripXpertDAL.GetSpecialDestinations(), JsonRequestBehavior.AllowGet);
         }
     }
 }

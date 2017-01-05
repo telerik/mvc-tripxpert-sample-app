@@ -24,6 +24,8 @@ namespace TripXpert.DAL
         }
     
         public int DestinationID { get; set; }
+        public string DefaultImage { get; set; }
+        public int LowestPrice { get; set; }
         public int TestimonialID { get; set; }
         public bool IsSpecial { get; set; }
         public string Title { get; set; }
