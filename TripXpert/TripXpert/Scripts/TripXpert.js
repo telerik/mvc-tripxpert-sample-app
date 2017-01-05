@@ -1,9 +1,8 @@
 ﻿/*global window */
 
-(function (TX, $)
-{
+(function (TX, $) {
     var url = "";
-    TX.showDialog = function(sender) {
+    TX.showDialog = function (sender) {
         url = sender.src;
         var dialog = $("#dialog").data("kendoDialog");
         var dataSource = $(dialog.element.context.firstChild).data("kendoListView").dataSource;
@@ -11,8 +10,7 @@
         dialog.open();
     }
 
-    TX.listViewDataBound = function()
-    {
+    TX.listViewDataBound = function () {
         var dialog = $("#dialog").data("kendoDialog");
         if (this.dataSource.data().length != 0) {
             dialog.center();
@@ -20,8 +18,11 @@
         }
     }
 
-    TX.imageInfo = function()
-    {
+    TX.imageInfo = function () {
         return { imageURL: url };
+    }
+
+    TX.contact_showDialog = function () {
+        $("#dialog").data("kendoDialog").open();
     }
 })(window.TX = window.TX || {}, $);

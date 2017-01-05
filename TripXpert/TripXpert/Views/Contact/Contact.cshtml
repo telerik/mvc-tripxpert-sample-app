@@ -9,133 +9,165 @@
     </div>
     <div class="row">
 
-        <div class="col-xs-12 col-md-8 tx-left-content">
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <label>First Name *</label>
-                            <input type="text" class="k-input" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <label>Last Name *</label>
-                            <input type="text" class="k-input" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <label>Email *</label>
-                            <input type="text" class="k-input" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <label>Phone </label>
-                            <input type="text" class="k-input" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <label>Mobile *</label>
-                            <input type="text" class="k-input" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <label>Where are you from *</label>
-                            @(Html.Kendo().DropDownList()
-                              .Name("color")
-                              .DataTextField("Text")
-                              .DataValueField("Value")
-                              .BindTo(new List<SelectListItem>() {
-                                  new SelectListItem() {
-                                      Text = "Black",
-                                      Value = "1"
-                                  },
-                                  new SelectListItem() {
-                                      Text = "Orange",
-                                      Value = "2"
-                                  },
-                                  new SelectListItem() {
-                                      Text = "Grey",
-                                      Value = "3"
-                                  }
-                              })
-                              .Value("1")
-                              .HtmlAttributes(new { style = "width: 100%" })
-                            )
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 tx-textarea-wrapper">
-                    <label>Comments *</label>
-                    <textarea></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 tx-textarea-wrapper">
-                    <button class="k-button tx-send-button">Send</button>
-                </div>
-            </div>
-        </div>
+        <script>
+            $(document).ready(function () {
+                var validator = $("#feedbackForm").kendoValidator().data("kendoValidator");
+            });
+        </script>
 
+        <form id="feedbackForm">
+            <div class="col-xs-12 col-md-8 tx-left-content">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label>First Name *</label>
+                                <input type="text" class="k-input" required />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label>Last Name *</label>
+                                <input type="text" class="k-input" required />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label>Email *</label>
+                                <input type="text" class="k-input" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label>Phone </label>
+                                <input type="text" class="k-input" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label>Mobile *</label>
+                                <input type="text" class="k-input" required />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label>Where are you from *</label>
+                                @(Html.Kendo().DropDownList()
+                               .Name("country")
+                               .DataSource(source =>
+                               {
+                                   source.Read(read =>
+                                   {
+                                       read.Action("GetCountries", "Contact");
+                                   });
+                               })
+                              .HtmlAttributes(new { style = "width: 100%" })
+                                )
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 tx-textarea-wrapper">
+                        <label>Comments *</label>
+                        <textarea></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 tx-textarea-wrapper">
+                        <button class="k-button tx-send-button" type="submit">Send</button>
+                    </div>
+                </div>
+            </div>
+        </form>
         <div class="col-xs-6 col-md-4 tx-right-content">
             <div class="row">
                 <div class="col-xs-12 tx-address">
-                    <strong class="tx-address-line">Phone & Fax</strong>
+                    <span class="tx-address-line"><strong>Phone & Fax</strong></span>
                     <span class="tx-address-line">P: +359 2 8099850</span>
                     <span class="tx-address-line">F: +1 617 249 2116</span>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-6 tx-address">
-                    <strong class="tx-address-line">Phone & Fax</strong>
-                    <span class="tx-address-line">P: +359 2 8099850</span>
-                    <span class="tx-address-line">F: +1 617 249 2116</span>
+                    <address>
+                        <span class="tx-address-line"><strong>Address</strong></span>
+                        <span class="tx-address-line">33 Al Malinov Blvd</span>
+                        <span class="tx-address-line">Sofia 1729</span>
+                        <span class="tx-address-line">Bulgaria</span>
+                    </address>
                 </div>
                 <div class="col-xs-6 tx-address">
-                    <strong class="tx-address-line">Phone & Fax</strong>
-                    <span class="tx-address-line">P: +359 2 8099850</span>
-                    <span class="tx-address-line">F: +1 617 249 2116</span>
+                    <address>
+                        <span class="tx-address-line"><strong>GPS Coordinates</strong></span>
+                        <span class="tx-address-line">Latitude: 42.650680</span>
+                        <span class="tx-address-line">Longitude: 23.379321</span>
+                    </address>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 tx-address">
-                   @(Html.Kendo().Map()
-                    .Name("map")
-                    .Center(30.268107, -97.744821)
-                    .Zoom(3)
+                    @(Html.Kendo().Map()
+                    .Name("map1")
+                    .Center(42, 23)
+                    .Zoom(6)
+                    .HtmlAttributes(new { @style = "width: 470px; height: 300px;" })
                     .Layers(layers =>
                     {
                         layers.Add()
                             .Type(MapLayerType.Tile)
                             .UrlTemplate("http://#= subdomain #.tile.openstreetmap.org/#= zoom #/#= x #/#= y #.png")
                             .Subdomains("a", "b", "c")
-                            .Attribution("&copy; <a href='http://osm.org/copyright'>OpenStreetMap contributors</a>");
+                            .Attribution("&copy; <a href='http://osm.org/copyright' title='OpenStreetMap contributors' target='_blank'>OpenStreetMap contributors</a>.");
                     })
                     .Markers(markers =>
                     {
                         markers.Add()
-                            .Location(30.268107, -97.744821)
+                            .Location(42.650680, 23.379321)
                             .Shape(MapMarkersShape.PinTarget)
-                            .Tooltip(tooltip => tooltip.Content("Austin, TX"));
+                            .Title("Sofia HQ")
+                            .Tooltip(tooltip => tooltip.Content("33 Al Malinov Blvd, Sofia, Bulgaria"));
                     })
-                )
+                    )
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 tx-address">
-                    <a href="" class="tx-larger-map">view larger map</a>
+                    <a id="largerMapButton" href="" class="tx-larger-map" onclick="TX.contact_showDialog(); return false;">view larger map</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
+@(Html.Kendo().Dialog()
+        .Name("dialog")
+        .Title("Map")
+        .Visible(false)
+        .Modal(true)
+        .Content(
+            Html.Kendo().Map()
+                             .Name("map2")
+                             .Center(42, 23)
+                             .Zoom(6)
+                             .HtmlAttributes(new { @style = "width: 800px; height: 600px;" })
+                             .Layers(layers =>
+                             {
+                                 layers.Add()
+                                     .Type(MapLayerType.Tile)
+                                     .UrlTemplate("http://#= subdomain #.tile.openstreetmap.org/#= zoom #/#= x #/#= y #.png")
+                                     .Subdomains("a", "b", "c")
+                                     .Attribution("&copy; <a href='http://osm.org/copyright' title='OpenStreetMap contributors' target='_blank'>OpenStreetMap contributors</a>.");
+                             })
+                             .Markers(markers =>
+                             {
+                                 markers.Add()
+                                     .Location(42.650680, 23.379321)
+                                     .Shape(MapMarkersShape.PinTarget)
+                                     .Title("Sofia HQ")
+                                     .Tooltip(tooltip => tooltip.Content("33 Al Malinov Blvd, Sofia, Bulgaria"));
+                             })
+             .ToHtmlString()
+             )
+)

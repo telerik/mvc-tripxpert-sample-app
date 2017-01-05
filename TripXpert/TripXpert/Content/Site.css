@@ -3,6 +3,10 @@
 
 /*>> Reset*/
 
+html{
+    background: #efefef;
+}
+
 body {
 	font: normal 14px "Segoe UI",Arial,sans-serif;
 }
@@ -347,4 +351,11 @@ div.k-overflow-wrapper .k-list-container .k-item .k-button:hover .k-icon {
     bottom: 0;
     position: fixed;
     width: 100%;
+}
+input.k-input.k-invalid {
+    border: 1px solid red;
+}
+
+.k-invalid-msg {
+    display: none !important;
 }
