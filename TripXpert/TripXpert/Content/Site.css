@@ -591,6 +591,8 @@ div.k-window-titlebar.k-dialog-titlebar {
     }
 
     .tx-details-title strong {
+        display: inline-block;
+        max-width: 16em;
         font-weight: normal;
         text-transform: capitalize;
     }
@@ -640,6 +642,7 @@ input.k-input.k-invalid {
 .k-invalid-msg {
     display: none !important;
 }
+
 .tx-controls-list
 {
     margin-left: 0.5em;
@@ -649,4 +652,11 @@ input.k-input.k-invalid {
 {
     padding-left: 2.5em;
     line-height: 1.8em;
+}
+
+@media only screen and (max-width: 1024px) {
+
+	.tx-qr-code {
+		display: none;
+	}
 }
