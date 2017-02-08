@@ -1,11 +1,10 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
-<br />
-<br />
-<div class="t-row tx_search tx_clearfix">
-    <span class="searchbox-wrapper">@(Html.Kendo().ComboBox()
+<div class="t-row tx_search tx_clearfix col-md-12">
+    <div class="col-md-3">
+        <span class="searchbox-wrapper">
+            @(Html.Kendo().ComboBox()
             .Name("Destinations") //The name of the ComboBox is mandatory. It specifies the "id" attribute of the widget.
             .Placeholder("All types")
             .DataTextField("Title") //Specify which property of the Product to be used by the ComboBox as a text.
@@ -20,62 +19,69 @@
             })
             .Height(400)
             //.SelectedIndex(0) //Select the first item.
-            .Template("<div class='destination-combo-template'>
+            .Template(@"<div class='destination-combo-template'>
                 <img src='#=data.DefaultImage#' title='#=data.Title#' /><h4>#=data.Title#</h4>
                 <span class='info'>from #:kendo.toString(data.LowestPrice, 'c0')#</span></div>
         ")
             )
-    </span>
-
-    <span class="searchbox-wrapper">@(Html.Kendo().DropDownList()
+        </span>
+    </div>
+    <div class="col-md-3">
+        <span class="searchbox-wrapper">
+            @(Html.Kendo().DropDownList()
           .Name("OfferType")
           .OptionLabel("Select offer type")
           .DataTextField("Text")
           .DataValueField("Value")
-          .BindTo(new List<selectlistitem>() {
+          .BindTo(new List<SelectListItem>() {
               new SelectListItem() {
-                Text = "All types", Value = "All"   
+                Text = "All types", Value = "All"
               },
               new SelectListItem() {
-                Text = "Special offers", Value = "Special"   
+                Text = "Special offers", Value = "Special"
               },
               new SelectListItem() {
-                Text = "Regular offers", Value = "Regular"   
+                Text = "Regular offers", Value = "Regular"
               }
           })
-          .HtmlAttributes(new { style="width:100%;" })
-    )
-    </span>
-
-    <span class="searchbox-wrapper">@(Html.Kendo().DropDownList()
+          .HtmlAttributes(new { style = "width:100%;" })
+          .Height(150)
+            )
+        </span>
+    </div>
+    <div class="col-md-3">
+        <span class="searchbox-wrapper">
+            @(Html.Kendo().DropDownList()
           .Name("PriceRange")
-          //.Placeholder("Select price range")
+            //.Placeholder("Select price range")
             .OptionLabel("Select price range")
           .DataTextField("Text")
           .DataValueField("Value")
-          .BindTo(new List<selectlistitem>() {
+          .BindTo(new List<SelectListItem>() {
               new SelectListItem() {
-                Text = "Any price range", Value = "0"   
+                Text = "Any price range", Value = "0"
               },
               new SelectListItem() {
-                Text = "from $0 to $999", Value = "0-999"   
+                Text = "from $0 to $999", Value = "0-999"
               },
               new SelectListItem() {
-                Text = "from $1000 to $1999", Value = "1000-1999"   
+                Text = "from $1000 to $1999", Value = "1000-1999"
               },
               new SelectListItem() {
-                Text = "from $2000 to $2999", Value = "2000-2999"   
+                Text = "from $2000 to $2999", Value = "2000-2999"
               }
           })
-          .HtmlAttributes(new { style="width:100%;" })
-    )
-    </span>
-
-    @(Html.Kendo().Button()
+          .HtmlAttributes(new { style = "width:100%;" })
+          .Height(150)
+            )
+        </span>
+    </div>
+    <div class="col-md-3">
+        @(Html.Kendo().Button()
         .Name("SearchButton")
-        .HtmlAttributes( new {type = "button", @class = "k-primary" } )
+        .HtmlAttributes(new { type = "button", @class = "k-primary col-sm-10" })
         .Content("Search"))
-
+    </div>
 </div>
 
 <div id="example">
@@ -84,10 +90,8 @@
         <a id="prev-img" title="Previous Image"></a>
         <a id="next-img" title="Next Image"></a>
     </div>
-
     <div class="responsive-message"></div>
 </div>
-
 <script id="template" type="text/x-kendo-template">
     <div>
         <div class="image-wrapper">
@@ -96,7 +100,6 @@
         <p class="title">#: Description #</p>
     </div>
 </script>
-
 <script>
     $(function () {
         var images = ["/images/gallery/The best of Japan/2000x1125/Kinkaku-ji-Temple_Ivan-zhekov_Attraction.JPG", "/images/gallery/UNESCO sites in Bulgaria/2000x1125/Rila-Monastery,-Bulgaria_Petar-Manolov_Attraction.jpg", "/images/gallery/Classic Tour of Peru/2000x1125/Titicaca-Lake_Attraction.jpg", "/images/gallery/Wonders of Italy/2000x1125/Grand-Canal,-Venice,-Italy2_Lilia-Karakoleva_Attraction.jpg", "/images/gallery/Brazil and Argentina Iguazu Falls/2000x1125/Cristo-Redentor-(Christ-the-Redeemer)_Galabina-Yordanova_Attraction.JPG"];
@@ -136,86 +139,10 @@
         }
     }
 </script>
-
 <style>
-    .searchbox-wrapper {
-        display: inline-block!important;
-        width: 300px;
-    }
 
-    .destination-combo-template img {
-    }
-
-    .destination-combo-template .info {
-    }
-
-    .destination-combo-template h4 {
-    }
-
-    .demo-section {
-        position: relative;
-    }
-
-        .demo-section > p {
-            text-align: right;
-            margin-top: 10px;
-            font-size: .8em;
-        }
-
-    #prev-img,
-    #next-img {
-        display: block;
-        position: absolute;
-        top: 42px;
-        z-idex: 1;
-        height: 100%;
-        width: 100px;
-        opacity: 0.2;
-    }
-
-    #prev-img {
-        left: 42px;
-        background: url('../content/web/scrollview/arrow-left.png') no-repeat 50% 50%;
-    }
-
-    #next-img {
-        left: auto;
-        right: 42px;
-        background: url('../content/web/scrollview/arrow-right.png') no-repeat 50% 50%;
-    }
-
-    a#prev-img:hover {
-        background: url('../content/web/scrollview/arrow-left.png') no-repeat 50% 50% rgba(0,0,0,.3);
-        opacity: 1;
-    }
-
-    a#next-img:hover {
-        background: url('../content/web/scrollview/arrow-right.png') no-repeat 50% 50% rgba(0,0,0,.3);
-        opacity: 1;
-    }
-
-    .title {
-        font-weight: bold;
-        text-transform: uppercase;
-        text-align: center;
-        margin: 0;
-        padding: 1em;
-        background-color: #222;
-        color: #fff;
-    }
-
-    .image-wrapper {
-        display: block;
-        background-size: cover;
-    }
-
-        .image-wrapper img {
-            width: 100%;
-        }
 </style>
-
 <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.3.1118/styles/kendo.nova.mobile.min.css" />
-
 <script>
     //Open on focus logic
     $(function () {
