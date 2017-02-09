@@ -745,7 +745,7 @@ input.k-input.k-invalid {
 }
 
 .t-row.tx_search .k-dropdown-wrap .k-input {
-    font-size: 1.4em;
+    /*font-size: 1.4em;*/
     font-style: italic;
 }
 
@@ -761,6 +761,14 @@ input.k-input.k-invalid {
 .t-row.tx_search .k-dropdown-wrap .k-input {
     height: 44px;
     line-height: 35px;
+}
+
+.t-row.tx_search .k-dropdown-wrap:hover .k-select {
+    background-color: lime;
+}
+
+.t-row.tx_search .k-dropdown-wrap .k-icon.k-i-close {
+    display: none;
 }
 
 .t-row.tx_search .k-dropdown-wrap .k-select {

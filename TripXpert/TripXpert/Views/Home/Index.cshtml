@@ -3,6 +3,7 @@
 }
 <div class="t-row tx_search tx_clearfix col-md-12">
     <div class="col-md-3">
+        <span class="k-icon k-i-marker-pin"></span>
         <span class="searchbox-wrapper">
             @(Html.Kendo().ComboBox()
             .Name("Destinations") //The name of the ComboBox is mandatory. It specifies the "id" attribute of the widget.
@@ -27,6 +28,7 @@
         </span>
     </div>
     <div class="col-md-3">
+        <span class="k-icon k-i-bell"></span>
         <span class="searchbox-wrapper">
             @(Html.Kendo().DropDownList()
           .Name("OfferType")
@@ -50,6 +52,7 @@
         </span>
     </div>
     <div class="col-md-3">
+        <span class="k-icon k-i-currency"></span>
         <span class="searchbox-wrapper">
             @(Html.Kendo().DropDownList()
           .Name("PriceRange")
@@ -76,10 +79,10 @@
             )
         </span>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 clearfix">
         @(Html.Kendo().Button()
         .Name("SearchButton")
-        .HtmlAttributes(new { type = "button", @class = "k-primary col-sm-10" })
+        .HtmlAttributes(new { type = "button", @class = "k-primary col-sm-8" })
         .Content("Search"))
     </div>
 </div>
