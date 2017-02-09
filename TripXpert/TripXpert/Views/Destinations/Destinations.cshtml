@@ -2,5 +2,48 @@
     ViewBag.Title = "Destinations";
 }
 
-<h2>Destinations</h2>
+<h2>Available Destinations</h2>
 
+@(Html.Kendo().ListView<TripXpert.Models.DestinationViewModel>()
+            .Name("listView")
+            .TagName("div")
+            .ClientTemplateId("template")
+            .DataSource(dataSource =>
+            {
+                dataSource.Read(read => read.Action("Destinations_Read", "Destinations"));
+                dataSource.PageSize(21);
+            })
+)
+
+<script type="text/x-kendo-tmpl" id="template">
+    <div class="tx_destination tx_clearfix">
+        <div class="tx_image_wrapper">
+            <a href='@Url.Action("DestinationDetails", "DestinationDetails")/#:data.DestinationID#'>
+                <img src="#=data.DefaultImage#" alt="#:data.DestinationID# image" />
+            </a>
+            <span class="tx_icon tx_left_arrow_icon"></span>
+            <span class="tx_icon tx_up_arrow_icon"></span>
+        </div>
+        <div class="tx_destination_info">
+            <h3>
+                <a href="@Url.Action("DestinationDetails", "DestinationDetails")/#:data.DestinationID#">#:data.Title#</a>
+            </h3>
+            <label id="priceLabel" class="tx_price">from #:kendo.toString(data.LowestPrice, "c", "en-US")#</label>
+            <hr />
+            <p class="tx_places">
+                # for (var i=0; i < data.ShortDescription.length; i++) {#
+                    # if (i > 0) { #
+                        <span class="tx_dot_separator" style="display: inline-block"></span>
+                    #}#
+                    #:data.ShortDescription[i]#
+                #}#
+            </p>
+            <div class="tx_dest_footer">
+                <button id="btn_ViewDetails" class="tx_btn" onclick="location.href='@Url.Action("DestinationDetails", "DestinationDetails")/#:data.DestinationID#'">View Details</button>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script>
+</script>
