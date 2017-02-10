@@ -846,6 +846,65 @@ a#next-img:hover {
         border-radius: 0;
     }
 
+    #Destinations_listbox {
+        .k-item {
+            padding: 0;
+            border-width: 0;
+
+            &:not(:last-of-type) {
+                border-bottom: 1px solid white;
+            }
+
+            &:hover {
+                border-color: white;
+            }
+        }
+
+        .destination-combo-template {
+            position: relative;
+            border-color: #efefef;
+            border-width: 15px;
+            border-style: solid;
+            cursor: pointer;
+
+            &:hover {
+                border-color: white;
+                background-color: white;
+
+                h4 {
+                    color: $button-blue;
+                }
+            }
+
+            img {
+                height: 80px;
+                width: 105px;
+                float: left;
+                margin-right: 1em;
+            }
+
+            .k-icon.k-i-arrow-60-left {
+                font-size: 32px;
+                color: white;
+                position: absolute;
+                top: 5px;
+                left: 83px;
+            }
+
+            h4 {
+                margin-top: 15px;
+            }
+
+            span.info {
+                float: right;
+                margin-top: 15px;
+                margin-right: 15px;
+                font-size: 0.8em;
+                color: $button-blue;
+            }
+        }
+    }
+
     .k-item {
         font-style: normal;
         padding: 5px;

@@ -20,8 +20,8 @@
             })
             .Height(400)
             //.SelectedIndex(0) //Select the first item.
-            .Template(@"<div class='destination-combo-template'>
-                <img src='#=data.DefaultImage#' title='#=data.Title#' /><h4>#=data.Title#</h4>
+            .Template(@"<div class='destination-combo-template clearfix'>
+                <span class='k-icon k-i-arrow-60-left'></span><img src='#=data.DefaultImage#' title='#=data.Title#' /><h4>#=data.Title#</h4>
                 <span class='info'>from #:kendo.toString(data.LowestPrice, 'c0')#</span></div>
         ")
             )

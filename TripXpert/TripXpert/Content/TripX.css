@@ -659,6 +659,43 @@ a#next-img:hover {
   padding: 0; }
   .k-list-container.k-popup.k-group.k-reset.k-state-border-up * {
     border-radius: 0; }
+  .k-list-container.k-popup.k-group.k-reset.k-state-border-up #Destinations_listbox .k-item {
+    padding: 0;
+    border-width: 0; }
+    .k-list-container.k-popup.k-group.k-reset.k-state-border-up #Destinations_listbox .k-item:not(:last-of-type) {
+      border-bottom: 1px solid white; }
+    .k-list-container.k-popup.k-group.k-reset.k-state-border-up #Destinations_listbox .k-item:hover {
+      border-color: white; }
+  .k-list-container.k-popup.k-group.k-reset.k-state-border-up #Destinations_listbox .destination-combo-template {
+    position: relative;
+    border-color: #efefef;
+    border-width: 15px;
+    border-style: solid;
+    cursor: pointer; }
+    .k-list-container.k-popup.k-group.k-reset.k-state-border-up #Destinations_listbox .destination-combo-template:hover {
+      border-color: white;
+      background-color: white; }
+      .k-list-container.k-popup.k-group.k-reset.k-state-border-up #Destinations_listbox .destination-combo-template:hover h4 {
+        color: #25a0da; }
+    .k-list-container.k-popup.k-group.k-reset.k-state-border-up #Destinations_listbox .destination-combo-template img {
+      height: 80px;
+      width: 105px;
+      float: left;
+      margin-right: 1em; }
+    .k-list-container.k-popup.k-group.k-reset.k-state-border-up #Destinations_listbox .destination-combo-template .k-icon.k-i-arrow-60-left {
+      font-size: 32px;
+      color: white;
+      position: absolute;
+      top: 5px;
+      left: 83px; }
+    .k-list-container.k-popup.k-group.k-reset.k-state-border-up #Destinations_listbox .destination-combo-template h4 {
+      margin-top: 15px; }
+    .k-list-container.k-popup.k-group.k-reset.k-state-border-up #Destinations_listbox .destination-combo-template span.info {
+      float: right;
+      margin-top: 15px;
+      margin-right: 15px;
+      font-size: 0.8em;
+      color: #25a0da; }
   .k-list-container.k-popup.k-group.k-reset.k-state-border-up .k-item {
     font-style: normal;
     padding: 5px; }
