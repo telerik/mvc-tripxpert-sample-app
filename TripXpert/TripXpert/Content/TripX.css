@@ -605,31 +605,34 @@ a#next-img:hover {
     border-width: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important; }
-  .t-row.tx_search .k-dropdown-wrap.k-state-focused .k-input, .t-row.tx_search .k-dropdown-wrap.k-state-active .k-input {
-    color: #25a0da; }
-  .t-row.tx_search .k-dropdown-wrap,
-  .t-row.tx_search .k-dropdown-wrap .k-input {
-    height: 44px;
-    line-height: 39px; }
-  .t-row.tx_search .k-dropdown-wrap .k-input {
-    /*font-size: 1.4em;*/
-    font-style: italic;
-    color: #767676; }
-  .t-row.tx_search .k-dropdown-wrap:hover {
-    background-color: white; }
-  .t-row.tx_search .k-dropdown-wrap .k-icon.k-i-close {
-    display: none; }
-  .t-row.tx_search .k-dropdown-wrap .k-select {
-    line-height: 45px; }
-  .t-row.tx_search .k-dropdown-wrap.k-state-border-down {
-    background-color: white;
-    padding-bottom: 0; }
-    .t-row.tx_search .k-dropdown-wrap.k-state-border-down .k-select .k-icon {
+  .t-row.tx_search .k-dropdown-wrap {
+    padding-left: 30px;
+    border-right: 1px solid #cccccc !important; }
+    .t-row.tx_search .k-dropdown-wrap.k-state-focused .k-input, .t-row.tx_search .k-dropdown-wrap.k-state-active .k-input {
       color: #25a0da; }
+    .t-row.tx_search .k-dropdown-wrap,
+    .t-row.tx_search .k-dropdown-wrap .k-input {
+      height: 44px;
+      line-height: 39px; }
+    .t-row.tx_search .k-dropdown-wrap .k-input {
+      /*font-size: 1.4em;*/
+      font-style: italic;
+      color: #767676; }
+    .t-row.tx_search .k-dropdown-wrap:hover {
+      background-color: white; }
+    .t-row.tx_search .k-dropdown-wrap .k-icon.k-i-close {
+      display: none; }
+    .t-row.tx_search .k-dropdown-wrap .k-select {
+      line-height: 45px; }
+    .t-row.tx_search .k-dropdown-wrap.k-state-border-down {
+      background-color: white;
+      padding-bottom: 0; }
+      .t-row.tx_search .k-dropdown-wrap.k-state-border-down .k-select .k-icon {
+        color: #25a0da; }
   .t-row.tx_search div.col-md-3 {
     background-color: white; }
     .t-row.tx_search div.col-md-3:not(:last-child) {
-      padding: 8px 0 8px 30px; }
+      padding: 8px 0; }
     .t-row.tx_search div.col-md-3:last-child {
       padding: 0; }
     .t-row.tx_search div.col-md-3 > .k-icon {

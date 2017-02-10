@@ -755,7 +755,9 @@ a#next-img:hover {
     }
 
     .k-dropdown-wrap {
-
+        padding-left: 30px;
+        border-right: 1px solid #cccccc !important;
+        
         &.k-state-focused,
         &.k-state-active {
             .k-input {
@@ -801,7 +803,7 @@ a#next-img:hover {
         background-color: white;
 
         &:not(:last-child) {
-            padding: 8px 0 8px 30px;
+            padding: 8px 0;
         }
 
         &:last-child {
