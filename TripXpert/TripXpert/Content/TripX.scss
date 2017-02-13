@@ -59,9 +59,6 @@ textarea {
     position: relative;
 }
 
-#wrapper a {
-    color: #6eaf46;
-}
 
 #wrapper a:hover {
     text-decoration: none;
@@ -968,4 +965,106 @@ a#prev-img:hover {
 
 a#next-img:hover {
     opacity: 1;
+}
+
+
+//Destinations
+
+.body-content {
+    background-color: #efefef;
+
+    .k-widget.k-listview {
+        border-width: 0;
+    }
+
+    .t-row.tx_main_content {
+    }
+
+    .tx_destination {
+        float: left;
+        width: 570px;
+        margin: 0 36px 70px 0px;
+        position: relative;
+        background: white;
+
+        .tx_image_wrapper {
+            float: left;
+            margin-right: 20px;
+            position: relative;
+
+            .tx_icon.tx_left_arrow_icon {
+                .k-icon {
+                    position: absolute;
+                    right: -13px;
+                    top: 25px;
+                    color: white;
+                    font-size: 36px;
+                }
+            }
+        }
+
+        img {
+            width: 325px;
+        }
+
+        .tx_destination_info {
+            padding-right: 20px;
+            padding-top: 1px;
+            margin-top: -1px;
+
+            hr {
+                margin: 20px 0;
+                display: block;
+                border: 1px inset;
+                color: gray;
+                box-sizing: border-box;
+            }
+
+            .tx_places {
+                font-size: 1.1em;
+                padding: 0;
+                color: #858585;
+                font-weight: lighter;
+            }
+        }
+
+        h3 {
+            font-size: 1.3em;
+            font-weight: lighter;
+            margin: 17px 0 16px;
+
+            a {
+                color: #595959;
+
+                &:hover {
+                    color: #25a0da;
+                }
+            }
+        }
+
+        label {
+            margin: 0;
+        }
+
+        .tx_dest_footer .tx_btn {
+            font-size: 1em;
+            position: absolute;
+            right: 105px;
+            bottom: 0;
+            padding: 10px 15px;
+            margin: 0 1.3333em;
+            text-align: center;
+            cursor: pointer;
+            background: #95d43a;
+            border: 0 none;
+            color: #fff;
+            border-radius: 0;
+            cursor: pointer;
+            display: inline-block;
+
+            &:hover {
+                background-color: $button-blue;
+            }
+        }
+    }
 }

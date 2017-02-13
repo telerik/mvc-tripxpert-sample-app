@@ -41,9 +41,6 @@ textarea {
 #wrapper {
   position: relative; }
 
-#wrapper a {
-  color: #6eaf46; }
-
 #wrapper a:hover {
   text-decoration: none;
   color: #25a0da; }
@@ -742,4 +739,69 @@ a#prev-img:hover {
 
 a#next-img:hover {
   opacity: 1; }
+
+.body-content {
+  background-color: #efefef; }
+  .body-content .k-widget.k-listview {
+    border-width: 0; }
+  .body-content .tx_destination {
+    float: left;
+    width: 570px;
+    margin: 0 36px 70px 0px;
+    position: relative;
+    background: white; }
+    .body-content .tx_destination .tx_image_wrapper {
+      float: left;
+      margin-right: 20px;
+      position: relative; }
+      .body-content .tx_destination .tx_image_wrapper .tx_icon.tx_left_arrow_icon .k-icon {
+        position: absolute;
+        right: -13px;
+        top: 25px;
+        color: white;
+        font-size: 36px; }
+    .body-content .tx_destination img {
+      width: 325px; }
+    .body-content .tx_destination .tx_destination_info {
+      padding-right: 20px;
+      padding-top: 1px;
+      margin-top: -1px; }
+      .body-content .tx_destination .tx_destination_info hr {
+        margin: 20px 0;
+        display: block;
+        border: 1px inset;
+        color: gray;
+        box-sizing: border-box; }
+      .body-content .tx_destination .tx_destination_info .tx_places {
+        font-size: 1.1em;
+        padding: 0;
+        color: #858585;
+        font-weight: lighter; }
+    .body-content .tx_destination h3 {
+      font-size: 1.3em;
+      font-weight: lighter;
+      margin: 17px 0 16px; }
+      .body-content .tx_destination h3 a {
+        color: #595959; }
+        .body-content .tx_destination h3 a:hover {
+          color: #25a0da; }
+    .body-content .tx_destination label {
+      margin: 0; }
+    .body-content .tx_destination .tx_dest_footer .tx_btn {
+      font-size: 1em;
+      position: absolute;
+      right: 105px;
+      bottom: 0;
+      padding: 10px 15px;
+      margin: 0 1.3333em;
+      text-align: center;
+      cursor: pointer;
+      background: #95d43a;
+      border: 0 none;
+      color: #fff;
+      border-radius: 0;
+      cursor: pointer;
+      display: inline-block; }
+      .body-content .tx_destination .tx_dest_footer .tx_btn:hover {
+        background-color: #25a0da; }
 
