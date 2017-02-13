@@ -689,37 +689,6 @@ input.k-input.k-invalid {
     font-size: .8em;
 }
 
-#prev-img,
-#next-img {
-    display: block;
-    position: absolute;
-    top: 42px;
-    z-idex: 1;
-    height: 100%;
-    width: 100px;
-    opacity: 0.2;
-}
-
-#prev-img {
-    left: 42px;
-    background: url('../content/web/scrollview/arrow-left.png') no-repeat 50% 50%;
-}
-
-#next-img {
-    left: auto;
-    right: 42px;
-    background: url('../content/web/scrollview/arrow-right.png') no-repeat 50% 50%;
-}
-
-a#prev-img:hover {
-    background: url('../content/web/scrollview/arrow-left.png') no-repeat 50% 50% rgba(0,0,0,.3);
-    opacity: 1;
-}
-
-a#next-img:hover {
-    background: url('../content/web/scrollview/arrow-right.png') no-repeat 50% 50% rgba(0,0,0,.3);
-    opacity: 1;
-}
 
 .title {
     font-weight: bold;
@@ -756,8 +725,8 @@ a#next-img:hover {
 
     .k-dropdown-wrap {
         padding-left: 30px;
-        border-right: 1px solid #cccccc !important;
-        
+        border-left: 1px solid #cccccc !important;
+
         &.k-state-focused,
         &.k-state-active {
             .k-input {
@@ -819,6 +788,12 @@ a#next-img:hover {
             font-size: 24px;
             z-index: 20;
             overflow: visible;
+        }
+
+        &:first-child {
+            .k-dropdown-wrap {
+                border-left-width: 0 !important;
+            }
         }
     }
 
@@ -919,4 +894,78 @@ a#next-img:hover {
         border-width: 0;
         color: black;
     }
+}
+
+#scrollview {
+    .k-pages.km-pages {
+        position: absolute;
+        top: 100px;
+        width: 100%;
+
+        li {
+            background-color: white;
+            border: 1px solid rgba(#cbcbcb, .9);
+            width: 10px;
+            height: 10px;
+            margin: 0 .5em;
+            position: relative;
+            box-sizing: content-box;
+            background-clip: content-box;
+
+            &.k-current-page.km-current-page {
+                background-color: white;
+            }
+
+            &.k-current-page.km-current-page:after {
+                width: 6px;
+                height: 6px;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                content: "";
+                border: 2px solid white;
+                background-color: $button-blue;
+                border-radius: 50%;
+                box-sizing: inherit;
+            }
+        }
+    }
+}
+
+#prev-img,
+#next-img {
+    display: block;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    height: 50px;
+    width: 50px;
+    margin-top: -25px;
+    opacity: 0.6;
+    background-color: white;
+    text-align: center;
+    line-height: 45px;
+    cursor: pointer;
+
+    .k-icon {
+        font-size: 32px;
+        color: black;
+    }
+}
+
+#prev-img {
+    left: 0;
+}
+
+#next-img {
+    left: auto;
+    right: 0;
+}
+
+a#prev-img:hover {
+    opacity: 1;
+}
+
+a#next-img:hover {
+    opacity: 1;
 }
