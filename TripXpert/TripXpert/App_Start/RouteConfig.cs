@@ -36,7 +36,12 @@ namespace TripXpert
                "Destinations",
                new { controller = "Destinations", action = "Destinations" }
            );
-
+            routes.MapRoute(
+               "DestinationDetails",
+               "Destination/{id}",
+               new { controller = "Destinations", action = "DestinationDetails", id =UrlParameter.Optional }
+           );
+            
             routes.MapRoute(
                "Contact",
                "Contact",

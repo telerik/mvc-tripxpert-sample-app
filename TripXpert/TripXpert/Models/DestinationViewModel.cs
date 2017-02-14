@@ -18,5 +18,9 @@ namespace TripXpert.Models
         public short? Duration { get; set; }
         public string VideoURL { get; set; }
 
+        public IEnumerable<TourInfo> TourInfos { get; set; }
+
+        public Testimonial Testimonial { get; set; }
+        public IEnumerable<Attraction> Attractions { get; set; }
     }
 }
