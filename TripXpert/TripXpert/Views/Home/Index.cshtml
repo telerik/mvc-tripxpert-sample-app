@@ -1,8 +1,8 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<div class="t-row tx_search tx_clearfix col-md-12">
-    <div class="col-md-3">
+<div class="t-row tx_search tx_clearfix col-xs-12">
+    <div class="col-xs-3">
         <span class="k-icon k-i-marker-pin"></span>
         <span class="searchbox-wrapper">
             @(Html.Kendo().ComboBox()
@@ -27,7 +27,7 @@
             )
         </span>
     </div>
-    <div class="col-md-3">
+    <div class="col-xs-3">
         <span class="k-icon k-i-bell"></span>
         <span class="searchbox-wrapper">
             @(Html.Kendo().DropDownList()
@@ -51,7 +51,7 @@
             )
         </span>
     </div>
-    <div class="col-md-3">
+    <div class="col-xs-3">
         <span class="k-icon k-i-currency"></span>
         <span class="searchbox-wrapper">
             @(Html.Kendo().DropDownList()
@@ -79,10 +79,10 @@
             )
         </span>
     </div>
-    <div class="col-md-3 clearfix">
+    <div class="col-xs-3 clearfix">
         @(Html.Kendo().Button()
         .Name("SearchButton")
-        .HtmlAttributes(new { type = "button", @class = "k-primary col-sm-8" })
+        .HtmlAttributes(new { type = "button", @class = "k-primary col-xs-8" })
         .Content("Search"))
     </div>
 </div>
