@@ -116,8 +116,24 @@
 
             @(Html.Kendo().Calendar()
                 .Name("toursCalendar")
+                .MonthTemplateId("monthTemplate")
+                .Value(Model.TourInfos.First().StartDate)
             )
-
+            
+            <script id="monthTemplate" type="text/x-kendo-tmpl">
+                # var tourDatesRaw=[] #
+                # var tours= @Html.Raw(Json.Encode(Model.TourInfos)) #
+                # for (var i=0; i < tours.length; i++ ) { #
+                # $.each(tours[i].TourDates, function(index, val) {tourDatesRaw.push(+kendo.parseDate(val)) } ) #
+                # } #
+                ##
+                # if ($.inArray(+data.date, tourDatesRaw) != -1) { #
+                    <div class="tourDate" > #: data.value # </div>
+                # } else { #
+                    #: data.value #
+                # } #
+                
+            </script>
             <div>                 
                 <span class="tx_icon tx_gallery_icon selectGallery k-button tsSelected">View gallery</span>
                 <span class="tx_icon tx_player_icon selectMediaPlayer k-button">Play video</span>
@@ -128,51 +144,44 @@
     </div>
     <div class="t-row tx_detailed_info_row tx_clearfix">
         <div class="t-col t-col-12">
-            <div>
-                
-            </div>
-
-        </div>
-    </div>
-</div>
-@(Html.Kendo().TabStrip()
+            @(Html.Kendo().TabStrip()
                 .Name("tabStripInfo")
                 .Items(items =>
                 {
                 items.Add().Text("Overview").Selected(true)
                     .Content(@<text>
-                                <div class="tx_description">
-                                    <div class="t-col t-col-6 t-col-xs-12 t-col-sm-12 t-col-md-12">
-                                        <h3>@Model.Title</h3>
-                                        <p>@Model.FullDescription</p>
-                                        <a href="javascript:void(0);" class="tx_link tx_read_more">read more</a>
-                                        <a href="javascript:void(0);" class="tx_link tx_read_less">read less</a>
-                                    </div>
-                                    <div class="t-col t-col-2 t-col-xs-12 t-col-sm-12 t-col-md-12">
-                                        <p class="tx_places">
-                                            @{
-                                                for (int i = 0; i < @Model.ShortDescription.Length; i++)
-                                                {
-                                                    if (i > 0)
-                                                    {
-                                                        <span class="tx_dot_separator" style="display: inline-block"></span>
-                                                    }
-
-                                                    @Model.ShortDescription[i];
-                                                }
+                        <div class="tx_description">
+                            <div class="t-col t-col-6 t-col-xs-12 t-col-sm-12 t-col-md-12">
+                                <h3>@Model.Title</h3>
+                                <p>@Model.FullDescription</p>
+                                <a href="javascript:void(0);" class="tx_link tx_read_more">read more</a>
+                                <a href="javascript:void(0);" class="tx_link tx_read_less">read less</a>
+                            </div>
+                            <div class="t-col t-col-2 t-col-xs-12 t-col-sm-12 t-col-md-12">
+                                <p class="tx_places">
+                                    @{
+                                        for (int i = 0; i < @Model.ShortDescription.Length; i++)
+                                        {
+                                            if (i > 0)
+                                            {
+                                                <span class="tx_dot_separator" style="display: inline-block"></span>
                                             }
-                                        </p>
-                                        <blockquote>
-                                            @Model.Testimonial.TestimonialContent
-                                            <p>@Model.Testimonial.Author.</p>
-                                        </blockquote>
-                                    </div>
-                                    <div class="t-col t-col-4 t-col-xs-12 t-col-sm-12 t-col-md-12 tx_clearfix">
-                                        @(Html.Kendo().Map()
+
+                                            @Model.ShortDescription[i];
+                                        }
+                                    }
+                                </p>
+                                <blockquote>
+                                    @Model.Testimonial.TestimonialContent
+                                    <p>@Model.Testimonial.Author.</p>
+                                </blockquote>
+                            </div>
+                            <div class="t-col t-col-4 t-col-xs-12 t-col-sm-12 t-col-md-12 tx_clearfix">
+                                @(Html.Kendo().Map()
                                             .Name("overviewMap")
                                             .Center(40, 30)
                                             .Zoom(3)
-                                            .HtmlAttributes(new {style="height:350px; width: 320px;" })
+                                            .HtmlAttributes(new { style = "height:350px; width: 320px;" })
                                             .Layers(layers =>
                                             {
                                                 layers.Add()
@@ -180,139 +189,152 @@
                                                     .UrlTemplate("http://#= subdomain #.tile.openstreetmap.org/#= zoom #/#= x #/#= y #.png")
                                                     .Subdomains("a", "b", "c")
                                                     .Attribution("&copy; <a href='http://osm.org/copyright' title='OpenStreetMap contributors' target='_blank'>OpenStreetMap contributors</a>");
-                                                
+
                                             })
-                                        )
-                                    </div>
-                                </div>
-                            </text>);
+                                )
+                            </div>
+                        </div>
+                    </text>);
                     items.Add().Text("Attractions")
                     .Content(@<text>
-                                <script id="attractionsTemplate" type="text/x-kendo-tmpl">
-                                    <div class="t-col t-col-6 t-col-xs-12 t-col-sm-12 t-col-md-12">
-                                        <h3>#: Title #</h3>
-                                        <p>
-                                            #: Description #
-                                        </p>
-                                    </div>
-                                    <div class="t-col t-col-2 t-col-xs-12 t-col-sm-12 t-col-md-12">
-                                        <h4>Location</h4>
-                                        <br />
-                                        #: Location #
-                                    </div>
-                                    <div class="t-col t-col-4 t-col-xs-12 t-col-sm-12 t-col-md-12">
-                                        <img src="#:Image.ImageURL#" id="attractionImage" alt="#:Image.Title#" />
-                                    </div>
-                                </script>
-                                @(Html.Kendo().ListView(Model.Attractions)
+                                                <script id="attractionsTemplate" type="text/x-kendo-tmpl">
+                                                    <div class="t-col t-col-6 t-col-xs-12 t-col-sm-12 t-col-md-12">
+                                                        <h3>#: Title #</h3>
+                                                        <p>
+                                                            #: Description #
+                                                        </p>
+                                                    </div>
+                                                    <div class="t-col t-col-2 t-col-xs-12 t-col-sm-12 t-col-md-12">
+                                                        <h4>Location</h4>
+                                                        <br />
+                                                        #: Location #
+                                                    </div>
+                                                    <div class="t-col t-col-4 t-col-xs-12 t-col-sm-12 t-col-md-12">
+                                                        <img src="#:Image.ImageURL#" id="attractionImage" alt="#:Image.Title#" />
+                                                    </div>
+                                                </script>
+                                                @(Html.Kendo().ListView(Model.Attractions)
                                     .Name("AttractionsListView")
                                     .TagName("div")
                                     .ClientTemplateId("attractionsTemplate")
-                                )
-                            </text>);
+                                                )
+                    </text>);
                     items.Add().Text("Enquiry form")
                     .Content(@<text>
-                            <h3>Contact an Expert</h3>
-                            <div class="t-row">
-                                <div class="t-col t-col-8 t-col-xs-12 t-col-sm-12">
-                                    <div class="t-row">
-                                        <div class="t-col t-col-6 t-col-xs-12 t-col-sm-12 t-col-md-12">
-                                            <span>First name</span>
-                                            @(Html.Kendo().TextBox()
+                                                <h3>Contact an Expert</h3>
+                                                <div class="t-row">
+                                                    <div class="t-col t-col-8 t-col-xs-12 t-col-sm-12">
+                                                        <div class="t-row">
+                                                            <div class="t-col t-col-6 t-col-xs-12 t-col-sm-12 t-col-md-12">
+                                                                <span>First name</span>
+                                                                @(Html.Kendo().TextBox()
                                                                 .Name("firstNameTextBox")
-                                            )
-                                            <span>Last Name</span>
-                                            @(Html.Kendo().TextBox()
+                                                                )
+                                                                <span>Last Name</span>
+                                                                @(Html.Kendo().TextBox()
                                                                 .Name("lastNameTextBox")
-                                            )
-                                            <span>Email</span>
-                                            @(Html.Kendo().TextBox()
+                                                                )
+                                                                <span>Email</span>
+                                                                @(Html.Kendo().TextBox()
                                                                 .Name("emailTextBox")
-                                            )
-                                        </div>
-                                        <div class="t-col t-col-6 t-col-xs-12 t-col-sm-12 t-col-md-12">
-                                            <span>Phone</span>
-                                            @(Html.Kendo().TextBox()
+                                                                )
+                                                            </div>
+                                                            <div class="t-col t-col-6 t-col-xs-12 t-col-sm-12 t-col-md-12">
+                                                                <span>Phone</span>
+                                                                @(Html.Kendo().TextBox()
                                                                 .Name("phoneTextBox")
-                                            )
-                                            <span>Mobile</span>
-                                            @(Html.Kendo().TextBox()
+                                                                )
+                                                                <span>Mobile</span>
+                                                                @(Html.Kendo().TextBox()
                                                                 .Name("mobileTextBox")
-                                            )
-                                            <span>Where are you from?</span>
-                                            @(Html.Kendo().DropDownList()
+                                                                )
+                                                                <span>Where are you from?</span>
+                                                                @(Html.Kendo().DropDownList()
                                                                 .Name("countryDropDown")
-                                            )
-                                        </div>
-                                    </div>
-                                    <div class="t-row">
-                                        <div class="t-col t-col-12">
-                                            <span>Comments</span>
-                                            @(Html.TextArea("commentsTextBox", new { style="width: 100%; resize: none;", rows="5" })
+                                                                )
+                                                            </div>
+                                                        </div>
+                                                        <div class="t-row">
+                                                            <div class="t-col t-col-12">
+                                                                <span>Comments</span>
+                                                                @(Html.TextArea("commentsTextBox", new { style = "width: 100%; resize: none;", rows = "5" })
 
-                                            )
-                                            @(Html.Kendo().Button()
+                                                                )
+                                                                @(Html.Kendo().Button()
                                                 .Name("sendEnquiry")
                                                 .Content("Send")
                                                 .HtmlAttributes(new { @class = "tx_btn" })
                                                 .Events(e => e.Click("enquirySendClick"))
-                                            )
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="t-col t-col-4 t-col-xs-12 t-col-sm-12">
-                                    <p>
-                                        @Model.Title has been added to your enquiry.  Please complete the short form. We’ll get right back to you to help you with your travels.
-                                    </p>
-                                    <blockquote>
-                                        @Model.Testimonial.TestimonialContent
-                                        <p>@Model.Testimonial.Author</p>
-                                    </blockquote>
-                                </div>
-                            </div>
-                            </text>);
+                                                                )
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="t-col t-col-4 t-col-xs-12 t-col-sm-12">
+                                                        <p>
+                                                            @Model.Title has been added to your enquiry.  Please complete the short form. We’ll get right back to you to help you with your travels.
+                                                        </p>
+                                                        <blockquote>
+                                                            @Model.Testimonial.TestimonialContent
+                                                            <p>@Model.Testimonial.Author</p>
+                                                        </blockquote>
+                                                    </div>
+                                                </div>
+                    </text>);
                     items.Add().Text("Upload photo")
                     .Content(@<text>
-                                <div class="t-col t-col-8 t-col-xs-12 t-col-sm-12 t-col-md-12">
-                                    <strong>Step 1: Select your Photo</strong>
+                                                <div class="t-col t-col-8 t-col-xs-12 t-col-sm-12 t-col-md-12">
+                                                    <strong>Step 1: Select your Photo</strong>
 
-                                    @(Html.Kendo().Upload()
+                                                    @(Html.Kendo().Upload()
                                                                     .Name("imageUpload")
                                                                     .Validation(v => v.AllowedExtensions(new string[] { ".jpg", ".png", ".gif" }))
-                                    )
+                                                    )
 
-                                    <strong>Step 1: Info about picture & author</strong>
-                                    <span>Your name</span>
-                                    @(Html.Kendo().TextBox()
+                                                    <strong>Step 1: Info about picture & author</strong>
+                                                    <span>Your name</span>
+                                                    @(Html.Kendo().TextBox()
                                                                         .Name("nameTextBox")
-                                    )
-                                    <span>Photo title</span>
-                                    @(Html.Kendo().TextBox()
+                                                    )
+                                                    <span>Photo title</span>
+                                                    @(Html.Kendo().TextBox()
                                                                         .Name("photoTitleTextBox")
-                                    )
+                                                    )
 
-                                    @(Html.Kendo().Button()
+                                                    @(Html.Kendo().Button()
                                                                     .Name("sendImageButton")
                                                                     .Content("Send")
                                                                     .HtmlAttributes(new { @class = "tx_btn" })
                                                                     .Events(e => e.Click("imageSendClick"))
-                                    )
-                                </div>
-                                <div class="t-col t-col-4 t-hidden-xs t-hidden-sm t-hidden-md">
-                                    <p>Use the Upload tool to upload your photo and prepare it for destination page.</p>
-                                    <blockquote>
-                                        @Model.Testimonial.TestimonialContent
-                                        <p>@Model.Testimonial.Author</p>
-                                    </blockquote>
-                                </div>
-                            </text>);
+                                                    )
+                                                </div>
+                                                <div class="t-col t-col-4 t-hidden-xs t-hidden-sm t-hidden-md">
+                                                    <p>Use the Upload tool to upload your photo and prepare it for destination page.</p>
+                                                    <blockquote>
+                                                        @Model.Testimonial.TestimonialContent
+                                                        <p>@Model.Testimonial.Author</p>
+                                                    </blockquote>
+                                                </div>
+                    </text>);
                 })
-)
+            )
+
+        </div>
+    </div>
+</div>
+
 <style>
     #tabstripMain.k-tabstrip-items {
         display:none;
     }
 
+    #toursCalendar .k-state-selected {
+        color: inherit;
+        background-color: inherit;
+        border-color: inherit;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
 </style>
 
 <script>
@@ -348,8 +370,5 @@
         //TODO: clear inputs
     }
 
-    $("#toursCalendar").on("click", function (e) {
-        e.preventDefault();
-    });
 
 </script>

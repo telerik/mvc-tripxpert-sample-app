@@ -15,6 +15,6 @@ namespace TripXpert.Models
         public int? PerSingleOccupancy { get; set; }
         public int? PerChild { get; set; }
         public short? Duration { get; set; }
-        
+        public List<DateTime>TourDates { get; set; }
     }
 }

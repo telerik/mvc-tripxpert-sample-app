@@ -40,7 +40,8 @@ namespace TripXpert.Controllers
                     PerPersonSharing = t.PerPersonSharing,
                     PerSingleOccupancy = t.PerSingleOccupancy,
                     PerChild = t.PerChild,
-                    Duration = t.Duration
+                    Duration = t.Duration,
+                    TourDates = GetTourDates((DateTime)t.StartDate, (DateTime)t.EndDate)
                 }),
                 Testimonial = new Models.Testimonial(TripXpertDAL.GetTestimonial(s.TestimonialID)),
                 Attractions = TripXpertDAL.GetAttactionsForDestionation(s.DestinationID).Select(a=> new Models.Attraction()
@@ -56,6 +57,20 @@ namespace TripXpert.Controllers
 
 
             return View(destination);
+        }
+
+        private List<DateTime> GetTourDates(DateTime startDate, DateTime endDate)
+        {
+            List<DateTime> dates = new List<DateTime>();
+
+            TimeSpan dayDiff = endDate.Subtract(startDate);
+
+            for (int i = 0; i < dayDiff.Days; i++)
+            {
+                dates.Add(startDate.AddDays(i));
+            }
+
+            return dates;
         }
 
         [HttpPost]
