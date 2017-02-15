@@ -186,6 +186,7 @@
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MapInfo.cs" />
+    <Compile Include="Models\Marker.cs" />
     <Compile Include="Models\Testimonial.cs" />
     <Compile Include="Models\TourInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

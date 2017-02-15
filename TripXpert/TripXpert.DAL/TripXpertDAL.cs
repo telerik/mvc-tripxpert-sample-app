@@ -57,7 +57,7 @@ namespace TripXpert.DAL
 
         }
 
-        private static List<DestinationMarker> GetMarkers(int destinationID)
+        public static List<DestinationMarker> GetMarkers(int destinationID)
         {
             TripXpertEntities entity = new TripXpertEntities();
             using (entity)

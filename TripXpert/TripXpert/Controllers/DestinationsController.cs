@@ -53,11 +53,17 @@ namespace TripXpert.Controllers
                     Description = a.Description,
                     Image = new Models.Image( TripXpertDAL.GetAttractionImage(a.AttractionID) )
                 }),
+                MapInfo = new MapInfo()
+                {
+                    ZoomSettings = TripXpertDAL.GetMapZoomSettings(s.DestinationID, 320, 350),
+                    Markers = TripXpertDAL.GetMarkers(s.DestinationID).Select(m => new Marker((double)m.Latitude, (double)m.Longitude, s.Title))
+                }
             }).FirstOrDefault();
 
 
             return View(destination);
         }
+        
 
         private List<DateTime> GetTourDates(DateTime startDate, DateTime endDate)
         {
@@ -73,18 +79,7 @@ namespace TripXpert.Controllers
             return dates;
         }
 
-        [HttpPost]
-        public ActionResult AttractionLocations(int id=1)
-        {
-            MapInfo MapInfo = new MapInfo()
-            {
-                ZoomSettings = TripXpertDAL.GetMapZoomSettings(id, 320, 350),
-                MapData = TripXpertDAL.GetMapData(id)
-            };
-
-            return Json(MapInfo.MapData);
-        }
-
+        
         public ActionResult Destinations_Read([DataSourceRequest] DataSourceRequest request)
         {
             IEnumerable<DestinationViewModel> data = TripXpertDAL.GetAllDestinations().Select(s => new DestinationViewModel()

@@ -22,5 +22,6 @@ namespace TripXpert.Models
 
         public Testimonial Testimonial { get; set; }
         public IEnumerable<Attraction> Attractions { get; set; }
+        public MapInfo MapInfo { get; set; }
     }
 }
