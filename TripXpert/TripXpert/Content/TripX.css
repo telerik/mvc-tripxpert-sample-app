@@ -781,6 +781,41 @@ a#next-img:hover {
       .body-content .tx_destination .tx_dest_footer .tx_btn:hover {
         background-color: #25a0da; }
 
+#header #responsiveMenu {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  z-index: 150;
+  border: 1px solid #E0E0E0;
+  border-radius: 0; }
+  #header #responsiveMenu .k-icon.k-i-arrow-60-down {
+    display: none; }
+  #header #responsiveMenu .k-item {
+    border-top-width: 0;
+    height: auto;
+    padding: 0;
+    background-color: #F9F9F9; }
+    #header #responsiveMenu .k-item.k-state-border-down {
+      background-color: #25a0da; }
+      #header #responsiveMenu .k-item.k-state-border-down .k-item {
+        width: 50%; }
+      #header #responsiveMenu .k-item.k-state-border-down .k-link {
+        background-color: transparent;
+        color: white;
+        box-shadow: none; }
+        #header #responsiveMenu .k-item.k-state-border-down .k-link .k-icon {
+          color: white; }
+    #header #responsiveMenu .k-item .k-link {
+      padding: 0.3em 0.5em;
+      border: none;
+      background-color: transparent; }
+      #header #responsiveMenu .k-item .k-link .k-icon {
+        color: #858585; }
+  #header #responsiveMenu .k-menu-group.k-popup .k-item .k-link {
+    font-size: .7em;
+    color: black; }
+
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1280px) {
   #header .k-menu .k-item.rightAlignedItem {
@@ -799,12 +834,33 @@ a#next-img:hover {
 @media only screen and (max-width: 1024px) {
   #Menu1 .k-item:not(.rightAlignedItem) {
     display: none; }
-  /*div.tx_mobile_nav_menu {
-		display: block;
-	}*/ }
+  #header #responsiveMenu {
+    display: inline-block; }
+  #header .k-menu .k-item.rightAlignedItem {
+    padding: 0; }
+    #header .k-menu .k-item.rightAlignedItem .k-link {
+      border-left: 1px solid #cccccc;
+      height: 100%;
+      padding: 24px;
+      font-size: 0; }
+      #header .k-menu .k-item.rightAlignedItem .k-link .k-icon {
+        font-size: 35px;
+        margin-right: 0; }
+    #header .k-menu .k-item.rightAlignedItem:not(.k-last) .k-link {
+      padding-right: 24px;
+      margin-right: 50px;
+      border-right: 1px solid #cccccc; } }
 
 /* Medium Devices, Desktops */
 /* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .navbar-header {
+    float: left; } }
+
 /* Extra Small Devices, Phones */
+@media only screen and (max-width: 620px) {
+  #header .k-menu .k-item.rightAlignedItem {
+    display: none; } }
+
 /* Custom, iPhone Retina */
 

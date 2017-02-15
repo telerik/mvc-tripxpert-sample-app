@@ -18,6 +18,21 @@
         <div id="header" class="row">
             <div class="col-sm-12">
                 <div class="navbar">
+                    @(Html.Kendo().Menu()
+                    .Name("responsiveMenu")
+                    .OpenOnClick(true)
+                    .Items(items =>
+                    {
+                        items.Add().Text("").SpriteCssClasses("k-icon", "k-i-menu")
+                        .Items(innerChildren =>
+                        {
+                            innerChildren.Add().Text("Home").Route("Home");
+                            innerChildren.Add().Text("Destinations").Route("Destinations");
+                            innerChildren.Add().Text("Attractions").Route("Attractions");
+                            innerChildren.Add().Text("Contact").Route("Contact");
+                        });
+                    })
+                    )
                     <div class="navbar-header">
                         <a href="@Url.Action("Index", "Home")">
                             <img src="@Url.Content("~/Images/App/trip_xpert_logo.png")" , alt="tripxpert logo" />
