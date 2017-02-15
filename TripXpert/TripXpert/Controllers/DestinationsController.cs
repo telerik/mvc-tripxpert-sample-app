@@ -79,7 +79,14 @@ namespace TripXpert.Controllers
             return dates;
         }
 
-        
+        public JsonResult GetCountries()
+        {
+            var countries = TripXpertDAL.GetCountries();
+
+            return Json(countries, JsonRequestBehavior.AllowGet);
+        }
+
+
         public ActionResult Destinations_Read([DataSourceRequest] DataSourceRequest request)
         {
             IEnumerable<DestinationViewModel> data = TripXpertDAL.GetAllDestinations().Select(s => new DestinationViewModel()

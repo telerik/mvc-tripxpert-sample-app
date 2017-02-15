@@ -262,7 +262,11 @@
                                                                 )
                                                                 <span>Where are you from?</span>
                                                                 @(Html.Kendo().DropDownList()
-                                                                .Name("countryDropDown")
+                                                                    .Name("countryDropDown")
+                                                                    .OptionLabel("-Select country-")
+                                                                    .DataSource(dataSource => dataSource
+                                                                        .Read("GetCountries", "Destinations")
+                                                                    )
                                                                 )
                                                             </div>
                                                         </div>
@@ -414,7 +418,22 @@
     }
 
     function enquirySendClick(e) {
-        //TODO: clear inputs
+        var firstName = $("#firstNameTextBox");
+        var lastName = $("#lastNameTextBox");
+        var email = $("#emailTextBox");
+        var phone = $("#phoneTextBox");
+        var mobile = $("#mobileTextBox");
+        var country = $("#countryDropDown").data("kendoDropDownList");
+        var comments = $("#commentsTextBox");
+
+        firstName.val("");
+        lastName.val("");
+        email.val("");
+        phone.val("");
+        mobile.val("");
+        country.value("");
+        comments.val("");
+
     }
     $(document).ready(function () {
         var smallMap = $("#overviewMap").data("kendoMap");
