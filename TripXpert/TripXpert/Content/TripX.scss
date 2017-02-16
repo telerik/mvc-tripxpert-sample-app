@@ -95,16 +95,6 @@ textarea {
         box-shadow: none;
         border: none;
 
-        .k-link {
-            padding: 4px 0 0;
-            color: black;
-
-            &:hover {
-                color: $button-blue;
-                background-color: white;
-            }
-        }
-
         .k-item {
             height: 4em;
             margin: 0;
@@ -115,6 +105,21 @@ textarea {
             font-size: 1.429em;
             border-radius: 0;
             box-shadow: none;
+
+            &.k-state-hover {
+                .k-link {
+                    background-color: transparent;
+                }
+            }
+        }
+
+        .k-link {
+            padding: 4px 0 0;
+            color: black;
+
+            &:hover {
+                color: $button-blue;
+            }
         }
 
         .k-state-highlight:not(.rightAlignedItem),
@@ -870,7 +875,7 @@ input.k-input.k-invalid {
                 color: white;
                 position: absolute;
                 top: 5px;
-                left: 83px;
+                left: 84px;
             }
 
             h4 {
@@ -942,7 +947,6 @@ input.k-input.k-invalid {
     display: block;
     position: absolute;
     top: 50%;
-    z-index: 10;
     height: 50px;
     width: 50px;
     margin-top: -25px;
@@ -1184,7 +1188,7 @@ a#next-img:hover {
         display: inline-block;
     }
 
-        #header .k-menu .k-item.rightAlignedItem {
+    #header .k-menu .k-item.rightAlignedItem {
         padding: 0;
 
         .k-link {
@@ -1201,7 +1205,7 @@ a#next-img:hover {
 
         &:not(.k-last) {
             .k-link {
-                padding-right:24px;
+                padding-right: 24px;
                 margin-right: 50px;
                 border-right: 1px solid #cccccc;
             }
