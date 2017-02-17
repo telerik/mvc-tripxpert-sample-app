@@ -39,7 +39,7 @@ textarea {
 /*<< Reset*/
 /*>> Common*/
 #wrapper {
-  position: relative; }
+  /*position: relative;*/ }
   #wrapper a:hover {
     text-decoration: none;
     color: #25a0da; }
@@ -67,12 +67,6 @@ textarea {
     background-color: transparent;
     box-shadow: none;
     border: none; }
-    #header .k-menu .k-link {
-      padding: 4px 0 0;
-      color: black; }
-      #header .k-menu .k-link:hover {
-        color: #25a0da;
-        background-color: white; }
     #header .k-menu .k-item {
       height: 4em;
       margin: 0;
@@ -83,6 +77,13 @@ textarea {
       font-size: 1.429em;
       border-radius: 0;
       box-shadow: none; }
+      #header .k-menu .k-item.k-state-hover .k-link {
+        background-color: transparent; }
+    #header .k-menu .k-link {
+      padding: 4px 0 0;
+      color: black; }
+      #header .k-menu .k-link:hover {
+        color: #25a0da; }
     #header .k-menu .k-state-highlight:not(.rightAlignedItem),
     #header .k-menu .k-state-highlight:not(.rightAlignedItem):hover {
       height: 3.45em;
@@ -636,7 +637,7 @@ input.k-input.k-invalid {
       color: white;
       position: absolute;
       top: 5px;
-      left: 83px; }
+      left: 84px; }
     .k-list-container.k-popup.k-group.k-reset.k-state-border-up #Destinations_listbox .destination-combo-template h4 {
       margin-top: 15px; }
     .k-list-container.k-popup.k-group.k-reset.k-state-border-up #Destinations_listbox .destination-combo-template span.info {
@@ -685,9 +686,8 @@ input.k-input.k-invalid {
 #prev-img,
 #next-img {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 50%;
-  z-index: 10;
   height: 50px;
   width: 50px;
   margin-top: -25px;
@@ -780,6 +780,95 @@ a#next-img:hover {
       display: inline-block; }
       .body-content .tx_destination .tx_dest_footer .tx_btn:hover {
         background-color: #25a0da; }
+
+#DetailsLayout .cal-row {
+  background-color: white;
+  padding-left: 45px;
+  padding-right: 45px; }
+  #DetailsLayout .cal-row h3 {
+    font-size: 1.2em;
+    margin-top: 30px;
+    margin-bottom: 10px; }
+    #DetailsLayout .cal-row h3 span {
+      float: right; }
+  #DetailsLayout .cal-row #pricesButton {
+    font-size: 1.1em;
+    color: #7FC914;
+    cursor: pointer; }
+    #DetailsLayout .cal-row #pricesButton:hover {
+      color: #25a0da; }
+  #DetailsLayout .cal-row #toursCalendar {
+    border-width: 0;
+    width: 100%;
+    height: 100%; }
+    #DetailsLayout .cal-row #toursCalendar .k-header {
+      background-color: transparent; }
+    #DetailsLayout .cal-row #toursCalendar .k-content {
+      border-width: 0; }
+      #DetailsLayout .cal-row #toursCalendar .k-content thead tr th {
+        text-align: center;
+        background-color: transparent;
+        border-top: 1px solid #ccc; }
+      #DetailsLayout .cal-row #toursCalendar .k-content tbody td {
+        text-align: center;
+        width: 75px;
+        height: 90px;
+        /*&.k-state-selected a {
+                        padding: 0;
+                        width: 38px;
+                        height: 38px;
+                        line-height: 38px;
+                        color: inherit;
+                        border: 2px solid $button-blue;
+                        border-radius: 50%;
+                    }*/ }
+        #DetailsLayout .cal-row #toursCalendar .k-content tbody td.k-state-hover {
+          background-color: transparent; }
+          #DetailsLayout .cal-row #toursCalendar .k-content tbody td.k-state-hover a {
+            background-clip: content-box;
+            background-color: #ccc; }
+            #DetailsLayout .cal-row #toursCalendar .k-content tbody td.k-state-hover a .tourDate {
+              color: inherit; }
+        #DetailsLayout .cal-row #toursCalendar .k-content tbody td a {
+          padding: 0;
+          width: 38px;
+          height: 38px;
+          line-height: 38px;
+          color: inherit;
+          border: 2px solid rgba(255, 255, 255, 0);
+          border-radius: 50%;
+          /*&:hover {
+                            background-clip: content-box;
+                            background-color: #ccc;
+
+                            .tourDate {
+                                color: inherit;
+                            }
+                        }*/ }
+          #DetailsLayout .cal-row #toursCalendar .k-content tbody td a .tourDate {
+            width: 38px;
+            height: 38px;
+            line-height: 38px;
+            color: white;
+            background-color: #25a0da;
+            border-radius: 50%; }
+
+#DetailsLayout .k-tabstrip-wrapper #prev-img,
+#DetailsLayout .k-tabstrip-wrapper #next-img {
+  position: absolute; }
+
+#DetailsLayout .k-tabstrip-wrapper #tabstripMain {
+  border-width: 0; }
+  #DetailsLayout .k-tabstrip-wrapper #tabstripMain .k-reset.k-tabstrip-items {
+    display: none; }
+  #DetailsLayout .k-tabstrip-wrapper #tabstripMain #tabstripMain-1 {
+    padding: 0;
+    border-width: 0; }
+  #DetailsLayout .k-tabstrip-wrapper #tabstripMain #scrollview {
+    border-width: 0; }
+
+#DetailsLayout .scrollview-col {
+  padding: 0; }
 
 #header #responsiveMenu {
   display: none;

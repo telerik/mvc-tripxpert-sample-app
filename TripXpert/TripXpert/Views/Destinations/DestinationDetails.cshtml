@@ -5,7 +5,7 @@
 @model TripXpert.Models.DestinationViewModel
 
 <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.3.1118/styles/kendo.nova.mobile.min.css" /> 
-<div id="DetailsLayout" class="t-container t-container-fluid">
+<div id="DetailsLayout" class="t-container t-container-fluid container-fluid">
     <div class="t-row tx_destination_title">
         <div class="t-col t-col-12">
 
@@ -14,8 +14,8 @@
         </div>
     </div>
     
-    <div class="t-row tx_media_row">
-        <div class="t-col t-col-9 t-col-xs-12 t-col-sm-12 t-col-md-7 t-col-lg-8">
+    <div class="t-row tx_media_row row">
+        <div class="t-col t-col-9 t-col-xs-12 t-col-sm-12 t-col-md-7 t-col-lg-8 col-md-9 scrollview-col">
             <script id="template" type="text/x-kendo-template">
                 <div class="image-wrapper">
                     <img src="#:ImageURL #" />
@@ -34,8 +34,8 @@
                         .Content(@<text>
                             <div class="demo-section hidden-on-narrow k-content">
                                 <div id="scrollview" ></div>
-                                <a id="prev-img" title="Previous Image"></a>
-                                <a id="next-img" title="Next Image"></a>
+                                <a id="prev-img" title="Previous Image"><span class="k-icon k-i-arrow-chevron-left"></span></a>
+                                <a id="next-img" title="Next Image"><span class="k-icon k-i-arrow-chevron-right"></a>
                             </div>
                             <script>
                                 var dataSource = new kendo.data.DataSource({
@@ -83,7 +83,7 @@
             </div>
 
         </div>
-        <div class="t-col t-col-3 t-col-xs-12 t-col-sm-12 t-col-md-5 t-col-lg-4 tx_brief_info">
+        <div class="t-col t-col-3 t-col-xs-12 t-col-sm-12 t-col-md-5 t-col-lg-4 tx_brief_info col-md-3 cal-row">
 
             <h3 class="clearfix">Price form $@Model.LowestPrice<span>@Model.Duration days</span></h3>
             <a id="pricesButton" class="tx_link">view full price info</a>
