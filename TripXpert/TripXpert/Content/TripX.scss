@@ -1087,76 +1087,84 @@ a#next-img:hover {
 //Destination Details
 
 #DetailsLayout {
-    .cal-row {
-        background-color: white;
-        padding-left: 45px;
-        padding-right: 45px;
+    .t-row.tx_media_row {
+        position: relative;
 
-        h3 {
-            font-size: 1.2em;
-            margin-top: 30px;
-            margin-bottom: 10px;
-
-            span {
-                float: right;
-            }
-        }
-
-        #pricesButton {
-            font-size: 1.1em;
-            color: #7FC914;
-            cursor: pointer;
-
-            &:hover {
-                color: $button-blue;
-            }
-        }
-
-        #toursCalendar {
-            border-width: 0;
-            width: 100%;
+        .cal-row {
+            position: absolute;
+            right: 0;
+            width: 350px;
             height: 100%;
+            background-color: white;
+            padding-left: 30px;
+            padding-right: 30px;
 
-            .k-header {
-                background-color: transparent;
+            h3 {
+                font-size: 1.2em;
+                margin-top: 30px;
+                margin-bottom: 10px;
+
+                span {
+                    float: right;
+                }
             }
 
-            .k-content {
-                border-width: 0;
+            #pricesButton {
+                font-size: 1.1em;
+                color: #7FC914;
+                cursor: pointer;
 
-                thead tr th {
-                    text-align: center;
+                &:hover {
+                    color: $button-blue;
+                }
+            }
+
+            #toursCalendar {
+                border-width: 0;
+                width: 100%;
+                height: 500px;
+                box-shadow: none;
+                margin-top: 25px;
+
+                .k-header {
                     background-color: transparent;
-                    border-top: 1px solid #ccc;
                 }
 
-                tbody td {
-                    text-align: center;
-                    width: 75px;
-                    height: 90px;
+                .k-content {
+                    border-width: 0;
+                    border-bottom: 1px solid #ccc;
 
-                    &.k-state-hover {
+                    thead tr th {
+                        text-align: center;
                         background-color: transparent;
-
-                        a {
-                            background-clip: content-box;
-                            background-color: #ccc;
-
-                            .tourDate {
-                                color: inherit;
-                            }
-                        }
+                        border-top: 1px solid #ccc;
                     }
 
-                    a {
-                        padding: 0;
-                        width: 38px;
-                        height: 38px;
-                        line-height: 38px;
-                        color: inherit;
-                        border: 2px solid rgba(255, 255, 255, 0);
-                        border-radius: 50%;
-                        /*&:hover {
+                    tbody td {
+                        text-align: center;
+
+                        &.k-state-hover {
+                            background-color: transparent;
+
+                            a {
+                                background-clip: content-box;
+                                background-color: #ccc;
+
+                                .tourDate {
+                                    color: inherit;
+                                }
+                            }
+                        }
+
+                        a {
+                            padding: 0;
+                            width: 38px;
+                            height: 38px;
+                            line-height: 38px;
+                            color: inherit;
+                            border: 2px solid rgba(255, 255, 255, 0);
+                            border-radius: 50%;
+                            /*&:hover {
                             background-clip: content-box;
                             background-color: #ccc;
 
@@ -1164,16 +1172,16 @@ a#next-img:hover {
                                 color: inherit;
                             }
                         }*/
-                        .tourDate {
-                            width: 38px;
-                            height: 38px;
-                            line-height: 38px;
-                            color: white;
-                            background-color: $button-blue;
-                            border-radius: 50%;
+                            .tourDate {
+                                width: 38px;
+                                height: 38px;
+                                line-height: 38px;
+                                color: white;
+                                background-color: $button-blue;
+                                border-radius: 50%;
+                            }
                         }
-                    }
-                    /*&.k-state-selected a {
+                        /*&.k-state-selected a {
                         padding: 0;
                         width: 38px;
                         height: 38px;
@@ -1182,37 +1190,88 @@ a#next-img:hover {
                         border: 2px solid $button-blue;
                         border-radius: 50%;
                     }*/
+                    }
+                }
+
+                .k-footer {
+                    display: none !important;
+                }
+            }
+
+            .tx_buttons {
+                display: table;
+                position: absolute;
+                width: auto;
+                margin-left: auto;
+                margin-right: auto;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-collapse: collapse;
+
+                .k-button {
+                    display: table-cell;
+                    background-color: #aeaeae;
+                    color: white;
+                    border-radius: 0;
+                    padding: 10px 20px;
+                    border-width: 0;
+                    margin-left: 1px;
+                    font-size: 1.1em;
+                    &:last-child{
+                        border-left: 1px solid white;
+                    }
+                    &.tsSelected {
+                        background-color: #95d43a;
+                    }
+
+                    &.tsSelected:hover,
+                    &:hover {
+                        background-color: $button-blue;
+                    }
+
+                    .k-icon {
+                        color: white;
+                        margin-right: 15px;
+                        font-size: 1.4em;
+                    }
                 }
             }
         }
-    }
 
-    .k-tabstrip-wrapper {
-        #prev-img,
-        #next-img {
-            position: absolute;
+        .scrollview-col {
+            box-sizing: border-box;
+            position: relative;
+            float: left;
+            min-height: 1px;
+            padding: 0;
+            padding-right: 350px;
+            width: 100%;
+
+            .k-tabstrip-wrapper {
+                #prev-img,
+                #next-img {
+                    position: absolute;
+                }
+
+                #tabstripMain {
+                    border-width: 0;
+
+                    .k-reset.k-tabstrip-items {
+                        display: none;
+                    }
+
+                    #tabstripMain-1 {
+                        padding: 0;
+                        border-width: 0;
+                    }
+
+                    #scrollview {
+                        border-width: 0;
+                    }
+                }
+            }
         }
-
-        #tabstripMain {
-            border-width: 0;
-
-            .k-reset.k-tabstrip-items {
-                display: none;
-            }
-
-            #tabstripMain-1 {
-                padding: 0;
-                border-width: 0;
-            }
-
-            #scrollview {
-                border-width: 0;
-            }
-        }
-    }
-
-    .scrollview-col {
-        padding: 0;
     }
 }
 

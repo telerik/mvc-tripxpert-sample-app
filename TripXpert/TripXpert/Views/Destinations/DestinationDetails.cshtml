@@ -15,7 +15,7 @@
     </div>
     
     <div class="t-row tx_media_row row">
-        <div class="t-col t-col-9 t-col-xs-12 t-col-sm-12 t-col-md-7 t-col-lg-8 col-md-9 scrollview-col">
+        <div class="t-col t-col-9 t-col-xs-12 t-col-sm-12 t-col-md-7 t-col-lg-8 scrollview-col">
             <script id="template" type="text/x-kendo-template">
                 <div class="image-wrapper">
                     <img src="#:ImageURL #" />
@@ -83,7 +83,7 @@
             </div>
 
         </div>
-        <div class="t-col t-col-3 t-col-xs-12 t-col-sm-12 t-col-md-5 t-col-lg-4 tx_brief_info col-md-3 cal-row">
+        <div class="t-col t-col-3 t-col-xs-12 t-col-sm-12 t-col-md-5 t-col-lg-4 tx_brief_info cal-row">
 
             <h3 class="clearfix">Price form $@Model.LowestPrice<span>@Model.Duration days</span></h3>
             <a id="pricesButton" class="tx_link">view full price info</a>
@@ -134,9 +134,8 @@
                 # } #
                 
             </script>
-            <div>                 
-                <span class="tx_icon tx_gallery_icon selectGallery k-button tsSelected">View gallery</span>
-                <span class="tx_icon tx_player_icon selectMediaPlayer k-button">Play video</span>
+            <div class="tx_buttons">                 
+                <span class="tx_icon tx_gallery_icon selectGallery k-button k-button-icontext tsSelected"><span class="k-icon k-i-photo-camera"></span>View gallery</span><span class="tx_icon tx_player_icon selectMediaPlayer k-button-icontext k-button"><span class="k-icon k-i-play"></span>Play video</span>
             </div>
 
 
