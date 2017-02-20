@@ -388,13 +388,13 @@
     $(".selectGallery").on("click", function () {
         $(this).siblings(".tsSelected").removeClass("tsSelected");
         $(this).addClass("tsSelected");
-        var tabStrip = $("#tabstrip").data("kendoTabStrip");
+        var tabStrip = $("#tabstripMain").data("kendoTabStrip");
         tabStrip.select(0);
     });
     $(".selectMediaPlayer").on("click", function () {
         $(this).siblings(".tsSelected").removeClass("tsSelected");
         $(this).addClass("tsSelected");
-        var tabStrip = $("#tabstrip").data("kendoTabStrip");
+        var tabStrip = $("#tabstripMain").data("kendoTabStrip");
         tabStrip.select(1);
     });
 
