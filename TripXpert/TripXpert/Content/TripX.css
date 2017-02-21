@@ -1030,6 +1030,180 @@ a#next-img:hover {
   #DetailsLayout .tabstrip_row #AttractionsListView .tx_attr_name_col h3 {
     font-size: 1.2em;
     margin-bottom: 25px; }
+  #DetailsLayout .tabstrip_row #tx_enquiry_form label {
+    margin-top: 20px;
+    display: block;
+    font-weight: normal; }
+  #DetailsLayout .tabstrip_row #tx_enquiry_form input {
+    width: 100%;
+    border-radius: 0;
+    border-width: 1px;
+    border-style: solid;
+    padding: 4px 0;
+    vertical-align: middle;
+    background-color: #efefef;
+    border-color: #efefef;
+    height: 36px; }
+    #DetailsLayout .tabstrip_row #tx_enquiry_form input:hover {
+      background-color: white;
+      border-color: #cfcfcf; }
+    #DetailsLayout .tabstrip_row #tx_enquiry_form input:focus {
+      background-color: white;
+      border-color: #25a0da;
+      box-shadow: none; }
+    #DetailsLayout .tabstrip_row #tx_enquiry_form input:invalid {
+      border-color: #de3914; }
+  #DetailsLayout .tabstrip_row #tx_enquiry_form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #efefef;
+    border-color: #efefef;
+    padding: 10px; }
+    #DetailsLayout .tabstrip_row #tx_enquiry_form textarea:hover {
+      background-color: white;
+      border-color: #cfcfcf; }
+    #DetailsLayout .tabstrip_row #tx_enquiry_form textarea:focus {
+      background-color: white;
+      border-color: #25a0da;
+      box-shadow: none; }
+    #DetailsLayout .tabstrip_row #tx_enquiry_form textarea:invalid {
+      border-color: #de3914; }
+  #DetailsLayout .tabstrip_row #tx_enquiry_form .k-dropdown-wrap {
+    background-color: #efefef;
+    border-color: #efefef;
+    border-radius: 0;
+    height: 36px;
+    box-sizing: border-box; }
+    #DetailsLayout .tabstrip_row #tx_enquiry_form .k-dropdown-wrap.k-state-focused {
+      box-shadow: none; }
+  #DetailsLayout .tabstrip_row #tx_enquiry_form .k-button {
+    display: inline-block;
+    margin: 1.8em 0 1.667em;
+    font-size: 18px;
+    width: 10em;
+    height: 3.125em;
+    background: #95d43a;
+    border: 0 none;
+    color: #fff;
+    border-radius: 0;
+    cursor: pointer;
+    display: inline-block; }
+    #DetailsLayout .tabstrip_row #tx_enquiry_form .k-button:hover {
+      background-color: #25a0da; }
+  #DetailsLayout .tabstrip_row #tx_enquiry_form blockquote {
+    quotes: "“" "”" "‘" "’";
+    margin: 0;
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 1em;
+    color: #aeaeae;
+    border-left-width: 0; }
+    #DetailsLayout .tabstrip_row #tx_enquiry_form blockquote:before {
+      content: open-quote;
+      display: block;
+      height: .5em;
+      font-size: 10em;
+      font-family: Helvetica;
+      font-style: normal;
+      color: #efefef;
+      vertical-align: -.3em; }
+    #DetailsLayout .tabstrip_row #tx_enquiry_form blockquote:after {
+      content: close-quote;
+      text-align: right;
+      display: block;
+      height: .5em;
+      font-size: 10em;
+      font-family: Helvetica;
+      font-style: normal;
+      color: #efefef;
+      vertical-align: -.3em; }
+    #DetailsLayout .tabstrip_row #tx_enquiry_form blockquote p {
+      font-size: 1em; }
+  #DetailsLayout .tabstrip_row #tx_upload_photo label {
+    margin-top: 20px;
+    display: block;
+    font-weight: normal; }
+  #DetailsLayout .tabstrip_row #tx_upload_photo input {
+    width: 60%;
+    border-radius: 0;
+    border-width: 1px;
+    border-style: solid;
+    padding: 4px 0;
+    vertical-align: middle;
+    background-color: #efefef;
+    border-color: #efefef;
+    height: 36px; }
+    #DetailsLayout .tabstrip_row #tx_upload_photo input:hover {
+      background-color: white;
+      border-color: #cfcfcf; }
+    #DetailsLayout .tabstrip_row #tx_upload_photo input:focus {
+      background-color: white;
+      border-color: #25a0da;
+      box-shadow: none; }
+    #DetailsLayout .tabstrip_row #tx_upload_photo input:invalid {
+      border-color: #de3914; }
+  #DetailsLayout .tabstrip_row #tx_upload_photo .k-button {
+    display: inline-block;
+    margin: 1.8em 0 1.667em;
+    font-size: 18px;
+    width: 10em;
+    height: 3.125em;
+    background: #95d43a;
+    border: 0 none;
+    color: #fff;
+    border-radius: 0;
+    cursor: pointer;
+    display: block; }
+    #DetailsLayout .tabstrip_row #tx_upload_photo .k-button:hover {
+      background-color: #25a0da; }
+  #DetailsLayout .tabstrip_row #tx_upload_photo .k-upload {
+    text-align: right;
+    width: 60%;
+    border-radius: 0;
+    border-width: 1px;
+    border-style: solid;
+    vertical-align: middle;
+    background-color: #efefef;
+    border-color: #efefef; }
+    #DetailsLayout .tabstrip_row #tx_upload_photo .k-upload .k-button {
+      font-size: 1em;
+      height: 2em;
+      margin: 0;
+      line-height: normal;
+      display: inline-block; }
+      #DetailsLayout .tabstrip_row #tx_upload_photo .k-upload .k-button.k-state-focused {
+        box-shadow: none; }
+  #DetailsLayout .tabstrip_row #tx_upload_photo blockquote {
+    quotes: "“" "”" "‘" "’";
+    margin: 0;
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 1em;
+    color: #aeaeae;
+    border-left-width: 0; }
+    #DetailsLayout .tabstrip_row #tx_upload_photo blockquote:before {
+      content: open-quote;
+      display: block;
+      height: .5em;
+      font-size: 10em;
+      font-family: Helvetica;
+      font-style: normal;
+      color: #efefef;
+      vertical-align: -.3em; }
+    #DetailsLayout .tabstrip_row #tx_upload_photo blockquote:after {
+      content: close-quote;
+      text-align: right;
+      display: block;
+      height: .5em;
+      font-size: 10em;
+      font-family: Helvetica;
+      font-style: normal;
+      color: #efefef;
+      vertical-align: -.3em; }
+    #DetailsLayout .tabstrip_row #tx_upload_photo blockquote p {
+      font-size: 1em; }
 
 #header #responsiveMenu {
   display: none;

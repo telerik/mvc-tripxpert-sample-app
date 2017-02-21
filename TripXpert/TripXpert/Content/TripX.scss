@@ -1450,13 +1450,255 @@ a#next-img:hover {
                     border-left: 1px solid #d9d9d9;
                 }
             }
+
             .tx_attr_name_col {
                 h3 {
                     font-size: 1.2em;
                     margin-bottom: 25px;
                 }
             }
-            .tx_attractions_tab {
+        }
+
+        #tx_enquiry_form {
+            label {
+                margin-top: 20px;
+                display: block;
+                font-weight: normal;
+            }
+
+            input {
+                width: 100%;
+                border-radius: 0;
+                border-width: 1px;
+                border-style: solid;
+                padding: 4px 0;
+                vertical-align: middle;
+                background-color: #efefef;
+                border-color: #efefef;
+                height: 36px;
+
+                &:hover {
+                    background-color: white;
+                    border-color: #cfcfcf;
+                }
+
+                &:focus {
+                    background-color: white;
+                    border-color: $button-blue;
+                    box-shadow: none;
+                }
+
+                &:invalid {
+                    border-color: #de3914;
+                }
+            }
+
+            textarea {
+                box-sizing: border-box;
+                width: 100%;
+                border-width: 1px;
+                border-style: solid;
+                background-color: #efefef;
+                border-color: #efefef;
+                padding: 10px;
+
+                &:hover {
+                    background-color: white;
+                    border-color: #cfcfcf;
+                }
+
+                &:focus {
+                    background-color: white;
+                    border-color: $button-blue;
+                    box-shadow: none;
+                }
+
+                &:invalid {
+                    border-color: #de3914;
+                }
+            }
+
+            .k-dropdown-wrap {
+                background-color: #efefef;
+                border-color: #efefef;
+                border-radius: 0;
+                height: 36px;
+                box-sizing: border-box;
+
+                &.k-state-hover {
+                }
+
+                &.k-state-focused {
+                    box-shadow: none;
+                }
+            }
+
+            .k-button {
+                display: inline-block;
+                margin: 1.8em 0 1.667em;
+                font-size: 18px;
+                width: 10em;
+                height: 3.125em;
+                background: #95d43a;
+                border: 0 none;
+                color: #fff;
+                border-radius: 0;
+                cursor: pointer;
+                display: inline-block;
+
+                &:hover {
+                    background-color: $button-blue;
+                }
+            }
+
+            blockquote {
+                quotes: "\201C""\201D""\2018""\2019";
+                margin: 0;
+                font-weight: lighter;
+                font-style: italic;
+                font-size: 1em;
+                color: #aeaeae;
+                border-left-width: 0;
+
+                &:before {
+                    content: open-quote;
+                    display: block;
+                    height: .5em;
+                    font-size: 10em;
+                    font-family: Helvetica;
+                    font-style: normal;
+                    color: #efefef;
+                    vertical-align: -.3em;
+                }
+
+                &:after {
+                    content: close-quote;
+                    text-align: right;
+                    display: block;
+                    height: .5em;
+                    font-size: 10em;
+                    font-family: Helvetica;
+                    font-style: normal;
+                    color: #efefef;
+                    vertical-align: -.3em;
+                }
+
+                p {
+                    font-size: 1em;
+                }
+            }
+        }
+
+        #tx_upload_photo {
+            label {
+                margin-top: 20px;
+                display: block;
+                font-weight: normal;
+            }
+
+            input {
+                width: 60%;
+                border-radius: 0;
+                border-width: 1px;
+                border-style: solid;
+                padding: 4px 0;
+                vertical-align: middle;
+                background-color: #efefef;
+                border-color: #efefef;
+                height: 36px;
+
+                &:hover {
+                    background-color: white;
+                    border-color: #cfcfcf;
+                }
+
+                &:focus {
+                    background-color: white;
+                    border-color: $button-blue;
+                    box-shadow: none;
+                }
+
+                &:invalid {
+                    border-color: #de3914;
+                }
+            }
+
+            .k-button {
+                display: inline-block;
+                margin: 1.8em 0 1.667em;
+                font-size: 18px;
+                width: 10em;
+                height: 3.125em;
+                background: #95d43a;
+                border: 0 none;
+                color: #fff;
+                border-radius: 0;
+                cursor: pointer;
+                display: block;
+
+                &:hover {
+                    background-color: $button-blue;
+                }
+            }
+
+            .k-upload {
+                text-align: right;
+                width: 60%;
+                border-radius: 0;
+                border-width: 1px;
+                border-style: solid;
+                vertical-align: middle;
+                background-color: #efefef;
+                border-color: #efefef;
+
+                .k-button {
+                    font-size: 1em;
+                    height: 2em;
+                    margin: 0;
+                    line-height: normal;
+                    display: inline-block;
+
+                    &.k-state-focused {
+                        box-shadow: none;
+                    }
+                }
+            }
+
+            blockquote {
+                quotes: "\201C""\201D""\2018""\2019";
+                margin: 0;
+                font-weight: lighter;
+                font-style: italic;
+                font-size: 1em;
+                color: #aeaeae;
+                border-left-width: 0;
+
+                &:before {
+                    content: open-quote;
+                    display: block;
+                    height: .5em;
+                    font-size: 10em;
+                    font-family: Helvetica;
+                    font-style: normal;
+                    color: #efefef;
+                    vertical-align: -.3em;
+                }
+
+                &:after {
+                    content: close-quote;
+                    text-align: right;
+                    display: block;
+                    height: .5em;
+                    font-size: 10em;
+                    font-family: Helvetica;
+                    font-style: normal;
+                    color: #efefef;
+                    vertical-align: -.3em;
+                }
+
+                p {
+                    font-size: 1em;
+                }
             }
         }
     }

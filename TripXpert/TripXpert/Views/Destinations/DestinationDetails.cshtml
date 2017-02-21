@@ -238,103 +238,107 @@
                     </text>);
                     items.Add().Text("Enquiry form").SpriteCssClasses("tx_enquiry_icon")
                     .Content(@<text>
-                                                <h3>Contact an Expert</h3>
-                                                <div class="t-row row">
-                                                    <div class="t-col t-col-8 t-col-xs-12 t-col-sm-12 col-sm-8">
-                                                        <div class="t-row row">
-                                                            <div class="t-col t-col-6 t-col-xs-12 t-col-sm-12 t-col-md-12 col-sm-6">
-                                                                <span>First name</span>
-                                                                @(Html.Kendo().TextBox()
-                                                                .Name("firstNameTextBox")
-                                                                )
-                                                                <span>Last Name</span>
-                                                                @(Html.Kendo().TextBox()
-                                                                .Name("lastNameTextBox")
-                                                                )
-                                                                <span>Email</span>
-                                                                @(Html.Kendo().TextBox()
-                                                                .Name("emailTextBox")
-                                                                )
-                                                            </div>
-                                                            <div class="t-col t-col-6 t-col-xs-12 t-col-sm-12 t-col-md-12 col-sm-6">
-                                                                <span>Phone</span>
-                                                                @(Html.Kendo().TextBox()
-                                                                .Name("phoneTextBox")
-                                                                )
-                                                                <span>Mobile</span>
-                                                                @(Html.Kendo().TextBox()
-                                                                .Name("mobileTextBox")
-                                                                )
-                                                                <span>Where are you from?</span>
-                                                                @(Html.Kendo().DropDownList()
-                                                                    .Name("countryDropDown")
-                                                                    .OptionLabel("-Select country-")
-                                                                    .DataSource(dataSource => dataSource
-                                                                        .Read("GetCountries", "Destinations")
-                                                                    )
-                                                                )
-                                                            </div>
-                                                        </div>
-                                                        <div class="t-row row">
-                                                            <div class="t-col t-col-12 col-sm-12">
-                                                                <span>Comments</span>
-                                                                @(Html.TextArea("commentsTextBox", new { style = "width: 100%; resize: none;", rows = "5" })
+                        <div id="tx_enquiry_form">
+                            <h3>Contact an Expert</h3>
+                            <div class="t-row row">
+                                <div class="t-col t-col-8 t-col-xs-12 t-col-sm-12 col-sm-8">
+                                    <div class="t-row row">
+                                        <div class="t-col t-col-6 t-col-xs-12 t-col-sm-12 t-col-md-12 col-sm-6">
+                                            <label for="firstNameTextBox">First name</label>
+                                            @(Html.Kendo().TextBox()
+                                                                            .Name("firstNameTextBox")
+                                            )
+                                            <label for="lastNameTextBox">Last Name</label>
+                                            @(Html.Kendo().TextBox()
+                                                                            .Name("lastNameTextBox")
+                                            )
+                                            <label for="emailTextBox">Email</label>
+                                            @(Html.Kendo().TextBox()
+                                                                            .Name("emailTextBox")
+                                            )
+                                        </div>
+                                        <div class="t-col t-col-6 t-col-xs-12 t-col-sm-12 t-col-md-12 col-sm-6">
+                                            <label for="phoneTextBox">Phone</label>
+                                            @(Html.Kendo().TextBox()
+                                                                            .Name("phoneTextBox")
+                                            )
+                                            <label for="mobileTextBox">Mobile</label>
+                                            @(Html.Kendo().TextBox()
+                                                                            .Name("mobileTextBox")
+                                            )
+                                            <label for="countryDropDown">Where are you from?</label>
+                                            @(Html.Kendo().DropDownList()
+                                                                                .Name("countryDropDown")
+                                                                                .OptionLabel("-Select country-")
+                                                                                .DataSource(dataSource => dataSource
+                                                                                    .Read("GetCountries", "Destinations")
+                                                                                )
+                                                                                .HtmlAttributes(new { style = "width: 100%" })
+                                            )
+                                        </div>
+                                    </div>
+                                    <div class="t-row row">
+                                        <div class="t-col t-col-12 col-sm-12">
+                                            <label for="commentsTextBox">Comments</label>
+                                            @(Html.TextArea("commentsTextBox", new { style = "width: 100%; resize: none;", rows = "5" })
 
-                                                                )
-                                                                @(Html.Kendo().Button()
-                                                .Name("sendEnquiry")
-                                                .Content("Send")
-                                                .HtmlAttributes(new { @class = "tx_btn" })
-                                                .Events(e => e.Click("enquirySendClick"))
-                                                                )
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="t-col t-col-4 t-col-xs-12 t-col-sm-12 col-sm-4">
-                                                        <p>
-                                                            @Model.Title has been added to your enquiry.  Please complete the short form. We’ll get right back to you to help you with your travels.
-                                                        </p>
-                                                        <blockquote>
-                                                            @Model.Testimonial.TestimonialContent
-                                                            <p>@Model.Testimonial.Author</p>
-                                                        </blockquote>
-                                                    </div>
-                                                </div>
+                                            )
+                                            @(Html.Kendo().Button()
+                                                            .Name("sendEnquiry")
+                                                            .Content("Send")
+                                                            .HtmlAttributes(new { @class = "tx_btn" })
+                                                            .Events(e => e.Click("enquirySendClick"))
+                                            )
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="t-col t-col-4 t-col-xs-12 t-col-sm-12 col-sm-4">
+                                    <p>
+                                        @Model.Title has been added to your enquiry.  Please complete the short form. We’ll get right back to you to help you with your travels.
+                                    </p>
+                                    <blockquote>
+                                        @Model.Testimonial.TestimonialContent
+                                        <p>@Model.Testimonial.Author</p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
                     </text>);
                     items.Add().Text("Upload photo").SpriteCssClasses("tx_upload_icon")
                     .Content(@<text>
-                                                <div class="t-col t-col-8 t-col-xs-12 t-col-sm-12 t-col-md-12">
-                                                    <strong>Step 1: Select your Photo</strong>
-
-                                                    @(Html.Kendo().Upload()
-                                                                    .Name("imageUpload")
-                                                                    .Validation(v => v.AllowedExtensions(new string[] { ".jpg", ".png", ".gif" }))
-                                                    )
-
-                                                    <strong>Step 1: Info about picture & author</strong>
-                                                    <span>Your name</span>
-                                                    @(Html.Kendo().TextBox()
-                                                                        .Name("nameTextBox")
-                                                    )
-                                                    <span>Photo title</span>
-                                                    @(Html.Kendo().TextBox()
-                                                                        .Name("photoTitleTextBox")
-                                                    )
-
-                                                    @(Html.Kendo().Button()
-                                                                    .Name("sendImageButton")
-                                                                    .Content("Send")
-                                                                    .HtmlAttributes(new { @class = "tx_btn" })
-                                                                    .Events(e => e.Click("imageSendClick"))
-                                                    )
-                                                </div>
-                                                <div class="t-col t-col-4 t-hidden-xs t-hidden-sm t-hidden-md">
-                                                    <p>Use the Upload tool to upload your photo and prepare it for destination page.</p>
-                                                    <blockquote>
-                                                        @Model.Testimonial.TestimonialContent
-                                                        <p>@Model.Testimonial.Author</p>
-                                                    </blockquote>
-                                                </div>
+                        <div id="tx_upload_photo">
+                            <div class="row">
+                                <div class="t-col t-col-8 t-col-xs-12 t-col-sm-12 t-col-md-12 col-sm-8">
+                                    <strong>Step 1: Select your Photo</strong>
+                                    @(Html.Kendo().Upload()
+                                                    .Name("imageUpload")
+                                                    .Validation(v => v.AllowedExtensions(new string[] { ".jpg", ".png", ".gif" }))
+                                    )
+                                    <strong>Step 1: Info about picture & author</strong>
+                                    <label prefix="nameTextBox">Your name</label>
+                                    @(Html.Kendo().TextBox()
+                                    .Name("nameTextBox")
+                                    )
+                                    <label for="photoTitleTextBox">Photo title</label>
+                                    @(Html.Kendo().TextBox()
+                                    .Name("photoTitleTextBox")
+                                    )
+                                    @(Html.Kendo().Button()
+                                    .Name("sendImageButton")
+                                    .Content("Send")
+                                    .HtmlAttributes(new { @class = "tx_btn" })
+                                    .Events(e => e.Click("imageSendClick"))
+                                    )
+                                </div>
+                                <div class="t-col t-col-4 t-hidden-xs t-hidden-sm t-hidden-md col-sm-4">
+                                    <p>Use the Upload tool to upload your photo and prepare it for destination page.</p>
+                                    <blockquote>
+                                        @Model.Testimonial.TestimonialContent
+                                        <p>@Model.Testimonial.Author</p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
                     </text>);
                 })
             )
