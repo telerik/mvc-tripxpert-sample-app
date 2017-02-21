@@ -1,6 +1,13 @@
 ﻿@charset "UTF-8";
 /* Widgets icons font */
 @font-face {
+  font-family: 'tripxpert';
+  src: url("tx_font/tripxpert.eot");
+  src: url("tx_font/tripxpert.woff") format("application/font-woff"), url("tx_font/tripxpert.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
   font-family: 'widgets';
   src: url("../../fonts/widgets-v4.eot");
   src: url("../fonts/widgets.eot?#iefix") format("embedded-opentype"), url("../../fonts/widgets.woff") format("woff"), url("../../fonts/widgets.ttf") format("truetype"), url("fonts/widgets.svg") format("svg");
@@ -781,6 +788,16 @@ a#next-img:hover {
       display: inline-block; }
       .body-content .tx_destination .tx_dest_footer .tx_btn:hover {
         background-color: #25a0da; }
+    .body-content .tx_destination .tx_places {
+      color: #858585; }
+      .body-content .tx_destination .tx_places .tx_dot_separator {
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        margin-right: .2em;
+        background: #858585;
+        vertical-align: middle;
+        border-radius: 4px; }
 
 #DetailsLayout .t-row.tx_media_row {
   position: relative; }
@@ -890,7 +907,7 @@ a#next-img:hover {
           color: white;
           margin-right: 15px;
           font-size: 1.4em; }
-  #DetailsLayout .t-row.tx_media_row .scrollview-col {
+  #DetailsLayout .t-row.tx_media_row .scrollview-row {
     box-sizing: border-box;
     position: relative;
     float: left;
@@ -898,18 +915,25 @@ a#next-img:hover {
     padding: 0;
     padding-right: 350px;
     width: 100%; }
-    #DetailsLayout .t-row.tx_media_row .scrollview-col .k-tabstrip-wrapper #prev-img,
-    #DetailsLayout .t-row.tx_media_row .scrollview-col .k-tabstrip-wrapper #next-img {
+    #DetailsLayout .t-row.tx_media_row .scrollview-row .k-tabstrip-wrapper #prev-img,
+    #DetailsLayout .t-row.tx_media_row .scrollview-row .k-tabstrip-wrapper #next-img {
       position: absolute; }
-    #DetailsLayout .t-row.tx_media_row .scrollview-col .k-tabstrip-wrapper #tabstripMain {
+    #DetailsLayout .t-row.tx_media_row .scrollview-row .k-tabstrip-wrapper #tabstripMain {
       border-width: 0; }
-      #DetailsLayout .t-row.tx_media_row .scrollview-col .k-tabstrip-wrapper #tabstripMain .k-reset.k-tabstrip-items {
+      #DetailsLayout .t-row.tx_media_row .scrollview-row .k-tabstrip-wrapper #tabstripMain .k-reset.k-tabstrip-items {
         display: none; }
-      #DetailsLayout .t-row.tx_media_row .scrollview-col .k-tabstrip-wrapper #tabstripMain #tabstripMain-1 {
+      #DetailsLayout .t-row.tx_media_row .scrollview-row .k-tabstrip-wrapper #tabstripMain #tabstripMain-1 {
         padding: 0;
         border-width: 0; }
-      #DetailsLayout .t-row.tx_media_row .scrollview-col .k-tabstrip-wrapper #tabstripMain #scrollview {
+      #DetailsLayout .t-row.tx_media_row .scrollview-row .k-tabstrip-wrapper #tabstripMain #scrollview {
         border-width: 0; }
+    #DetailsLayout .t-row.tx_media_row .scrollview-row #tabstripMain-2 {
+      padding: 0;
+      overflow: hidden;
+      background-color: black;
+      border-width: 0; }
+      #DetailsLayout .t-row.tx_media_row .scrollview-row #tabstripMain-2 #destinationMediaPlayer {
+        background-color: black; }
 
 #DetailsLayout .tabstrip_row {
   margin-top: 30px; }
@@ -952,13 +976,39 @@ a#next-img:hover {
   #DetailsLayout .tabstrip_row .k-tabstrip-items {
     margin-top: -3px; }
     #DetailsLayout .tabstrip_row .k-tabstrip-items .k-item {
+      outline: none;
       font-size: 1.1em;
       border-top: 3px solid #95d43a;
       padding: 10px 20px;
       cursor: pointer;
       border-right-color: #d9d9d9;
       border-radius: 2px 2px 0 0; }
+      #DetailsLayout .tabstrip_row .k-tabstrip-items .k-item .k-sprite {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 50px;
+        margin-left: 10px; }
+      #DetailsLayout .tabstrip_row .k-tabstrip-items .k-item .k-sprite:before {
+        position: absolute;
+        width: 2em;
+        height: 2em;
+        text-align: center;
+        vertical-align: middle;
+        font: 2em/1 "tripxpert" !important;
+        left: 50%;
+        top: 50%;
+        margin: -.5em 0 0 -.5em; }
+      #DetailsLayout .tabstrip_row .k-tabstrip-items .k-item .tx_info_icon:before {
+        content: '\e609'; }
+      #DetailsLayout .tabstrip_row .k-tabstrip-items .k-item .tx_attraction_icon:before {
+        content: '\e604'; }
+      #DetailsLayout .tabstrip_row .k-tabstrip-items .k-item .tx_enquiry_icon:before {
+        content: '\e607'; }
+      #DetailsLayout .tabstrip_row .k-tabstrip-items .k-item .tx_upload_icon:before {
+        content: '\e60d'; }
       #DetailsLayout .tabstrip_row .k-tabstrip-items .k-item .k-link {
+        outline: none;
         color: #858585; }
       #DetailsLayout .tabstrip_row .k-tabstrip-items .k-item.k-tab-on-top {
         border-top: 3px solid #25a0da; }

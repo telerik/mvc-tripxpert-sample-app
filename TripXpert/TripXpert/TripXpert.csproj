@@ -222,6 +222,29 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\TripXpert.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Videos\Barcelona and Tenerife\BarcelonaAndTenerife.mp4" />
+    <Content Include="Videos\Brazil and Argentina Iguazu Falls\IguazuFalls.mp4" />
+    <Content Include="Videos\Classic Tour of Peru\MachuPicchu.mp4" />
+    <Content Include="Videos\Costa Rican Treasures\CostaRica.mp4" />
+    <Content Include="Videos\Cuba\Cuba.mp4" />
+    <Content Include="Videos\Egypt Explorer\KarnakTemple.mp4" />
+    <Content Include="Videos\England, Scotland and Wales\EnglandScotlandAndWales.mp4" />
+    <Content Include="Videos\France - A Grand Tour\France.mp4" />
+    <Content Include="Videos\Golden Myanmar\Myanmar.mp4" />
+    <Content Include="Videos\Grand Tour of Italy\Italy.mp4" />
+    <Content Include="Videos\Highlights of South Africa\SouthAfrica.mp4" />
+    <Content Include="Videos\Imperial China\China.mp4" />
+    <Content Include="Videos\India\India.mp4" />
+    <Content Include="Videos\Kenya\Kenya.mp4" />
+    <Content Include="Videos\Malta\Malta.mp4" />
+    <Content Include="Videos\New York City Tour\NY.mp4" />
+    <Content Include="Videos\Spectacular Highlights of Turkey and Greece\TurkeyAndGreece.mp4" />
+    <Content Include="Videos\The Best of Central Europe\CentralEurope.mp4" />
+    <Content Include="Videos\The best of Japan\Japan.mp4" />
+    <Content Include="Videos\The Best of Western Europe\WesternEurope.mp4" />
+    <Content Include="Videos\UNESCO sites in Bulgaria\Bulgaria_Elenite.mp4" />
+    <Content Include="Videos\United States - East Coast tour 1\Niagara.mp4" />
+    <Content Include="Videos\Wonders of Italy\Italy.mp4" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -245,7 +268,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\kendo\2017.1.14\fonts\" />
     <Folder Include="Images\" />
-    <Folder Include="Videos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

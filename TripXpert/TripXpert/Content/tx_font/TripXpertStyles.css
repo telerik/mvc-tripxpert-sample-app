@@ -1,0 +1,2388 @@
+.rigActiveImage img {
+}
+
+@font-face {
+	font-family: 'tripxpert';
+	src: url('../Font/tripxpert.eot');
+	src: url('../Font/tripxpert.woff') format('application/font-woff'), url('../Font/tripxpert.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*>> Reset*/
+html, body, form {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: normal 62.5% "Segoe UI", Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+	font-weight: lighter;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	border: 0 none;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+input,
+textarea {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+}
+
+/*<< Reset*/
+
+
+/*>> Common*/
+
+
+/*>>Font Icons*/
+.tx_icon {
+	position: relative;
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.tx_icon:before {
+	position: absolute;
+	width: 1em;
+	height: 1em;
+	text-align: center;
+	vertical-align: middle;
+	font: 1em/1 "tripxpert" !important;
+	left: 50%;
+	top: 50%;
+	margin: -.5em 0 0 -.5em;
+}
+
+
+
+.tx_info_icon:before {
+	content: '\e609';
+}
+
+.tx_download_icon:before {
+	content: '\e606';
+}
+
+.tx_up_arrow_icon:before {
+	content: '\e603';
+}
+
+.tx_down_arrow_icon:before {
+	content: '\e600';
+}
+
+.tx_left_arrow_icon:before {
+	content: '\e601';
+}
+
+.tx_attraction_icon:before {
+	content: '\e604';
+}
+
+.tx_enquiry_icon:before {
+	content: '\e607';
+}
+
+.tx_upload_icon:before {
+	content: '\e60d';
+}
+
+.tx_gallery_icon:before {
+	content: '\e608';
+}
+
+.tx_player_icon:before {
+	content: '\e60e';
+}
+
+.tx_marker_icon:before {
+	content: '\e60a';
+}
+
+.tx_calendar_icon:before {
+	content: '\e605';
+}
+
+.tx_telerik_icon:before {
+	content: '\e60c';
+}
+
+.tx_price_icon:before {
+	content: '\e60b';
+}
+
+.tx_offer_icon:before {
+	content: '\e60f';
+}
+/*<<Font Icons*/
+
+
+/*>>Sprite Icons*/
+.tx_control_icon {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	background: url('../Images/App/controls_sprite.png');
+	background-repeat: no-repeat;
+}
+
+.tx_ajaxmanager_s_icon {
+	background-position: 0 0;
+}
+
+.tx_upload_s_icon {
+	background-position: 0 -48px;
+}
+
+.tx_calendar_s_icon {
+	background-position: 0 -96px;
+}
+
+.tx_imageeditor_s_icon {
+	background-position: 0 -144px;
+}
+
+.tx_imagegallery_s_icon {
+	background-position: 0 -192px;
+}
+
+.tx_input_s_icon {
+	background-position: 0 -240px;
+}
+
+.tx_lightbox_s_icon {
+	background-position: 0 -288px;
+}
+
+.tx_listview_s_icon {
+	background-position: 0 -336px;
+}
+
+.tx_mediaplayer_s_icon {
+	background-position: 0 -384px;
+}
+
+.tx_menu_s_icon {
+	background-position: 0 -431px;
+}
+
+.tx_pagelayout_s_icon {
+	background-position: 0 -480px;
+}
+
+.tx_rating_s_icon {
+	background-position: 0 -528px;
+}
+
+.tx_tabstrip_s_icon {
+	background-position: 0 -576px;
+}
+
+.tx_map_s_icon {
+	background-position: 0 -624px;
+}
+
+.tx_combobox_s_icon {
+	background-position: 0 -672px;
+}
+
+.tx_button_s_icon {
+	background-position: 0 -713px;
+}
+/*<<Sprite Icons*/
+
+
+
+html .t-container.t-container-fluid {
+	max-width: 100%;
+	margin: 0;
+}
+
+.tx_left_arrow_icon,
+.tx_up_arrow_icon {
+	position: absolute;
+	font-size: 2.8em;
+	color: #fff;
+}
+
+.tx_clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+
+.tx_btn,
+.tx_destination .tx_btn {
+	font-size: 18px;
+	width: 10em;
+	height: 3.125em;
+	background: #95d43a;
+	border: 0 none;
+	color: #fff;
+	border-radius: 0;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.tx_btn:hover,
+.tx_btn:hover input,
+.tx_destination .tx_btn:hover {
+	background: #25a0da;
+}
+
+.tx_link {
+	display: block;
+	margin-bottom: 1em;
+	text-align: left;
+	color: #7fc914;
+	cursor: pointer;
+}
+
+.tx_link:hover {
+	color: #25a0da;
+}
+
+.tx_animated_menu {
+	-webkit-transition: background-color .33s ease-in;
+	-moz-transition: background-color .33s ease-in;
+}
+
+.tx_image_wrapper {
+	position: relative;
+}
+
+div.RadCalendar {
+	font-size: 1.2em;
+	line-height: 2.125em;
+}
+
+.RadCalendar .rcTitle {
+	font-size: 1.2em;
+}
+
+div.RadCalendar .rcRow th {
+	padding: 0 .5em 0 .4375em;
+	font-size: 1em;
+}
+
+div.RadCalendar .rcWeek th {
+	font-size: 1em;
+}
+
+html table.RadCalendarMonthView {
+	font-size: 16px;
+	line-height: 2.125em;
+	width: auto;
+}
+
+div.RadCalendar .rcTitlebar,
+div.RadCalendar .rcMain {
+	border: 0 none;
+	border-bottom: 1px solid #cdcdcd;
+}
+
+div.RadCalendar .rcMain .rcRow a,
+div.RadCalendar .rcMain .rcRow span {
+	line-height: 2.8;
+}
+
+/*>>Lightbox*/
+
+.RadLightBox {
+	z-index: 2147483647 !important;
+	text-align: left;
+	font-size: 16px;
+}
+
+.rltbDescriptionBox {
+	display: none;
+}
+
+div.RadLightBox .rltbWrapper {
+	background: #efefef;
+}
+
+div.RadLightBox .rltbGlowEffect,
+div.RadLightBox .rltbWrapper {
+	border-radius: 0;
+}
+
+div.RadLightBox .rltbWrapper,
+div.RadLightBox .rltbItemBox {
+	padding: 0;
+}
+
+.RadLightBox h4 {
+	position: relative;
+	padding: 1.4286em;
+	font-size: 1.35em;
+	background: #ffffff;
+}
+
+.tx_lb_template {
+	padding: .8em 1.875em;
+}
+
+/*Attractions LightBox*/
+div.RadLightBox.tx_attractions_lb {
+	font-size: 10px;
+}
+
+@media only screen and (min-width: 480px) and (max-width: 640px) {
+	div.RadLightBox.tx_attractions_lb {
+		font-size: 11px;
+	}
+}
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+	div.RadLightBox.tx_attractions_lb {
+		font-size: 12px;
+	}
+}
+
+.tx_attractions_lb .rltbItemTemplate {
+	padding: 2em;
+}
+
+div.tx_attractions_lb .rltbWrapper {
+	overflow: auto;
+}
+
+.tx_attractions_lb img {
+	float: left;
+	margin: 0 2em 1.5em 0;
+}
+
+.tx_attractions_lb h3 {
+	font-size: 2.1em;
+	line-height: 1.2;
+	margin-bottom: 0.714em;
+}
+
+.tx_attractions_lb h4 {
+	background: none;
+	font-size: 1.6em;
+	line-height: 2;
+	margin: 0;
+	padding: 0;
+}
+
+.tx_attractions_lb strong {
+	font-weight: normal;
+	font-size: 1.4em;
+	line-height: 1.2;
+}
+
+.tx_attractions_lb p {
+	font-size: 1.5em;
+	line-height: 1.4;
+}
+
+.tx_attractions_lb p {
+	clear: both;
+}
+
+.tx_attractions_lb a {
+	font-size: 1.6em;
+	color: #95d43a;
+}
+
+.tx_attractions_lb a:hover {
+	color: #25a0da;
+}
+
+.tx_attractions_lb a span {
+	margin-right: .76em;
+	vertical-align: -2px;
+}
+
+@media only screen and (max-width: 480px) {
+	div.RadLightBox {
+		font-size: 17px;
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 640px) {
+	div.RadLightBox {
+		font-size: 24px;
+	}
+
+	.RadLightBox h4 {
+		padding: 1em;
+	}
+
+	div.RadLightBox button.rltbCloseButton {
+		top: .7em;
+	}
+}
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+	div.RadLightBox button.rltbCloseButton {
+		top: 90px;
+		right: 15px;
+	}
+}
+
+@media only screen and (min-width: 641px) and (max-width: 1026px) {
+	div.RadLightBox {
+		font-size: 16px;
+	}
+
+	div.RadLightBox button.rltbCloseButton {
+		font-size: 1.6em;
+	}
+}
+
+.RadLightBox h4 .tx_icon {
+	position: absolute;
+	z-index: 10;
+	bottom: -20px;
+	left: 35px;
+	font-size: 20px;
+	color: white;
+}
+
+/*<<Lightbox*/
+/*<< Common*/
+
+
+/*>> Master*/
+/*>> Navigation Bar*/
+div.tx_navigation {
+	position: fixed;
+	z-index: 10000;
+	height: 80px;
+	background: #fff;
+	width: 100%;
+}
+
+.tx_additional_info {
+	display: inline-block;
+	float: right;
+}
+
+.tx_additional_info > a {
+	font-size: 12px;
+	color: #aeaeae;
+	display: inline-block;
+	padding: 22px;
+	box-sizing: border-box;
+}
+
+.tx_additional_info,
+.tx_additional_info > a {
+	height: 100%;
+}
+
+.tx_additional_info a:hover {
+	color: #25a0da;
+}
+
+.tx_additional_info .tx_info_icon,
+.tx_additional_info .tx_download_icon {
+	font-size: 2.47em;
+	display: inline-block;
+	width: 1.08333em;
+	height: 1.08333em;
+	margin-right: 6px;
+}
+
+@media only screen and (max-width: 620px) {
+	span.tx_additional_info {
+		display: none;
+	}
+
+	input.tx_logo {
+		margin-right: 0px;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	span.tx_additional_info a + a {
+		border-right: 1px solid #cccccc;
+	}
+}
+
+@media only screen and (max-width: 1280px) {
+
+	span.tx_additional_info a {
+		font-size: 0;
+		border-left: 1px solid #cccccc;
+	}
+
+
+	span.tx_additional_info .tx_info_icon,
+	span.tx_additional_info .tx_download_icon {
+		font-size: 35px;
+		margin-right: 0;
+	}
+}
+
+/*>>Mobile navigation*/
+div.tx_mobile_nav_menu {
+	float: right;
+	margin: 20px 22px;
+	display: none;
+}
+
+div.tx_mobile_nav_menu .rmRootToggle {
+	color: #858585;
+}
+
+.RadMenuPopup.tx_mobile_nav_menu {
+	z-index: 600;
+}
+
+@media only screen and (max-width: 768px) {
+	div.tx_mobile_nav_menu {
+		margin-top: .7em;
+	}
+}
+/*<<Mobile navigation*/
+
+
+/*>>Desctop navigation*/
+div.tx_desctop_nav_menu.RadMenu {
+	font-size: 2em;
+	position: absolute;
+}
+
+.tx_desctop_nav_menu.RadMenu .rmItem {
+	height: 46px;
+	padding: 1.2em 1.25em .5em 1.25em;
+}
+
+.tx_desctop_nav_menu.RadMenu .rmItem a {
+	padding: 0;
+}
+
+.RadMenu .rmItem a:hover {
+	color: #25a0da;
+}
+
+.tx_desctop_nav_menu.RadMenu .rmSelected a {
+	color: #fff;
+}
+
+div.tx_desctop_nav_menu.RadMenu .rmSelected {
+	height: 66px;
+	background: #25a0da;
+	color: #ffffff;
+}
+
+div.tx_desctop_nav_menu.RadMenu .rmSelected a {
+	border-top: 2px solid white;
+	margin-top: -2px;
+}
+
+.tx_desctop_nav_menu.RadMenu .rmFocused a {
+	color: #fff;
+}
+
+div.tx_desctop_nav_menu.RadMenu .rmFocused {
+	height: 66px;
+	background: #25a0da;
+	color: #ffffff;
+}
+
+div.tx_desctop_nav_menu.RadMenu .rmFocused a {
+	border-top: 2px solid white;
+	margin-top: -2px;
+}
+
+div.tx_desctop_nav_menu.RadMenu .rmRootGroup,
+div.tx_desctop_nav_menu.RadMenu .rmRootGroup .rmItem {
+	border: 0 none;
+}
+/*<<Desctop navigation*/
+
+div.tx_navigation .tx_logo {
+	margin-top: 24px;
+}
+
+.tx_logo {
+	max-width: 100%;
+	min-width: 120px;
+	margin: 0 90px 0 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+
+	div.tx_desctop_nav_menu {
+		display: none;
+	}
+
+	div.tx_mobile_nav_menu {
+		display: block;
+	}
+}
+
+
+/*<< Navigation Bar*/
+
+/*>> Main Content*/
+div.tx_main_content {
+	padding-top: 80px;
+}
+
+.tx_main_content h2 {
+	font-size: 3em;
+	color: #858585;
+	margin: 1.25em 1em;
+}
+/*<< Main Content*/
+
+
+/*>> Footer*/
+.tx_footer {
+	background: #000;
+	color: #eeeeee;
+	line-height: 1.4em;
+	overflow: hidden;
+	font-size: 11px;
+	height: 40px;
+	padding: 5px 0 5px 20px;
+}
+
+.tx_footer p {
+	margin: 0;
+	padding: 0;
+	color: #818692;
+}
+
+
+.tx_footer p a, .tx_footer p a:hover {
+	color: #cccccc;
+	text-decoration: none;
+}
+
+@media only screen and (max-width: 640px) {
+	.tx_footer {
+		font-size: .75em;
+	}
+}
+
+.tx_telerik_icon {
+	color: #5ce600;
+	vertical-align: -1px;
+}
+
+.tx_copyright {
+	display: inline-block;
+	color: #9f9f9f;
+	float: right;
+	font-size: 1.6em;
+	margin-right: 1.2em;
+}
+/*<< Footer*/
+/*<< Master*/
+
+
+/*>> Home*/
+
+/*>> Home Page Layout */
+html .Hidden {
+	display: none;
+}
+
+div.tx_home_page {
+}
+
+.tx_home_page > .tx_main_content,
+.tx_home_page > .tx_footer {
+	position: absolute;
+	width: 100%;
+}
+
+.tx_home_page .tx_navigation {
+	top: 0;
+}
+
+.tx_home_page .tx_footer {
+	bottom: 0;
+}
+
+.tx_home_page .tx_main_content {
+	top: 80px;
+	bottom: 40px;
+	padding-top: 0;
+}
+
+.tx_home_page,
+.tx_home_gallery {
+	height: 100%;
+}
+
+.tx_home_gallery img {
+	cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+	div.tx_home_gallery .rigDotList {
+		position: fixed;
+		top: 190px;
+		left: 50%;
+		margin-left: -64px;
+	}
+}
+/*<< Page Layout */
+
+
+.tx_main_content {
+	position: relative;
+	background: #efefef;
+}
+
+/*>>Search*/
+div.tx_home_page .tx_search {
+	position: absolute;
+	z-index: 500;
+	height: 64px;
+	top: 3em;
+	font-size: 1.6em;
+	left: 35px;
+	right: 35px;
+	background: #fff;
+}
+
+.tx_search .tx_icon {
+	position: absolute;
+	left: 15px;
+	top: 11px;
+	font-size: 1.6em;
+	color: #767676;
+}
+
+.tx_search > div {
+	position: relative;
+	display: inline-block;
+	width: 26%;
+	float: left;
+	margin-top: 13px;
+	padding-right: 10px;
+}
+
+/*>>Combo*/
+div.tx_search div.RadComboBox,
+div.tx_search div.RadPicker {
+	border-left: 1px solid #cccccc;
+}
+
+div.tx_search > div:first-child .RadComboBox {
+	border-left: none;
+}
+
+div.tx_search .RadComboBox .rcbInputCell,
+div.tx_search .RadComboBox .rcbArrowCell,
+div.tx_search .RadButton.rbButton {
+	background: #fff;
+}
+
+div.tx_search .RadComboBox .rcbInput {
+	width: 80%;
+}
+
+div.RadComboBox .rcbInner {
+	height: auto;
+}
+
+div.RadComboBox .rcbInner.rcbHovered {
+	background-color: #fff;
+	cursor: text;
+}
+
+.RadComboBox .rcbFocused .rcbActionButton .rcbIcon {
+	color: #25a0da;
+}
+
+.RadComboBox .rcbInner.rcbHovered input {
+	cursor: text;
+}
+
+/*<<Combo*/
+
+/*>>Combo template*/
+.rcbSlide {
+	width: auto !important;
+}
+
+.tx_search_brief_info .rcbScroll {
+	min-width: 380px;
+	background: #fff;
+}
+
+@media only screen and (max-width: 480px) {
+	.tx_search_brief_info .rcbScroll {
+		min-width: 0;
+	}
+}
+
+div.tx_search_brief_info .rcbTemplate {
+	background-color: #efefef;
+	border-bottom: 1px solid #fff;
+	padding: 1em;
+}
+
+div.tx_search_brief_info .rcbHovered {
+	background: #fff;
+}
+
+.tx_search_brief_info .rcbTemplate > div {
+	position: relative;
+	height: 80px;
+	background-color: #fff;
+}
+
+.tx_search_brief_info .rcbTemplate img {
+	float: left;
+	margin-right: 1em;
+}
+
+.tx_search_brief_info .tx_left_arrow_icon {
+	font-size: 1.25em;
+	left: 86px;
+	top: 13px;
+	position: absolute;
+}
+
+.tx_search_brief_info h4,
+.tx_search_brief_info .tx_price {
+	line-height: 1.4;
+}
+
+.tx_search_brief_info .tx_price {
+	float: right;
+	padding-right: 1em;
+	font-size: 1em;
+}
+
+.tx_search_brief_info h4 {
+	padding-top: 0.7em;
+}
+
+@media only screen and (max-width: 640px) {
+	.tx_search_brief_info .tx_price {
+		float: none;
+	}
+
+	.tx_search_brief_info .RadRating {
+		display: none;
+	}
+}
+/*<<Combo template*/
+
+/*>>Button*/
+div.tx_search .RadButton.rbButton {
+	background: #25a0da;
+	float: right;
+	height: 100%;
+	width: 15.7%;
+	padding: 0;
+	font-size: 16px;
+}
+
+
+div.tx_search .RadButton.rbButton .rbText {
+	color: #fff;
+	font-weight: bold;
+	width: 100%;
+	height: 100%;
+	line-height: 64px;
+}
+
+div.tx_search .RadButton.rbButton:hover {
+	background: #28afee;
+	border: 0 none;
+}
+
+.tx_search .RadButton_MetroTouch.RadButton.rbHovered {
+	border: 0 none;
+}
+
+
+/*<<Button*/
+
+.tx_search .RadInput .riTextBox {
+	font-size: 1.6em;
+}
+
+div.tx_search .RadInput .riTextBox[type="text"],
+div.tx_search .RadComboBox .rcbInput {
+	height: 2.4em;
+	padding-left: 2.5em;
+}
+
+
+.tx_search div.RadComboBox .rcbEmptyMessage,
+.tx_search .RadInput .riEmpty,
+div.tx_search .RadComboBox .rcbInput,
+div.tx_search .RadPicker .riTextBox {
+	color: #858585;
+}
+
+
+div.tx_search .RadComboBox .rcbActionButton {
+	right: 0;
+	cursor: pointer;
+}
+
+div.tx_search .rcbInputCell,
+div.tx_search .RadComboBox .rcbFocused,
+div.tx_search .RadComboBox .rcbFocused .rcbInput {
+	background: transparent;
+	color: #25a0da;
+}
+
+div.RadComboBox .rcbFocused .rcbActionButton .rcbIcon {
+	background-position: -17px -67px;
+}
+
+.rcbSlide {
+	margin-top: 10px;
+}
+
+div.tx_search .rcbInner,
+div.tx_search .rcbActionButton {
+	border: 0 none;
+	background: #fff;
+}
+
+div.tx_search .rcbHovered .rcbActionButton,
+div.tx_search .rcbFocused .rcbActionButton {
+	background: #fff;
+}
+
+
+div.tx_search .RadPicker,
+div.tx_search .RadComboBox {
+	display: block !important;
+}
+
+
+
+@media only screen and (max-width: 769px) {
+	div.tx_home_page .tx_search {
+		margin-top: -2em;
+		background: none;
+	}
+
+	.tx_search > .RadComboBox {
+		margin-top: 0;
+	}
+
+	div.tx_search div.RadPicker {
+		border-right: 0 none;
+	}
+
+	.tx_search > div {
+		width: 100%;
+		display: block;
+		margin: 0 0 2px;
+	}
+
+	div.tx_search .RadComboBox .rcbInner,
+	div.tx_search .RadInput .riTextBox {
+		margin-top: 0;
+		background: rgba(255, 255, 255, .8);
+	}
+
+	.tx_search > .RadButton,
+	.tx_search > div:first-child + div,
+	.tx_search > div:first-child + div + div {
+		display: none;
+	}
+
+	div.tx_search .RadComboBox .rcbActionButton {
+		display: none !important;
+	}
+
+	div.tx_search div.RadComboBox,
+	div.tx_search div.RadPicker {
+		border-left: 0 none;
+	}
+
+	div.tx_search .RadButton.rbButton {
+		width: 100%;
+	}
+
+	div.tx_search .RadButton.RadButton.rbButton input {
+		font-size: 20px;
+	}
+
+	div.tx_search .RadComboBox .rcbInput {
+		height: 3.2em;
+		font-size: 1.3em;
+	}
+
+	.rcbSlide {
+		margin-top: 0;
+	}
+
+	div.tx_search .RadInput .riTextBox[type="text"] {
+		height: 3.2em;
+		font-size: 2.1em;
+	}
+
+	.tx_search .tx_icon {
+		left: 20px;
+		top: 24px;
+		font-size: 1.8em;
+	}
+
+	.rigPrevButton,
+	.rigNextButton {
+		display: none !important;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	div.tx_search .RadComboBox .rcbInput,
+	div.tx_search .RadInput .riTextBox[type="text"] {
+		height: 2.6667em;
+	}
+
+	.tx_search .tx_icon {
+		left: 20px;
+		top: 18px;
+	}
+}
+
+div.RadComboBoxDropDown {
+	border: 0 none;
+}
+
+div.tx_search .racTokenList,
+div.tx_search .RadPicker .riTextBox,
+div.tx_search .RadComboBox .rcbReadOnly .rcbInputCell,
+div.tx_search .RadComboBox .rcbReadOnly .rcbArrowCellRight,
+div.tx_search .RadButton.rbButton {
+	border: 0 none;
+	outline: none;
+}
+/*<<Search*/
+
+/*>> ImageGallery*/
+.RadImageGallery {
+	font-size: 16px;
+}
+
+.tx_inner_page .rigDescription {
+	font-style: italic;
+}
+
+@media only screen and (max-width: 1280px) {
+	.rigFullScrButton {
+		display: none;
+	}
+}
+/*<< ImageGallery*/
+/*<< Home*/
+
+
+/*>> Destinations*/
+
+.RadMap {
+	font-size: 14px;
+}
+
+.tx_popular_destinations {
+	padding-left: 20px;
+}
+
+.tx_destination {
+	float: left;
+	width: 570px;
+	margin: 0 36px 70px 0px;
+	position: relative;
+	background: white;
+}
+
+.tx_destination:first-child {
+	margin-left: 0;
+}
+
+.tx_destination h3 {
+	font-size: 1.8em;
+	font-weight: lighter;
+	margin: 17px 0 16px;
+}
+
+.tx_destination h3 a {
+	color: #595959;
+}
+
+.tx_destination h3 a:hover {
+	color: #25a0da;
+}
+
+.tx_destination_info {
+	padding-right: 20px;
+	padding-top: 1px; /*uncollapse margins*/
+	margin-top: -1px;
+}
+
+.tx_rating {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.tx_destination hr {
+	margin: 20px 0;
+}
+
+.tx_destination .tx_image_wrapper {
+	float: left;
+	margin-right: 20px;
+}
+
+.tx_image_wrapper .tx_up_arrow_icon {
+	display: none;
+}
+
+.tx_image_wrapper .tx_left_arrow_icon {
+	right: 0;
+	top: 25px;
+}
+
+.tx_destination img {
+	width: 325px;
+}
+
+.tx_destination .tx_image_wrapper a {
+	display: inline-block;
+	width: 100%;
+}
+
+.tx_price,
+.tx_departure_dates {
+	font-size: 1.6em;
+	vertical-align: middle;
+}
+
+.tx_testination_info .tx_price {
+	float: right;
+}
+
+.tx_places {
+	font-size: 1.5em;
+	padding: 0;
+	color: #858585;
+	font-weight: lighter;
+}
+
+.tx_dot_separator {
+	display: inline-block;
+	width: 4px;
+	height: 4px;
+	margin-right: .2em;
+	background: #858585;
+	vertical-align: middle;
+	border-radius: 4px;
+}
+
+
+.tx_destination .tx_dest_footer .tx_btn {
+	font-size: 1.5em;
+	position: absolute;
+	right: 105px;
+	bottom: 0;
+	width: 6.6667em;
+	height: 2.6em;
+	line-height: 2.6;
+	margin: 0 1.3333em;
+	padding: 0 0.6333em;
+	text-align: center;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 640px) {
+	.tx_popular_destinations {
+		padding: 0;
+	}
+
+	.tx_destination {
+		font-size: 18px;
+		display: block;
+		float: none;
+		width: 93%;
+		margin: 30px auto;
+		position: relative;
+	}
+
+	.tx_destination:first-child {
+		margin: auto;
+	}
+
+	.tx_destination_info {
+		display: block;
+	}
+
+	.tx_destination .tx_image_wrapper {
+		float: none;
+		width: 100%;
+	}
+
+	.tx_destination img {
+		width: 100%;
+	}
+
+	.tx_destination h3 {
+		margin-bottom: .5em;
+	}
+
+	.tx_destination h3 {
+		margin-left: 1.3333em;
+	}
+
+	.tx_destination .RadRating {
+		font-size: 30px;
+		margin: 0 1.3333em 1em 1.3333em;
+	}
+
+	.tx_image_wrapper .tx_left_arrow_icon {
+		display: none;
+	}
+
+	.tx_image_wrapper .tx_up_arrow_icon {
+		display: block;
+		bottom: -2px;
+		left: 50px;
+	}
+
+	.tx_places,
+	.tx_destination hr {
+		display: none;
+	}
+
+	.tx_testination .tx_price,
+	.tx_destination .tx_dest_footer .tx_btn {
+		position: static;
+	}
+
+	.tx_destination_info .tx_price {
+		position: absolute;
+		bottom: .6em;
+		right: 1em;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.tx_destination {
+		font-size: 12px;
+	}
+}
+/*<< Destinations*/
+
+
+/*>> Attractions*/
+
+
+.RadImageGallery .rigThumbnailsBox li img {
+	opacity: 1;
+}
+
+.RadImageGallery .rigThumbnailsList:hover li img {
+	opacity: 0.33;
+}
+
+.RadImageGallery .rigThumbnailsList:hover a:hover img {
+	opacity: 1;
+}
+
+#rcMView_OK {
+	width: 2.55em !important;
+}
+
+#rcMView_Cancel {
+	width: 3.74em !important;
+}
+
+/*<< Attractions*/
+
+/*>> Contacts*/
+/*^The form style definition is in Enquiry Form*/
+.tx_contact {
+	padding-bottom: 50px;
+	background: #efefef;
+}
+
+.tx_enquiry_form .RadInput {
+	height: auto;
+	font-size: 1em;
+}
+
+.tx_enquiry_form .RadInput .riTextBox {
+	height: 36px;
+}
+
+.tx_enquiry_form .RadInput.RadInputMultiline .riTextBox {
+	height: 168px;
+}
+
+
+.tx_enquiry_form.tx_contact {
+	padding-left: 0;
+}
+
+div.tx_contact .tx_enquiry_left {
+	padding-top: 2.6em;
+}
+
+.tx_enquiry_form .RadComboBox label {
+	display: block;
+}
+
+.tx_enquiry_form .RadComboBox .rcbInner {
+	width: 100%;
+	box-sizing: border-box;
+	padding-top: .3em;
+	padding-bottom: .3em;
+}
+
+div.tx_contact .tx_enquiry_left {
+	width: 100%;
+	padding-right: 375px;
+	padding-top: 2.6em;
+}
+
+div.tx_contact div.tx_enquiry_right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 350px;
+}
+
+@media only screen and (max-width: 1100px) {
+	div.tx_contact.tx_enquiry_form {
+		padding-right: 0;
+	}
+
+	div.tx_contact .tx_enquiry_left {
+		width: auto;
+		padding-right: 0;
+	}
+
+	div.tx_contact .tx_enquiry_left > .t-row {
+		margin-right: 0;
+	}
+
+	div.tx_contact div.tx_enquiry_right {
+		position: static;
+		width: 100%;
+	}
+
+	.tx_contact .RadMap,
+	.tx_contact .tx_link {
+		margin-left: 15px;
+	}
+}
+
+.tx_contact_info {
+	padding: 19px 17px 19px 19px;
+	position: relative;
+}
+
+.tx_contact_info,
+.tx_contact_info address {
+	font-size: 16px;
+	font-style: normal;
+	font-weight: lighter;
+}
+
+.tx_contact_info strong {
+	font-weight: normal;
+}
+
+.tx_contact_info address {
+	float: left;
+	margin-right: 25px;
+}
+
+.tx_contact_info + .tx_image_wrapper .tx_down_arrow_icon {
+	position: absolute;
+	font-size: 2em;
+	top: -1px;
+	left: 32px;
+	color: #fff;
+}
+
+.tx_contact_info address + address {
+	margin-right: 0;
+}
+
+.tx_contact_info address:first-child + address {
+	float: right;
+}
+
+div.tx_contact .tx_enquiry_right {
+	position: relative;
+	width: 350px;
+}
+
+div.tx_enquiry_form .tx_enquiry_right .tx_link {
+	font-size: 16px;
+	position: absolute;
+	bottom: -50px;
+}
+
+@media only screen and (max-width: 1280px) {
+	div.tx_contact .tx_enquiry_right {
+		margin-left: 1.5%;
+	}
+}
+
+@media only screen and (max-width: 1100px) {
+	div.tx_contact .tx_enquiry_left,
+	div.tx_contact .tx_enquiry_right {
+		width: 100%;
+		margin-left: 0%;
+	}
+
+	.tx_enquiry_right .tx_down_arrow_icon {
+		display: none;
+	}
+}
+
+/*<< Contacts*/
+
+
+/*>> Destination Details*/
+div.tx_media_row {
+	position: relative;
+}
+
+.tx_media_row .tx_link {
+	font-size: 1.6em;
+}
+
+.tx_media_row .RadMediaPlayer {
+	margin-bottom: auto;
+}
+
+div.RadMediaPlayer .rmpVolContrBarWrapper {
+	right: 55px !important;
+}
+
+.tx_media_row .RadMediaPlayer,
+.tx_media_row .RadMediaPlayer object {
+	width: 100% !important;
+}
+
+.RadMediaPlayer .rmpTitleBar .rmpButtSet {
+	text-align: center;
+	min-width: 60px;
+}
+
+.RadSocialShare {
+	background: #fff;
+}
+
+div.tx_detailed_info_row {
+	margin-top: 3em;
+}
+
+.tx_media_row > .t-col {
+	background: #fff;
+}
+
+.tx_media_row > .tx_brief_info {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+div.tx_media_row div.tx_brief_info {
+	text-align: center;
+	padding: 0 2em;
+	height: 100%;
+}
+
+div.tx_media_row .t-col,
+div.tx_detailed_info_row .t-col {
+	padding: 0;
+}
+
+.tx_brief_info h3 {
+	text-align: left;
+	margin-top: 1.875em;
+	margin-bottom: 0.125em;
+	font-size: 1.8em;
+	font-weight: lighter;
+}
+
+.tx_brief_info h3 span {
+	float: right;
+}
+
+.tx_detailed_info_row .tx_read_more,
+.tx_detailed_info_row .tx_read_less {
+	font-size: 3.6em;
+	display: none;
+}
+
+.tx_brief_info .tx_departure_dates {
+	display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+	div.RadCalendar,
+	table.RadCalendarMonthView {
+		font-size: 13px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+	.tx_media_row .RadCalendar {
+		font-size: 11px;
+	}
+}
+
+.tx_media_row .RadTabStrip {
+	position: absolute;
+	line-height: 3.125;
+}
+
+
+div.RadTabStrip .rtsUL {
+	white-space: nowrap;
+}
+
+div.RadTabStrip .rtsLI {
+	float: none;
+	display: inline-block;
+}
+
+@media only screen and (max-width: 721px) {
+
+	.tx_detailed_info_row .RadTabStrip .rtsUL {
+		width: 100%;
+	}
+
+	.tx_detailed_info_row .RadTabStrip .rtsLI {
+		width: 25%;
+	}
+}
+
+.tx_media_row .RadTabStrip {
+	bottom: 0;
+}
+
+@media only screen and (max-width: 722px) {
+	.tx_media_row .RadTabStrip {
+		bottom: auto;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.tx_media_row .tx_brief_info {
+		position: relative;
+	}
+
+	.tx_media_row .RadCalendar {
+		margin-bottom: 80px;
+	}
+}
+
+/*This part makes the last layout N columns fixed width in DestinationDetails page (for big resolutions)*/
+@media only screen and (min-width: 1080px) {
+
+	/*Common*/
+	.tx_media_row > .t-col:first-child,
+	.tx_description > .t-col:first-child,
+	.tx_attractions > .t-col:first-child {
+		width: 100%;
+	}
+
+
+	.tx_description > .t-col:first-child + .t-col,
+	.tx_description > .t-col:first-child + .t-col + .t-col,
+	.tx_attraction > .t-col:first-child + .t-col,
+	.tx_attraction > .t-col:first-child + .t-col + .t-col {
+		top: 0;
+		position: absolute;
+	}
+
+	/*Media row*/
+	.tx_media_row > .t-col:first-child {
+		padding-right: 350px;
+	}
+
+	.tx_media_row > .t-col:first-child + .t-col {
+		right: 0;
+		width: 350px;
+	}
+
+	/*Overview tab*/
+	div.tx_detailed_info_row div.tx_description > .t-col:first-child {
+		padding: 0 620px 20px 20px;
+	}
+
+	.tx_description > .t-col:first-child + .t-col {
+		right: 380px;
+		width: 220px;
+		padding-top: 20px;
+		overflow: hidden;
+	}
+
+	.tx_description > .t-col:first-child + .t-col + .t-col {
+		right: 0;
+		width: 380px;
+		padding-top: 20px;
+	}
+
+	/*Attractions tab*/
+	.tx_attraction {
+		position: relative;
+	}
+
+	div.tx_detailed_info_row .tx_attraction > .t-col:first-child {
+		width: 100%;
+		padding-right: 595px;
+	}
+
+	.tx_attraction > .t-col:first-child + .t-col {
+		width: 217px;
+		right: 363px;
+		font-size: 14px;
+	}
+
+	.tx_attraction > .t-col:first-child + .t-col + .t-col {
+		right: -15px;
+		width: 378px;
+	}
+}
+
+
+@media only screen and (max-width: 721px) {
+	.tx_media_row .RadTabStrip {
+		top: 40px;
+	}
+
+	.tx_media_row .RadTabStrip {
+		font-size: 24px;
+	}
+
+	div.tx_media_row div.RadTabStrip div.rtsLink {
+		padding: 0 .75em;
+	}
+
+	html div.tx_media_row div.tx_brief_info {
+		padding-bottom: 4em;
+		height: auto !important;
+	}
+
+	.tx_brief_info,
+	.tx_description {
+		font-size: .7em;
+	}
+
+	.tx_brief_info h3 {
+		font-size: 3.6em;
+		margin-top: 6.45em;
+	}
+
+	div.RadImageGallery {
+		font-size: 14px;
+	}
+
+	.tx_brief_info a.tx_link,
+	.tx_brief_info .tx_departure_dates {
+		margin-bottom: 0;
+		padding-bottom: 1.3em;
+		border-bottom: 1px solid #cdcdcd;
+	}
+
+	.tx_brief_info .tx_departure_dates {
+		padding-top: 1.4em;
+		margin-bottom: 1.4em;
+	}
+
+	.tx_brief_info a.tx_link,
+	.tx_brief_info .tx_departure_dates {
+		font-size: 3.2em;
+		display: block;
+	}
+
+	.tx_brief_info .RadCalendar {
+		display: none;
+	}
+
+	div.tx_detailed_info_row .RadTabStrip {
+		font-size: 22px;
+	}
+
+	div.tx_detailed_info_row div.RadTabStrip .rtsLevel1 div.rtsLink {
+		padding: 0 .6em;
+	}
+
+	.tx_detailed_info_row .RadTabStrip .rtsIn span:first-child {
+		margin: 20px auto 0 auto;
+	}
+
+	.tx_detailed_info_row .RadTabStrip .rtsIn span:first-child + span {
+		display: block;
+		line-height: 2.8;
+	}
+
+	div.tx_detailed_info_row .tx_read_more,
+	div.tx_detailed_info_row .tx_read_less,
+	div.tx_detailed_info_row .tx_description h3 {
+		font-size: 3.6em;
+	}
+
+	div.tx_detailed_info_row .tx_read_more {
+		margin-bottom: 0;
+	}
+
+	div.tx_map_container .tx_link,
+	div.tx_description > .t-col:first-child p {
+		font-size: 3.2em;
+	}
+
+	.tx_detailed_info_row .tx_places {
+		font-size: 2.8em;
+	}
+
+	.tx_detailed_info_row blockquote {
+		display: none;
+	}
+}
+
+
+
+@media only screen and (max-width: 350px) {
+	.tx_media_row .RadTabStrip {
+		font-size: 15px;
+	}
+
+	div.tx_detailed_info_row .RadTabStrip {
+		font-size: 10px;
+	}
+}
+
+div.RadTabStrip .rtsLevel1 {
+	border-bottom: 0 none;
+}
+
+@media only screen and (min-width: 351px) and (max-width: 480px) {
+	.tx_media_row .RadTabStrip {
+		font-size: 17px;
+	}
+
+	div.tx_detailed_info_row .RadTabStrip {
+		font-size: 13px;
+	}
+}
+
+@media only screen and (min-width: 481px ) and (max-width: 590px) {
+	div.tx_detailed_info_row .RadTabStrip {
+		font-size: 18px;
+	}
+}
+
+@media only screen and (min-width: 591px) and (max-width: 620px) {
+	div.tx_detailed_info_row .RadTabStrip {
+		font-size: 20px;
+	}
+}
+
+
+div.tx_media_row .RadTabStrip div.rtsLink {
+	background: #95d43a;
+	color: white;
+	border: 0 none;
+	padding: 0 16px;
+}
+
+
+div.tx_media_row .RadTabStrip div.rtsLink:first-child {
+	border-right: 1px solid #fff;
+}
+
+@media only screen and (max-width: 768px) {
+	div.tx_media_row .RadTabStrip div.rtsLink {
+		padding: 0 9px;
+	}
+
+	div.tx_media_row .RadTabStrip div.rtsLink:first-child {
+		border-right-width: 2px;
+	}
+}
+
+div.tx_media_row .RadTabStrip div.rtsLink:hover {
+	background: #25a0da;
+}
+
+div.tx_media_row .RadTabStrip div.rtsSelected {
+	background: #aeaeae;
+}
+
+.tx_brief_info .tx_icon,
+.tx_detailed_info_row .tx_icon {
+	font-size: 2em;
+	margin-right: .4375em;
+	margin-top: -.05em;
+}
+
+.tx_detailed_info_row {
+	background: #fff;
+}
+
+
+.tx_detailed_info_row .RadTabStrip {
+	border-top: 3px solid #95d43a;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+.tx_detailed_info_row .RadTabStrip .rtsUL {
+	margin-top: -3px;
+}
+
+.tx_detailed_info_row .RadTabStrip .rtsUL,
+.tx_detailed_info_row .RadTabStrip .rtsLI,
+.tx_detailed_info_row .RadTabStrip .rtsLevel1 {
+	overflow: visible;
+}
+
+div.tx_detailed_info_row div.RadTabStrip .rtsLink {
+	color: #858585;
+	border-bottom-width: 0;
+}
+
+.tx_detailed_info_row .RadTabStrip .rtsLink:hover {
+	color: #95d43a;
+}
+
+.tx_detailed_info_row .RadTabStrip .rtsLevel1 .rtsLink,
+.tx_detailed_info_row .RadTabStrip .rtsLevel1 .rtsSelected,
+.tx_detailed_info_row .RadTabStrip .rtsLevel1 .rtsSelected:hover,
+.tx_detailed_info_row .RadTabStrip .rtsLevel1 .rtsLink:hover {
+	background: #fff;
+}
+
+.tx_detailed_info_row .RadTabStrip .rtsLevel1 .rtsSelected,
+.tx_detailed_info_row .RadTabStrip .rtsLevel1 .rtsSelected:hover {
+	border-bottom: 1px solid white;
+	margin-bottom: -1px;
+	border-left: 0 none;
+	border-right-color: #d9d9d9;
+}
+
+.tx_detailed_info_row .RadTabStrip .rtsLevel1 .rtsSelected.rtsLink {
+	border-top: 3px solid #25a0da;
+	color: #25a0da;
+}
+
+div.tx_detailed_info_row div.RadTabStrip .rtsLevel1 .rtsLink {
+	border-top: 3px solid #95d43a;
+	border-left: 0 none;
+	margin-left: 0;
+	padding: .5em 3.125em;
+}
+
+@media only screen and (min-width:721px) and (max-width: 1024px) {
+	div.tx_detailed_info_row div.RadTabStrip .rtsLevel1 .rtsLink {
+		padding: .5em 1.5em;
+	}
+}
+
+/* >>Overview Tab*/
+
+.k-map-controls {
+	z-index: 10000 !important;
+}
+
+.tx_description .tx_link {
+	font-size: 1.6em;
+}
+
+div.tx_detailed_info_row .tx_description > .t-col,
+div.tx_detailed_info_row .tx_attraction > .t-col {
+	padding: 0 2em;
+	border-left: 1px solid #d9d9d9;
+}
+
+div.tx_detailed_info_row .tx_attraction > .t-col {
+	margin-bottom: 2.5em;
+}
+
+div.tx_detailed_info_row .tx_description > .t-col:first-child,
+div.tx_detailed_info_row .tx_attraction > .t-col:first-child {
+	border-left-width: 0;
+}
+
+div.tx_detailed_info_row .tx_description > .t-col,
+div.tx_detailed_info_row .tx_attraction > .t-col:first-child,
+div.tx_detailed_info_row .tx_attraction > .t-col:last-child {
+	margin-top: 2.5em;
+}
+
+
+.tx_detailed_info_row .tx_description h3 {
+	margin: 0;
+}
+
+.tx_detailed_info_row blockquote {
+	margin-bottom: -.6em;
+	quotes: "\201C""\201D""\2018""\2019";
+	margin: 0;
+	font-weight: lighter;
+	font-style: italic;
+	font-size: 1.4em;
+	color: #aeaeae;
+}
+
+.tx_detailed_info_row blockquote:before,
+.tx_detailed_info_row blockquote:after {
+	display: block;
+	height: .5em;
+	font-size: 10em;
+	font-family: Helvetica;
+	font-style: normal;
+	color: #efefef;
+	vertical-align: -.3em;
+}
+
+.tx_detailed_info_row blockquote:before {
+	content: open-quote;
+}
+
+.tx_detailed_info_row blockquote:after {
+	content: close-quote;
+	text-align: right;
+}
+
+.tx_detailed_info_row .tx_description blockquote p {
+	margin: .4em 0 0;
+	font-size: .8666em;
+}
+
+@media only screen and (max-width: 768px) {
+	.tx_detailed_info_row blockquote:after {
+		height: .8em;
+	}
+
+	.tx_detailed_info_row .tx_description blockquote p {
+		margin: 0;
+	}
+}
+
+.tx_detailed_info_row h3 {
+	margin: 1.38em 1.111em 0;
+	font-size: 1.8em;
+}
+
+.tx_description > .t-col:first-child p,
+.tx_attraction > .t-col:first-child p,
+.tx_enquiry_form .t-col > p {
+	font-size: 1.6em;
+}
+
+.tx_detailed_info_row h3,
+.tx_detailed_info_row p {
+	font-weight: lighter;
+}
+
+.tx_detailed_info_row .tx_map_container {
+	position: relative;
+}
+
+.tx_detailed_info_row .tx_map_container .tx_link {
+	position: absolute;
+	z-index: 100;
+	margin-bottom: 0;
+	bottom: -25px;
+}
+
+/* <<Overview Tab*/
+
+/* >>Attractions Tab*/
+.tx_attractions_listview {
+}
+
+.tx_attraction:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.tx_attraction h3 {
+	margin: 0;
+}
+
+.tx_attractions_listview h4 {
+	font-size: 1.14em;
+}
+
+.tx_attractions_listview ul {
+	font-size: 1.4em;
+}
+
+.tx_attractions_listview .tx_attraction > div {
+	display: inline-block;
+}
+
+/* <<Attractions Tab*/
+
+
+/* >>Enquiry form Tab*/
+.tx_enquiry_form {
+}
+
+div.tx_enquiry_form > .t-row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+div.tx_enquiry_form .RadComboBox .rcbInner,
+div.tx_enquiry_form .RadComboBox .rcbActionButton,
+div.tx_enquiry_form .RadComboBox .rcbHovered {
+	background: #efefef;
+	border: 1px solid #efefef;
+}
+
+.tx_enquiry_left,
+.tx_enquiry_right {
+	background: #fff;
+}
+
+div.tx_enquiry_form div.t-col.tx_enquiry_right {
+	padding: 0;
+}
+
+.tx_enquiry_form p {
+	margin: 0 0 15px 0;
+}
+
+html body .RadInput input.riTextBox,
+html body .RadInput textarea.riTextBox {
+	background: #efefef;
+	border-color: transparent;
+	outline: none;
+}
+
+html body .RadInput input.riFocused,
+html body .tx_enquiry_form textarea.riFocused,
+div.RadComboBox .rcbReadOnly.rcbFocused {
+	border-color: #25a0da;
+	background: white;
+}
+
+div.tx_enquiry_form .rcbFocused .rcbActionButton {
+	background: white;
+}
+
+html body .RadInput input.riError,
+html body .tx_enquiry_form textarea.riError {
+	border-color: red;
+	background: white;
+}
+
+div.tx_enquiry_form .RadComboBox .rcbFocused .rcbActionButton {
+	border-left: 0 none;
+}
+
+.tx_enquiry_form .RadComboBox .rcbLabel {
+	line-height: 1.375;
+}
+
+div.tx_detailed_info_row .tx_enquiry_form .t-col {
+	padding: 1em 1em 0;
+}
+
+div.tx_enquiry_form .riLabel {
+	font-size: 1.6em;
+	display: block;
+}
+
+.tx_enquiry_form .riContentWrapper,
+.tx_upload_form .riContentWrapper {
+	width: 100% !important;
+}
+
+div.tx_enquiry_form .RadInput,
+div.tx_enquiry_form .RadComboBox {
+	margin-bottom: 1.3em;
+}
+
+.tx_enquiry_form .RadComboBox label,
+div.tx_enquiry_form .RadComboBox .rcbReadOnly .rcbInput,
+div.tx_enquiry_form .RadComboBox .rcbFocused .rcbInput {
+	color: #666;
+}
+
+.tx_enquiry_form .tx_btn {
+	display: inline-block;
+	margin: 1em 0 1.667em;
+}
+
+/* <<Enquiry form Tab*/
+
+/* >>Upload photo*/
+
+div.t-row.tx_upload_form {
+	margin-left: 0;
+}
+
+.tx_upload_form ul {
+	font-size: 1.6em;
+	margin-left: 1.25em;
+	padding-bottom: 1.25em;
+}
+
+.tx_upload_form .RadUpload .ruBrowse {
+	margin-left: 0;
+}
+
+.tx_upload_form .ruInputs {
+	font-size: 1em;
+}
+
+.tx_upload_form li > strong {
+	display: inline-block;
+	font-weight: normal;
+	line-height: 1.875;
+	margin-bottom: .5em;
+}
+
+.tx_upload_form hr {
+	margin: 3em 0 .5em -1.25em;
+	height: 1px;
+	border: 0;
+	background: #d9d9d9;
+}
+
+
+.tx_upload_form > div:first-child + div > p {
+	font-size: 1.4em;
+	color: #222222;
+}
+
+.tx_upload_form > div:first-child + div > p,
+.tx_upload_form > div:first-child + div blockquote {
+	padding: 0 30px;
+}
+
+.tx_upload_form .RadInput:first-child {
+	margin-right: 20px;
+}
+
+.tx_upload_form .RadInput label {
+	display: block;
+}
+
+.tx_upload_form .tx_btn {
+	margin-top: 2em;
+}
+
+div.tx_upload_form .ruButton {
+	background-color: #95d43a !important;
+	color: #ffffff;
+	border: 0 none !important;
+}
+
+.tx_upload_form .ruFileWrap {
+	cursor: pointer;
+}
+
+div.tx_upload_form .ruFakeInput {
+	width: 508px;
+	border: 1px solid #efefef !important;
+	background: #efefef;
+}
+
+div.tx_upload_form .ruButtonHover {
+}
+
+.RadImageEditor {
+	overflow: hidden;
+	min-width: 650px;
+}
+
+/* <<Upload photo*/
+
+/*<< Destination Details*/
+
+/*>>About page*/
+
+.tx_about h3 {
+	font-size: 1.8em;
+}
+
+.tx_container {
+	position: relative;
+}
+
+.tx_about ul {
+	display: inline-block;
+	margin-top: 2em;
+	vertical-align: top;
+	margin-right: 170px;
+}
+
+.qrCode {
+	float: right;
+	margin: 20px 20px 0px 0px;
+}
+
+@media only screen and (max-width: 1024px) {
+
+	.qrCode {
+		display: none;
+	}
+}
+
+.tx_about ul + ul {
+	margin-right: 0;
+}
+
+.tx_about a {
+	color: #6eaf46;
+}
+
+.tx_about a:hover {
+	color: #25a0da;
+}
+
+.tx_about ul li {
+	padding: .5em;
+}
+
+.tx_about ul li span {
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.tx_about p,
+.tx_about li {
+	font-size: 1.6em;
+}
+
+
+/*>>Left*/
+div.tx_about .left {
+	background: #fff;
+}
+
+div.tx_about .left:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+div.tx_about .left {
+	width: 100%;
+	margin-bottom: 30px;
+	padding-right: 395px;
+	min-height: 977px;
+}
+
+div.tx_about .right {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	right: 0;
+	width: 380px;
+	background: #efefef;
+	padding-left: 30px;
+}
+
+@media only screen and (max-width: 1024px) {
+
+
+	div.tx_about .left {
+		padding-right: 0;
+		min-height: 0;
+	}
+
+	div.tx_about .right {
+		position: static;
+		width: 100%;
+		padding-left: 0;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.tx_about ul + ul {
+		margin-left: 0;
+	}
+
+	.tx_about .tx_container {
+		float: left;
+		margin-right: 2em;
+	}
+}
+
+.tx_about .left > h3 {
+	margin-top: 1.4444em;
+}
+/*<<Left*/
+
+
+/*>>Right*/
+.tx_about .right > h3 {
+	margin-bottom: 1.4444em;
+}
+
+.tx_about .tx_container {
+	max-width: 320px;
+	margin-bottom: 1.875em;
+}
+
+.tx_about .tx_container img {
+	max-width: 100%;
+}
+
+.tx_about .tx_container h3 {
+	background: #fff;
+	height: 3.125em;
+	line-height: 3.125;
+	padding: 0 1em;
+	color: #8dc837;
+	box-sizing: border-box;
+}
+
+.tx_about .tx_down_arrow_icon {
+	position: absolute;
+	font-size: 2em;
+	top: 55px;
+	left: 33px;
+	color: #fff;
+}
+/*<<Right*/
+
+.tx_support {
+	font-size: 14px;
+	margin-bottom: 20px;
+	border-collapse: collapse;
+}
+
+.tx_support td,
+.tx_support th {
+	border: 1px solid #d9d9d9;
+	padding: 5px;
+}
+
+
+/*<<About page*/

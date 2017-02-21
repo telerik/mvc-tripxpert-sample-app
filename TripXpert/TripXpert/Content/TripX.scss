@@ -4,6 +4,14 @@ $button-blue-hover: #28afee;
 $search-bar-text: #767676;
 /* Widgets icons font */
 @font-face {
+    font-family: 'tripxpert';
+    src: url('tx_font/tripxpert.eot');
+    src: url('tx_font/tripxpert.woff') format('application/font-woff'), url('tx_font//tripxpert.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'widgets';
     src: url('../../fonts/widgets-v4.eot');
     src: url('../fonts/widgets.eot?#iefix') format('embedded-opentype'), url('../../fonts/widgets.woff') format('woff'), url('../../fonts/widgets.ttf') format('truetype'), url('fonts/widgets.svg') format('svg');
@@ -1082,6 +1090,20 @@ a#next-img:hover {
                 background-color: $button-blue;
             }
         }
+
+        .tx_places {
+            color: #858585;
+
+            .tx_dot_separator {
+                display: inline-block;
+                width: 4px;
+                height: 4px;
+                margin-right: .2em;
+                background: #858585;
+                vertical-align: middle;
+                border-radius: 4px;
+            }
+        }
     }
 }
 
@@ -1241,7 +1263,7 @@ a#next-img:hover {
             }
         }
 
-        .scrollview-col {
+        .scrollview-row {
             box-sizing: border-box;
             position: relative;
             float: left;
@@ -1271,6 +1293,17 @@ a#next-img:hover {
                     #scrollview {
                         border-width: 0;
                     }
+                }
+            }
+
+            #tabstripMain-2 {
+                padding: 0;
+                overflow: hidden;
+                background-color: black;
+                border-width: 0;
+
+                #destinationMediaPlayer {
+                    background-color: black;
                 }
             }
         }
@@ -1337,6 +1370,7 @@ a#next-img:hover {
             margin-top: -3px;
 
             .k-item {
+                outline: none;
                 font-size: 1.1em;
                 border-top: 3px solid #95d43a;
                 padding: 10px 20px;
@@ -1344,7 +1378,45 @@ a#next-img:hover {
                 border-right-color: #d9d9d9;
                 border-radius: 2px 2px 0 0;
 
+
+                .k-sprite {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 50px;
+                    margin-left: 10px;
+                }
+
+                .k-sprite:before {
+                    position: absolute;
+                    width: 2em;
+                    height: 2em;
+                    text-align: center;
+                    vertical-align: middle;
+                    font: 2em/1 "tripxpert" !important;
+                    left: 50%;
+                    top: 50%;
+                    margin: -.5em 0 0 -.5em;
+                }
+
+                .tx_info_icon:before {
+                    content: '\e609';
+                }
+
+                .tx_attraction_icon:before {
+                    content: '\e604';
+                }
+
+                .tx_enquiry_icon:before {
+                    content: '\e607';
+                }
+
+                .tx_upload_icon:before {
+                    content: '\e60d';
+                }
+
                 .k-link {
+                    outline: none;
                     color: #858585;
                 }
 

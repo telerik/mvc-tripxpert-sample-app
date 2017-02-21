@@ -28,7 +28,7 @@
             )
         </span>
     </div>
-    <div class="col-sm-3 hidden-xs">
+    <div class="col-sm-3">
         <span class="k-icon k-i-bell"></span>
         <span class="searchbox-wrapper">
         @(Html.Kendo().DropDownList()
@@ -52,7 +52,7 @@
             )
         </span>
     </div>
-    <div class="col-sm-3 hidden-xs">
+    <div class="col-sm-3">
         <span class="k-icon k-i-currency"></span>
         <span class="searchbox-wrapper">
             @(Html.Kendo().DropDownList()
@@ -79,10 +79,10 @@
             )
         </span>
     </div>
-    <div class="col-sm-3 hidden-xs clearfix">
+    <div class="col-sm-3 clearfix">
         @(Html.Kendo().Button()
         .Name("SearchButton")
-        .HtmlAttributes(new { type = "button", @class = "k-primary col-xs-8" })
+        .HtmlAttributes(new { type = "button", @class = "k-primary col-sm-8 col-xs-12" })
         .Content("Search")
         .Events(ev=>ev.Click("searchClick"))
         )
