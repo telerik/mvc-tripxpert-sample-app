@@ -100,7 +100,7 @@
 <script id="template" type="text/x-kendo-template">
     <div>
         <div class="image-wrapper">
-            <img src="#:ImageURL #" />
+            <a href='@Url.Action("DestinationDetails", "Destinations")/#:DestinationID#'><img src="#:ImageURL #" /></a>
         </div>
         <p class="title">#: Description #</p>
     </div>

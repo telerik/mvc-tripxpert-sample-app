@@ -146,7 +146,8 @@ namespace TripXpert.DAL
                                            DestinationTitle=destination.Title,
                                            AttractionTitle=attraction.Title,
                                            Author = image.Author,
-                                           ImageURL = domainURL + image.FolderName.Trim() + "/2000x1125/" + image.ImageURL
+                                           ImageURL = domainURL + image.FolderName.Trim() + "/2000x1125/" + image.ImageURL,
+                                           DestinationID = image.DestinationID
                                        }).ToList().OrderBy(x => rnd.Next()).Take(5);
 
                 var imagesToReturn = (from imageData in imagesExtracted
@@ -154,7 +155,8 @@ namespace TripXpert.DAL
                                       {
                                           Description = imageData.Description,
                                           ImageURL = imageData.ImageURL,
-                                          Title = imageData.DestinationTitle + " - " + imageData.AttractionTitle
+                                          Title = imageData.DestinationTitle + " - " + imageData.AttractionTitle,
+                                          DestinationID = imageData.DestinationID
                                       }
                  ).AsEnumerable();
 
