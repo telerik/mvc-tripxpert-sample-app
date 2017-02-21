@@ -87,7 +87,7 @@ namespace TripXpert.Controllers
         }
 
 
-        public ActionResult Destinations_Read([DataSourceRequest] DataSourceRequest request)
+        public ActionResult Destinations_Read([DataSourceRequest] DataSourceRequest request, int[] ids)
         {
             IEnumerable<DestinationViewModel> data = TripXpertDAL.GetAllDestinations().Select(s => new DestinationViewModel()
             {
@@ -102,7 +102,12 @@ namespace TripXpert.Controllers
                 Duration = s.Duration,
                 VideoURL = s.VideoURL,
             });
-            
+
+            if (ids != null)
+            {
+                data = data.Where(d => ids.Contains(d.DestinationID));
+            }
+
             return Json(data.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 

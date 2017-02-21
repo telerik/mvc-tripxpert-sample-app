@@ -10,10 +10,30 @@
             .ClientTemplateId("template")
             .DataSource(dataSource =>
             {
-                dataSource.Read(read => read.Action("Destinations_Read", "Destinations"));
+                dataSource.Read(read => read.Action("Destinations_Read", "Destinations").Data("getIds"));
                 dataSource.PageSize(21);
             })
 )
+
+<script>
+    function getIds() {
+        var urlParams = getQueryString("Ids");
+        var idList;
+
+        if (urlParams) {
+            idList = urlParams.split(",").map(Number);
+        }
+        
+        return { ids: idList };
+    }
+
+    var getQueryString = function (field, url) {
+        var href = url ? url : window.location.href;
+        var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+        var string = reg.exec(href);
+        return string ? string[1] : null;
+    };
+</script>
 
 <script type="text/x-kendo-tmpl" id="template">
     <div class="tx_destination tx_clearfix">
