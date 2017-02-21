@@ -162,8 +162,11 @@
         });
         $("#scrollview").kendoMobileScrollView({
             dataSource: dataSource,
-            contentHeight: "800px",
+            contentHeight: "100%",
             enablePager: true,
+            change: function () {
+                updateImage();
+            },
             template: kendo.template($("#template").html())
         });
 
@@ -175,21 +178,66 @@
         $("#next-img").click(function (e) {
             var scrollView = $("#scrollview").data("kendoMobileScrollView");
             scrollView.next();
-        });
+        });       
     });
-</script>
-<style>
 
-</style>
-<link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.3.1118/styles/kendo.nova.mobile.min.css" />
-<script>
     //Open on focus logic
     $(function () {
         $("[data-role=combobox]").each(function () {
-            //var widget = $(this).getKendoComboBox();
-            //widget.input.on("focus", function() {
-            //      widget.open();
-            //});
+            var widget = $(this).getKendoComboBox();
+            widget.input.on("focus", function () {
+                widget.open();
+            });
         });
     });
+
+    $(window).resize(function () {
+        $("#scrollview").data("kendoMobileScrollView").refresh();
+        updateImage();
+    });
+
+    function updateImage() {
+        var img = $(".image-wrapper img");
+        var contHeight = img.closest(".image-wrapper").height();
+        var contWidth = img.closest(".image-wrapper").width();
+
+        var imgHeight = img.height();
+        var imgWidth = img.width();
+
+        var ratio1 = contWidth / contHeight;
+        var ratio2 = 1.777464788732394;
+        if (ratio2 > ratio1) {
+            img.height(contHeight);
+            img.width("");
+        }
+        else {
+            img.height(contHeight * (ratio1 / ratio2));
+            img.width("");
+        }
+    }
 </script>
+<link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.3.1118/styles/kendo.nova.mobile.min.css" />
+
+<style>
+    html, body, #wrapper, #main-content, .col-sm-12, .body-content, .demo-section {
+        height: 100%;
+    }
+
+    .image-wrapper {
+        height:100%;
+        overflow: hidden;  
+    }
+    .image-wrapper img {   
+        display: inline-block;
+        position: relative;
+        }
+
+    .k-virtual-page.km-virtual-page {
+        width: 100%!important;    
+}
+
+   .k-virtual-page.km-virtual-page > div {
+        height:100%; 
+}
+</style>
+
