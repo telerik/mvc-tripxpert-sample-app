@@ -18,6 +18,7 @@
                     read.Action("GetDestinations", "Home"); //Set the Action and Controller names.
                 });
             })
+            .Events(ev=>ev.Select("destinationsSelect").Change("destinationsChange"))
             .Height(400)
             //.SelectedIndex(0) //Select the first item.
             .Template(@"<div class='destination-combo-template clearfix'>
@@ -30,7 +31,7 @@
     <div class="col-sm-3 hidden-xs">
         <span class="k-icon k-i-bell"></span>
         <span class="searchbox-wrapper">
-            @(Html.Kendo().DropDownList()
+        @(Html.Kendo().DropDownList()
           .Name("OfferType")
           .OptionLabel("Select offer type")
           .DataTextField("Text")
@@ -55,12 +56,11 @@
         <span class="k-icon k-i-currency"></span>
         <span class="searchbox-wrapper">
             @(Html.Kendo().DropDownList()
-          .Name("PriceRange")
-            //.Placeholder("Select price range")
+            .Name("PriceRange")
             .OptionLabel("Select price range")
-          .DataTextField("Text")
-          .DataValueField("Value")
-          .BindTo(new List<SelectListItem>() {
+            .DataTextField("Text")
+            .DataValueField("Value")
+            .BindTo(new List<SelectListItem>() {
               new SelectListItem() {
                 Text = "Any price range", Value = "0"
               },
@@ -83,7 +83,9 @@
         @(Html.Kendo().Button()
         .Name("SearchButton")
         .HtmlAttributes(new { type = "button", @class = "k-primary col-xs-8" })
-        .Content("Search"))
+        .Content("Search")
+        .Events(ev=>ev.Click("searchClick"))
+        )
     </div>
 </div>
 
@@ -104,9 +106,52 @@
     </div>
 </script>
 <script>
-    $(function () {
-        var images = ["/images/gallery/The best of Japan/2000x1125/Kinkaku-ji-Temple_Ivan-zhekov_Attraction.JPG", "/images/gallery/UNESCO sites in Bulgaria/2000x1125/Rila-Monastery,-Bulgaria_Petar-Manolov_Attraction.jpg", "/images/gallery/Classic Tour of Peru/2000x1125/Titicaca-Lake_Attraction.jpg", "/images/gallery/Wonders of Italy/2000x1125/Grand-Canal,-Venice,-Italy2_Lilia-Karakoleva_Attraction.jpg", "/images/gallery/Brazil and Argentina Iguazu Falls/2000x1125/Cristo-Redentor-(Christ-the-Redeemer)_Galabina-Yordanova_Attraction.JPG"];
+    var selectedID = "";
+    var offerType = "";
+    var priceRange = "";
+    var ids = "1";
 
+    function destinationsSelect(e) {
+        selectedID = e.dataItem.DestinationID;
+        //getDestinationsQuery();
+        $("#OfferType").data("kendoDropDownList").enable(false);
+        $("#PriceRange").data("kendoDropDownList").enable(false);
+    }
+
+    function destinationsChange(e) {
+        if (e.sender.select() < 0) {
+            $("#OfferType").data("kendoDropDownList").enable(true);
+            $("#PriceRange").data("kendoDropDownList").enable(true);
+            selectedID = "";
+        }
+    }
+
+    function searchClick() {
+        $.ajax({
+            url: '/Home/GetDestinationsQuery',
+            type: 'GET',
+            data: {
+                priceRange:  $("#PriceRange").data("kendoDropDownList").value(),
+                offerType: $("#OfferType").data("kendoDropDownList").value()
+            },
+            success: function (data) {
+                data ? ids = data : ids = "1";
+                ids = ids.split(',');
+                if (selectedID != "") {
+                    ids = selectedID;
+                }
+                if (ids.length > 1) {
+                    window.location.href = "/Destinations?Ids=" + ids.toString();
+                }
+                else {
+                    window.location.href = "/Destination/" + ids.toString();
+                }
+            }
+        });
+        
+    }
+
+    $(function () {
         dataSource = new kendo.data.DataSource({
             transport: {
                 read: {
@@ -131,16 +176,7 @@
             var scrollView = $("#scrollview").data("kendoMobileScrollView");
             scrollView.next();
         });
-
-        PreLoadImages(images);
     });
-
-    function PreLoadImages(imagesUrls) {
-        for (var i = 0; i < imagesUrls.length; i++) {
-            var heavyImage = new Image();
-            heavyImage.src = imagesUrls[i];
-        }
-    }
 </script>
 <style>
 

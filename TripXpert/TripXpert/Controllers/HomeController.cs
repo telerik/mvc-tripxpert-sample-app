@@ -31,5 +31,11 @@ namespace TripXpert.Controllers
         {
             return Json(TripXpertDAL.GetSpecialDestinations(), JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult GetDestinationsQuery(string priceRange, string offerType) 
+        {
+            var result = TripXpertDAL.GetDestinationsQueryString(String.Empty, offerType == "" ? "All" : offerType, priceRange);      
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
     }
 }
