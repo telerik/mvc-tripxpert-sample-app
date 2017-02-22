@@ -1351,7 +1351,19 @@ a#next-img:hover {
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
   .navbar-header {
-    float: left; } }
+    float: left; }
+  .t-row.tx_search .col-sm-3:not(.clearfix) {
+    border: none;
+    opacity: .8;
+    margin-bottom: 2px; }
+  .t-row.tx_search .k-dropdown-wrap {
+    padding-left: 30px;
+    border-left: 0px solid #cccccc !important; }
+  #scrollview .k-pages.km-pages {
+    position: absolute;
+    top: auto;
+    bottom: 35px;
+    width: 100%; } }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 620px) {

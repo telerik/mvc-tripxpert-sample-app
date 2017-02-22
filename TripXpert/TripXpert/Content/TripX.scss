@@ -1963,8 +1963,27 @@ a#next-img:hover {
     .navbar-header {
         float: left;
     }
-}
 
+    .t-row.tx_search {
+        .col-sm-3:not(.clearfix) {
+            border: none;
+            opacity: .8;
+            margin-bottom: 2px;
+        }
+
+        .k-dropdown-wrap {
+            padding-left: 30px;
+            border-left: 0px solid #cccccc !important;
+        }
+    }
+
+    #scrollview .k-pages.km-pages {
+        position: absolute;
+        top: auto;
+        bottom: 35px;
+        width: 100%;
+    }
+}
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 620px) {
     #header .k-menu .k-item.rightAlignedItem {
@@ -1975,3 +1994,4 @@ a#next-img:hover {
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
 }
+
