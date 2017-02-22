@@ -113,7 +113,6 @@
 
     function destinationsSelect(e) {
         selectedID = e.dataItem.DestinationID;
-        //getDestinationsQuery();
         $("#OfferType").data("kendoDropDownList").enable(false);
         $("#PriceRange").data("kendoDropDownList").enable(false);
     }
@@ -128,7 +127,7 @@
 
     function searchClick() {
         $.ajax({
-            url: '/Home/GetDestinationsQuery',
+            url: '@Url.Action("GetDestinationsQuery","Home")',
             type: 'GET',
             data: {
                 priceRange:  $("#PriceRange").data("kendoDropDownList").value(),
@@ -141,10 +140,10 @@
                     ids = selectedID;
                 }
                 if (ids.length > 1) {
-                    window.location.href = "/Destinations?Ids=" + ids.toString();
+                    window.location.href = '@Url.Action("Destinations","Destinations")' + "?Ids=" + ids.toString();                  
                 }
                 else {
-                    window.location.href = "/Destination/" + ids.toString();
+                    window.location.href = '@Url.Action("DestinationDetails", "Destinations")' + "/" + ids.toString();;
                 }
             }
         });
@@ -200,19 +199,13 @@
         var img = $(".image-wrapper img");
         var contHeight = img.closest(".image-wrapper").height();
         var contWidth = img.closest(".image-wrapper").width();
-
-        var imgHeight = img.height();
-        var imgWidth = img.width();
-
         var ratio1 = contWidth / contHeight;
-        var ratio2 = 1.777464788732394;
+        var ratio2 = 1.777;
         if (ratio2 > ratio1) {
             img.height(contHeight);
-            img.width("");
         }
         else {
-            img.height(contHeight * (ratio1 / ratio2));
-            img.width("");
+            img.height( contWidth / ratio2);
         }
     }
 </script>
