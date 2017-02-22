@@ -821,13 +821,13 @@ input.k-input.k-invalid {
     }
 
     .k-button {
-        background-color: $button-blue;
+        background-color: #95D43A;
         height: 60px;
         float: right;
         font-weight: bold;
 
         &:hover {
-            background-color: $button-blue-hover;
+            background-color: $button-blue;
         }
     }
 }

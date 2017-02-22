@@ -602,12 +602,12 @@ input.k-input.k-invalid {
     .t-row.tx_search div.col-sm-3:first-child .k-dropdown-wrap {
       border-left-width: 0 !important; }
   .t-row.tx_search .k-button {
-    background-color: #25a0da;
+    background-color: #95D43A;
     height: 60px;
     float: right;
     font-weight: bold; }
     .t-row.tx_search .k-button:hover {
-      background-color: #28afee; }
+      background-color: #25a0da; }
 
 .k-animation-container {
   margin-top: 8px; }
