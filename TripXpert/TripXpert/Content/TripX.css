@@ -275,13 +275,14 @@ div.k-overflow-wrapper .k-list-container {
   color: #7fc914; }
 
 .tx-about .tx-about-wrapper {
-  padding-right: 0; }
+  padding-right: 0;
+  padding-left: 0; }
 
 .tx-about .tx-right-content {
   background-color: #efefef; }
 
 .tx-about .tx-left-content {
-  padding-left: 0; }
+  padding-left: 15px; }
 
 .tx-qr-code {
   float: right;
@@ -547,7 +548,6 @@ input.k-input.k-invalid {
 .image-wrapper {
   display: block;
   background-size: cover; }
-
 
 .t-row.tx_search {
   position: absolute;
