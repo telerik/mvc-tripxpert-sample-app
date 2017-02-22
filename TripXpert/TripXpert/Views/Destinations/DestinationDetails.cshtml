@@ -114,12 +114,6 @@
                 .Actions(actions => actions.Close())
             )
 
-            @(Html.Kendo().Calendar()
-                .Name("toursCalendar")
-                .MonthTemplateId("monthTemplate")
-                .Value(Model.TourInfos.First().StartDate)
-            )
-            
             <script id="monthTemplate" type="text/x-kendo-tmpl">
                 # var tourDatesRaw=[] #
                 # var tours= @Html.Raw(Json.Encode(Model.TourInfos)) #
@@ -128,12 +122,20 @@
                 # } #
                 ##
                 # if ($.inArray(+data.date, tourDatesRaw) != -1) { #
-                    <div class="tourDate" > #: data.value # </div>
+                <div class="tourDate"> #: data.value # </div>
                 # } else { #
-                    #: data.value #
+                #: data.value #
                 # } #
-                
+
             </script>
+
+            @(Html.Kendo().Calendar()
+                .Name("toursCalendar")
+                .MonthTemplateId("monthTemplate")
+                .Value(Model.TourInfos.First().StartDate)
+            )
+            
+            
             <div class="tx_buttons">                 
                 <span class="tx_icon tx_gallery_icon selectGallery k-button k-button-icontext tsSelected"><span class="k-icon k-i-photo-camera"></span>View gallery</span><span class="tx_icon tx_player_icon selectMediaPlayer k-button-icontext k-button"><span class="k-icon k-i-play"></span>Play video</span>
             </div>
