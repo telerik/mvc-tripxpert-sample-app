@@ -454,7 +454,37 @@
         largeMap.setOptions({
             zoom: smallMap.zoom() + 1
         });
-        
+        updateImage()
     });
      
+    $(window).resize(function () {
+        $("#scrollview").data("kendoMobileScrollView").refresh();
+        updateImage();
+    });
+
+    function updateImage() {
+        var img = $(".image-wrapper img");
+        var contHeight = $("#scrollview").height();
+        var contWidth = $("#scrollview").width();
+        var ratio1 = contWidth / contHeight;
+        var ratio2 = 1.777;
+        if (ratio2 > ratio1) {
+            img.height(contHeight);
+        }
+        else {
+            img.height(contWidth / ratio2);
+        }
+    }
 </script>
+
+
+<style>
+    .image-wrapper {
+        height:100%;
+        overflow: hidden;  
+    }
+    .image-wrapper img {   
+        display: inline-block;
+        position: relative;
+        }
+</style>
