@@ -1721,7 +1721,7 @@ a#next-img:hover {
                 }
             }
 
-            .k-button {
+            #sendImageButton.k-button {
                 display: inline-block;
                 margin: 1.8em 0 1.667em;
                 font-size: 18px;
@@ -1737,6 +1737,10 @@ a#next-img:hover {
                 &:hover {
                     background-color: $button-blue;
                 }
+
+                &:focus {
+                    box-shadow: none;
+                }
             }
 
             .k-upload {
@@ -1748,14 +1752,38 @@ a#next-img:hover {
                 vertical-align: middle;
                 background-color: #efefef;
                 border-color: #efefef;
-                height: 36px;
 
-                .k-button {
+                .k-upload-files {
+                    text-align: left;
+
+                    .k-upload-status .k-button {
+                        vertical-align: top;
+                    }
+                }
+
+                > .k-button {
                     cursor: pointer;
                     margin: 0;
                     height: 36px;
                     font-size: 1em;
                     display: inline-block;
+                    background: #95d43a;
+                    border-radius: 0;
+                    color: #fff;
+
+                    &.k-state-focused {
+                        border-color: #95d43a;
+                    }
+
+                    &:hover {
+                        background-color: $button-blue;
+                        border-color: $button-blue;
+                    }
+
+                    &:focus {
+                        box-shadow: none;
+                        border-color: #aeaeae;
+                    }
 
                     input {
                         width: 100%;

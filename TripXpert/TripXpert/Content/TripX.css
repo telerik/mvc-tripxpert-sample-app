@@ -1210,7 +1210,7 @@ a#next-img:hover {
       box-shadow: none; }
     #DetailsLayout .tabstrip_row #tx_upload_photo input:invalid {
       border-color: #de3914; }
-  #DetailsLayout .tabstrip_row #tx_upload_photo .k-button {
+  #DetailsLayout .tabstrip_row #tx_upload_photo #sendImageButton.k-button {
     display: inline-block;
     margin: 1.8em 0 1.667em;
     font-size: 18px;
@@ -1222,8 +1222,10 @@ a#next-img:hover {
     border-radius: 0;
     cursor: pointer;
     display: block; }
-    #DetailsLayout .tabstrip_row #tx_upload_photo .k-button:hover {
+    #DetailsLayout .tabstrip_row #tx_upload_photo #sendImageButton.k-button:hover {
       background-color: #25a0da; }
+    #DetailsLayout .tabstrip_row #tx_upload_photo #sendImageButton.k-button:focus {
+      box-shadow: none; }
   #DetailsLayout .tabstrip_row #tx_upload_photo .k-upload {
     text-align: right;
     width: 60%;
@@ -1232,17 +1234,31 @@ a#next-img:hover {
     border-style: solid;
     vertical-align: middle;
     background-color: #efefef;
-    border-color: #efefef;
-    height: 36px; }
-    #DetailsLayout .tabstrip_row #tx_upload_photo .k-upload .k-button {
+    border-color: #efefef; }
+    #DetailsLayout .tabstrip_row #tx_upload_photo .k-upload .k-upload-files {
+      text-align: left; }
+      #DetailsLayout .tabstrip_row #tx_upload_photo .k-upload .k-upload-files .k-upload-status .k-button {
+        vertical-align: top; }
+    #DetailsLayout .tabstrip_row #tx_upload_photo .k-upload > .k-button {
       cursor: pointer;
       margin: 0;
       height: 36px;
       font-size: 1em;
-      display: inline-block; }
-      #DetailsLayout .tabstrip_row #tx_upload_photo .k-upload .k-button input {
+      display: inline-block;
+      background: #95d43a;
+      border-radius: 0;
+      color: #fff; }
+      #DetailsLayout .tabstrip_row #tx_upload_photo .k-upload > .k-button.k-state-focused {
+        border-color: #95d43a; }
+      #DetailsLayout .tabstrip_row #tx_upload_photo .k-upload > .k-button:hover {
+        background-color: #25a0da;
+        border-color: #25a0da; }
+      #DetailsLayout .tabstrip_row #tx_upload_photo .k-upload > .k-button:focus {
+        box-shadow: none;
+        border-color: #aeaeae; }
+      #DetailsLayout .tabstrip_row #tx_upload_photo .k-upload > .k-button input {
         width: 100%; }
-      #DetailsLayout .tabstrip_row #tx_upload_photo .k-upload .k-button.k-state-focused {
+      #DetailsLayout .tabstrip_row #tx_upload_photo .k-upload > .k-button.k-state-focused {
         box-shadow: none; }
   #DetailsLayout .tabstrip_row #tx_upload_photo blockquote {
     quotes: "“" "”" "‘" "’";
