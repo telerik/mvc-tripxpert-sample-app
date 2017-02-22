@@ -9,8 +9,8 @@
 
 @font-face {
   font-family: 'widgets';
-  src: url("../../fonts/widgets-v4.eot");
-  src: url("../fonts/widgets.eot?#iefix") format("embedded-opentype"), url("../fonts/widgets.woff") format("woff"), url("../fonts/widgets.ttf") format("truetype"), url("../fonts/widgets.svg") format("svg");
+  src: url("tx_font/widgets-v4.eot");
+  src: url("tx_font/widgets.eot?#iefix") format("embedded-opentype"), url("tx_font/widgets.woff") format("woff"), url("tx_font/widgets.ttf") format("truetype"), url("tx_font/widgets.svg") format("svg");
   font-weight: normal;
   font-style: normal; }
 
