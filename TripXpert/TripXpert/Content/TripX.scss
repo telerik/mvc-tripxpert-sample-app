@@ -121,6 +121,7 @@ textarea {
 
         .k-link {
             outline: none;
+            text-decoration: none;
             height: 35px;
             color: black;
 
@@ -949,6 +950,21 @@ input.k-input.k-invalid {
 }
 
 #scrollview {
+
+    .title {
+        font-weight: normal;
+        text-align: left;
+        color: black;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        background-color: rgba(255,255,255,0.7);
+        text-transform: none;
+        font-size: 1.1em;
+    }
+
     .k-pages.km-pages {
         position: absolute;
         top: 100px;

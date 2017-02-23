@@ -87,6 +87,7 @@ textarea {
         background-color: transparent; }
     #header .k-menu .k-link {
       outline: none;
+      text-decoration: none;
       height: 35px;
       color: black; }
       #header .k-menu .k-link:hover {
@@ -688,6 +689,19 @@ input.k-input.k-invalid {
     background-color: #efefef;
     border-width: 0;
     color: black; }
+
+#scrollview .title {
+  font-weight: normal;
+  text-align: left;
+  color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  text-transform: none;
+  font-size: 1.1em; }
 
 #scrollview .k-pages.km-pages {
   position: absolute;
