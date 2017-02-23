@@ -1613,6 +1613,55 @@ a#next-img:hover {
         #AttractionsListView {
             .tx_attr_row {
                 padding: 20px 0;
+                box-sizing: border-box;
+                position: relative;
+                clear: both;
+
+
+                &:after {
+                    visibility: hidden;
+                    display: block;
+                    font-size: 0;
+                    content: " ";
+                    clear: both;
+                    height: 0;
+                }
+
+                .col-1 {
+                    float: left;
+                    box-sizing: border-box;
+                    height: 320px;
+                    width: 100%;
+                    padding-right: 595px;
+
+                    h3 {
+                        font-size: 1.2em;
+                        margin-bottom: 25px;
+                    }
+                }
+
+                .col-2 {
+                    box-sizing: border-box;
+                    position: absolute;
+                    top: 0;
+                    right: 363px;
+                    width: 217px;
+                    height: 320px;
+                    padding: 0 20px;
+                    border-left: 1px solid #D9D9D9;
+                }
+
+                .col-3 {
+                    box-sizing: border-box;
+                    position: absolute;
+                    top: 0;
+                    right: -15px;
+                    width: 378px;
+                    height: 320px;
+                    padding: 0 20px;
+                    border-left: 1px solid #D9D9D9;
+                    text-align: center;
+                }
 
                 .tx_attr_img {
                     float: right;
@@ -2076,11 +2125,62 @@ a#next-img:hover {
                     height: auto;
                     width: 100%;
                     box-sizing: border-box;
-                    padding: 20px;
+                    padding: 20px 0;
                     border-left-width: 0;
 
                     a#openLargeMap {
                         position: static;
+                    }
+                }
+            }
+        }
+    }
+
+    #DetailsLayout {
+        .tabstrip_row {
+            #AttractionsListView {
+                .tx_attr_row {
+                    padding: 20px 0;
+                    box-sizing: border-box;
+                    position: relative;
+                    clear: both;
+
+
+                    &:after {
+                        visibility: hidden;
+                        display: block;
+                        font-size: 0;
+                        content: " ";
+                        clear: both;
+                        height: 0;
+                    }
+
+                    .col-1 {
+                        float: none;
+                        box-sizing: border-box;
+                        padding-right: 0;
+                        height: auto;
+                        width: 100%;
+
+                        h3 {
+                        }
+                    }
+
+                    .col-2 {
+                        position: static;
+                        width: 100%;
+                        height: auto;
+                        padding: 0 20px;
+                        border-left-width: 0;
+                    }
+
+                    .col-3 {
+                        position: static;
+                        width: 100%;
+                        height: auto;
+                        padding: 0 20px;
+                        border-left-width: 0;
+                        text-align: left;
                     }
                 }
             }

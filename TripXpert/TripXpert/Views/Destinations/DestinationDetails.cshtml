@@ -213,23 +213,24 @@
                     .Content(@<text>
                                                 <script id="attractionsTemplate" type="text/x-kendo-tmpl">
                                                     <div class="tx_attr_row">
-                                                        <div class="t-col t-col-4 t-col-xs-12 t-col-sm-12 t-col-md-12 tx_attr_img">
-                                                            <img src="#:Image.ImageURL#" id="attractionImage" alt="#:Image.Title#" />
-                                                        </div>
-                                                        <div class="row" style="margin-right: 400px">
-                                                            <div class="t-col t-col-6 t-col-xs-12 t-col-sm-12 t-col-md-12 col-sm-10 tx_attr_name_col">
+                                                        @*<div class="t-col t-col-6 t-col-xs-12 t-col-sm-12 t-col-md-12 col-sm-10 tx_attr_name_col">*@
+                                                            <div class="col-1">
                                                                 <h3>#: Title #</h3>
                                                                 <p>
                                                                     #: Description #
                                                                 </p>
                                                             </div>
-                                                            <div class="t-col t-col-2 t-col-xs-12 t-col-sm-12 t-col-md-12 col-sm-2 tx_attr_loc_col">
+                                                        @*<div class="t-col t-col-2 t-col-xs-12 t-col-sm-12 t-col-md-12 col-sm-2 tx_attr_loc_col">*@
+                                                            <div class="col-2">
                                                                 <h4>Location</h4>
                                                                 <br />
                                                                 #: Location #
                                                             </div>
+                                                        @*<div class="t-col t-col-4 t-col-xs-12 t-col-sm-12 t-col-md-12 tx_attr_img">*@
+                                                            <div class="col-3">
+                                                                <img src="#:Image.ImageURL#" id="attractionImage" alt="#:Image.Title#" />
+                                                            </div>
                                                         </div>
-                                                    </div>
                                                 </script>
                                                 @(Html.Kendo().ListView(Model.Attractions)
                                     .Name("AttractionsListView")
