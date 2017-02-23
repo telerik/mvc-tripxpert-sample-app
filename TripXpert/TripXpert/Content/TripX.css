@@ -77,7 +77,6 @@ textarea {
     #header .k-menu .k-item {
       height: 4em;
       margin: 0;
-      padding: 1.05em 1.25em .5em;
       vertical-align: top;
       background-color: transparent;
       border: 0;
@@ -87,16 +86,20 @@ textarea {
       #header .k-menu .k-item.k-state-hover .k-link {
         background-color: transparent; }
     #header .k-menu .k-link {
-      padding: 4px 0 0;
+      outline: none;
+      height: 35px;
       color: black; }
       #header .k-menu .k-link:hover {
         color: #25a0da; }
     #header .k-menu .k-state-highlight:not(.rightAlignedItem),
     #header .k-menu .k-state-highlight:not(.rightAlignedItem):hover {
+      padding: 1.05em 1.25em .5em;
       height: 3.45em;
       color: #fff;
       background-color: #25a0da; }
     #header .k-menu .k-state-highlight:not(.rightAlignedItem) .k-link {
+      padding: 1.05em 0 1.05em;
+      height: 50px;
       border-top: 2px solid #fff;
       color: white;
       margin-top: 1px;
