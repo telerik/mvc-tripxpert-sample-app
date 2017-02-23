@@ -604,8 +604,7 @@ input.k-input.k-invalid {
   .t-row.tx_search .k-button {
     background-color: #95D43A;
     height: 60px;
-    float: right;
-    font-weight: bold; }
+    float: right; }
     .t-row.tx_search .k-button:hover {
       background-color: #25a0da; }
 
@@ -642,6 +641,27 @@ input.k-input.k-invalid {
       width: 105px;
       float: left;
       margin-right: 1em; }
+    .k-list-container.k-popup.k-group.k-reset.k-state-border-up #Destinations_listbox .destination-combo-template .tx_icon {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      color: white;
+      font-size: 24px;
+      left: 96px;
+      top: 6px;
+      position: absolute; }
+      .k-list-container.k-popup.k-group.k-reset.k-state-border-up #Destinations_listbox .destination-combo-template .tx_icon:before {
+        width: 16px;
+        height: 16px;
+        text-align: center;
+        vertical-align: middle;
+        font: 1em/1 "tripxpert" !important;
+        left: 50%;
+        top: 50%;
+        margin: -.5em 0 0 -.5em; }
+      .k-list-container.k-popup.k-group.k-reset.k-state-border-up #Destinations_listbox .destination-combo-template .tx_icon.tx_left_arrow_icon:before {
+        content: "\e601"; }
     .k-list-container.k-popup.k-group.k-reset.k-state-border-up #Destinations_listbox .destination-combo-template .k-icon.k-i-arrow-60-left {
       font-size: 32px;
       color: white;
