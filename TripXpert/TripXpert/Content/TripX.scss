@@ -2031,6 +2031,31 @@ a#next-img:hover {
     }
 }
 
+#windowPriceInfo {
+    padding: 25px;
+
+    #listView {
+        font-size: 1em;
+
+        &.k-widget {
+            box-shadow: none;
+        }
+
+        p:not(:first-of-type) {
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            list-style: disc;
+
+            li {
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1280px) {
 

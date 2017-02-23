@@ -1423,6 +1423,20 @@ a#next-img:hover {
     font-size: .7em;
     color: black; }
 
+#windowPriceInfo {
+  padding: 25px; }
+  #windowPriceInfo #listView {
+    font-size: 1em; }
+    #windowPriceInfo #listView.k-widget {
+      box-shadow: none; }
+    #windowPriceInfo #listView p:not(:first-of-type) {
+      margin-top: 20px;
+      margin-bottom: 5px; }
+    #windowPriceInfo #listView ul {
+      list-style: disc; }
+      #windowPriceInfo #listView ul li {
+        margin-left: 20px; }
+
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1280px) {
   #header .k-menu .k-item.rightAlignedItem {
