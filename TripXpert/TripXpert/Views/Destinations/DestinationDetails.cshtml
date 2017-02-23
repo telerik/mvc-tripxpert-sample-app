@@ -49,7 +49,7 @@
 
                                 $("#scrollview").kendoMobileScrollView({
                                     dataSource: dataSource,
-                                    contentHeight: "500px",
+                                    contentHeight: "100%",
                                     enablePager: true,
                                     itemsPerPage: 1,
                                     pageSize: 6,
@@ -99,9 +99,9 @@
                             <script type="text/x-kendo-tmpl" id="priceInfoTemplate">
                                 <p>Tour Rates: #: kendo.toString(data.StartDate, "dd MMMM yyyy")# - #: kendo.toString(data.EndDate, "dd MMMM yyyy")#</p>
                                 <ul>
-                                    <li>#:data.PerPersonSharing#  per person sharing</li>
-                                    <li>#:data.PerSingleOccupancy# per single occupancy</li>
-                                    <li>#:data.PerChild# per child (14 - 16 years)</li>
+                                    <li>$#:data.PerPersonSharing#  per person sharing</li>
+                                    <li>$#:data.PerSingleOccupancy# per single occupancy</li>
+                                    <li>$#:data.PerChild# per child (14 - 16 years)</li>
                                 </ul>
                             </script>
 
