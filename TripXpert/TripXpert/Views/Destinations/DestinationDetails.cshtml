@@ -49,7 +49,7 @@
 
                                 $("#scrollview").kendoMobileScrollView({
                                     dataSource: dataSource,
-                                    contentHeight: "800px",
+                                    contentHeight: "500px",
                                     enablePager: true,
                                     itemsPerPage: 1,
                                     pageSize: 6,
@@ -152,42 +152,14 @@
                 {
                 items.Add().Text("Overview").SpriteCssClasses("tx_info_icon").Selected(true)
                     .Content(@<text>
-            <div class="container-fluid">
-                <div class="t-col t-col-4 t-col-xs-12 t-col-sm-12 t-col-md-12 tx_clearfix col-sm-2 tx_border-left tx_map_col">
-                    <a id="openLargeMap" class="tx_link">view larger map</a>
-                    @(Html.Kendo().Map()
-                                        .Name("overviewMap")
-                                        .Center((double)Model.MapInfo.ZoomSettings["Latitude"], (double)Model.MapInfo.ZoomSettings["Longitude"])
-                                        .Zoom((double)Model.MapInfo.ZoomSettings["Zoom"])
-                                        .HtmlAttributes(new { style = "height:350px; width: 300px;" })
-                                        .Layers(layers =>
-                                        {
-                                            layers.Add()
-                                                .Type(MapLayerType.Tile)
-                                                .UrlTemplate("http://#= subdomain #.tile.openstreetmap.org/#= zoom #/#= x #/#= y #.png")
-                                                .Subdomains("a", "b", "c")
-                                                .Attribution("&copy; <a href='http://osm.org/copyright' title='OpenStreetMap contributors' target='_blank'>OpenStreetMap contributors</a>");
-
-                                        }).Markers(markers =>
-                                        {
-                                            foreach (var marker in Model.MapInfo.Markers)
-                                            {
-                                                markers.Add()
-                                                    .Location(marker.LatLng)
-                                                    .Title(marker.Name);
-                                            }
-                                        }
-                                        )
-                    )
-                </div>
-                <div class="tx_description row" style="margin-right: 360px">
-                    <div class="t-col t-col-6 t-col-xs-12 t-col-sm-12 t-col-md-12 col-md-9">
+            <div class="tx_overview_row tx_description">
+                    <div class="col-1">
                         <h3>@Model.Title</h3>
                         <p>@Model.FullDescription</p>
                         <a href="javascript:void(0);" class="tx_link tx_read_more">read more</a>
                         <a href="javascript:void(0);" class="tx_link tx_read_less">read less</a>
                     </div>
-                    <div class="t-col t-col-2 t-col-xs-12 t-col-sm-12 t-col-md-12 col-md-3 tx_border-left">
+                    <div class="col-2">
                         <p class="tx_places">
                             @{
                                 for (int i = 0; i < @Model.ShortDescription.Length; i++)
@@ -207,6 +179,32 @@
                         </blockquote>
                     </div>
 
+                <div class="col-3">
+                    <a id="openLargeMap" class="tx_link">view larger map</a>
+                    @(Html.Kendo().Map()
+                                        .Name("overviewMap")
+                                        .Center((double)Model.MapInfo.ZoomSettings["Latitude"], (double)Model.MapInfo.ZoomSettings["Longitude"])
+                                        .Zoom((double)Model.MapInfo.ZoomSettings["Zoom"])
+                                        .HtmlAttributes(new { style = "height:350px; width: 320px;" })
+                                        .Layers(layers =>
+                                        {
+                                            layers.Add()
+                                                .Type(MapLayerType.Tile)
+                                                .UrlTemplate("http://#= subdomain #.tile.openstreetmap.org/#= zoom #/#= x #/#= y #.png")
+                                                .Subdomains("a", "b", "c")
+                                                .Attribution("&copy; <a href='http://osm.org/copyright' title='OpenStreetMap contributors' target='_blank'>OpenStreetMap contributors</a>");
+
+                                        }).Markers(markers =>
+                                        {
+                                            foreach (var marker in Model.MapInfo.Markers)
+                                            {
+                                                markers.Add()
+                                                    .Location(marker.LatLng)
+                                                    .Title(marker.Name);
+                                            }
+                                        }
+                                        )
+                    )
                 </div>
             </div>
 

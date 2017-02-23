@@ -1363,6 +1363,67 @@ a#next-img:hover {
 
     .tabstrip_row {
         margin-top: 30px;
+        /*HERE!*/
+        .tx_overview_row {
+            box-sizing: border-box;
+            position: relative;
+
+            &:after {
+                visibility: hidden;
+                display: block;
+                font-size: 0;
+                content: " ";
+                clear: both;
+                height: 0;
+            }
+
+            .col-1 {
+                height: 445px;
+                float: left;
+                box-sizing: border-box;
+                width: 100%;
+                padding: 0 620px 20px 20px;
+            }
+
+            .col-2 {
+                height: 445px;
+                position: absolute;
+                box-sizing: border-box;
+                padding-top: 20px;
+                right: 380px;
+                width: 220px;
+                overflow: hidden;
+                border-left: 1px solid #D9D9D9;
+
+                .tx_places {
+                    padding: 0 20px;
+                }
+            }
+
+            .col-3 {
+                height: 445px;
+                right: 0;
+                width: 380px;
+                box-sizing: border-box;
+                padding: 20px 20px 0;
+                position: absolute;
+                border-left: 1px solid #D9D9D9;
+
+                a#openLargeMap {
+                    position: absolute;
+                    z-index: 100;
+                    margin-bottom: 0;
+                    bottom: 50px;
+                    cursor: pointer;
+                    color: #95d43a;
+                    font-size: 1.1em;
+
+                    &:hover {
+                        color: $button-blue;
+                    }
+                }
+            }
+        }
 
         .k-tabstrip-wrapper {
             background-color: white;
@@ -1384,20 +1445,6 @@ a#next-img:hover {
                     float: right;
                     width: 350px;
                     border-left: 1px solid #D9D9D9;
-                }
-            }
-
-            a#openLargeMap {
-                position: absolute;
-                z-index: 100;
-                margin-bottom: 0;
-                bottom: -25px;
-                cursor: pointer;
-                color: #95d43a;
-                font-size: 1.1em;
-
-                &:hover {
-                    color: $button-blue;
                 }
             }
         }
@@ -1995,6 +2042,47 @@ a#next-img:hover {
                 padding-right: 24px;
                 margin-right: 50px;
                 border-right: 1px solid #cccccc;
+            }
+        }
+    }
+
+    #DetailsLayout {
+        .tabstrip_row {
+            .tx_overview_row {
+                .col-1 {
+                    width: 100%;
+                    padding: 0 620px 20px 20px;
+                    float: none;
+                    box-sizing: border-box;
+                    width: 100%;
+                    padding: 20px;
+                    height: auto;
+                }
+
+                .col-2 {
+                    position: static;
+                    width: 100%;
+                    height: auto;
+                    padding: 20px;
+                    border-left-width: 0;
+
+                    .tx_places {
+                        padding: 0 20px;
+                    }
+                }
+
+                .col-3 {
+                    position: static;
+                    height: auto;
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 20px;
+                    border-left-width: 0;
+
+                    a#openLargeMap {
+                        position: static;
+                    }
+                }
             }
         }
     }
