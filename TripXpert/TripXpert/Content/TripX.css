@@ -597,8 +597,7 @@ input.k-input.k-invalid {
     .t-row.tx_search div.col-sm-3 > .k-icon {
       color: #767676;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 19px;
       left: 10px;
       font-size: 24px;
       z-index: 20;
@@ -1399,8 +1398,8 @@ a#next-img:hover {
   #header #responsiveMenu .k-icon.k-i-arrow-60-down {
     display: none; }
   #header #responsiveMenu .k-item {
-    border-top-width: 0;
     height: auto;
+    border-top-width: 0;
     padding: 0;
     background-color: #F9F9F9; }
     #header #responsiveMenu .k-item.k-state-border-down {
@@ -1410,10 +1409,12 @@ a#next-img:hover {
       #header #responsiveMenu .k-item.k-state-border-down .k-link {
         background-color: transparent;
         color: white;
-        box-shadow: none; }
+        box-shadow: none;
+        height: auto; }
         #header #responsiveMenu .k-item.k-state-border-down .k-link .k-icon {
           color: white; }
     #header #responsiveMenu .k-item .k-link {
+      height: auto;
       padding: 0.3em 0.5em;
       border: none;
       background-color: transparent; }
@@ -1537,6 +1538,8 @@ a#next-img:hover {
     border: none;
     opacity: .8;
     margin-bottom: 2px; }
+  .t-row.tx_search .col-sm-3.clearfix {
+    background-color: rgba(255, 255, 255, 0.8); }
   .t-row.tx_search .k-dropdown-wrap {
     padding-left: 30px;
     border-left: 0px solid #cccccc !important; }
@@ -1552,4 +1555,48 @@ a#next-img:hover {
     display: none; } }
 
 /* Custom, iPhone Retina */
+@media screen and (min-width: 1367px) {
+  #scrollview > div {
+    height: 780px !important; }
+    #scrollview > div img {
+      height: 780px; }
+  #destinationMediaPlayer {
+    height: 778px !important; } }
+
+@media screen and (min-width: 769px) and (max-width: 1366px) {
+  #scrollview > div {
+    height: 550px !important; }
+    #scrollview > div img {
+      height: 550px; }
+  #destinationMediaPlayer {
+    height: 548px !important; } }
+
+@media screen and (max-width: 768px) {
+  #scrollview > div {
+    height: 300px !important; }
+    #scrollview > div img {
+      width: 100%; }
+  #destinationMediaPlayer {
+    height: 298px !important; }
+  #DetailsLayout .t-row.tx_media_row .scrollview-col {
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    min-height: 1px;
+    padding: 0;
+    padding-right: 0;
+    width: 100%; }
+  #DetailsLayout .t-row.tx_media_row .cal-row {
+    position: static;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 10px 30px;
+    margin-bottom: 30px; }
+  #DetailsLayout .t-row.tx_media_row .cal-row .tx_buttons {
+    position: static;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px; } }
 

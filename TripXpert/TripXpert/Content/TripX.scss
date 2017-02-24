@@ -809,8 +809,7 @@ input.k-input.k-invalid {
         > .k-icon {
             color: $search-bar-text;
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 19px;
             left: 10px;
             font-size: 24px;
             z-index: 20;
@@ -1986,8 +1985,8 @@ a#next-img:hover {
     }
 
     .k-item {
-        border-top-width: 0;
         height: auto;
+        border-top-width: 0;
         padding: 0;
         background-color: #F9F9F9;
 
@@ -2002,6 +2001,7 @@ a#next-img:hover {
                 background-color: transparent;
                 color: white;
                 box-shadow: none;
+                height: auto;
 
                 .k-icon {
                     color: white;
@@ -2010,6 +2010,7 @@ a#next-img:hover {
         }
 
         .k-link {
+            height: auto;
             padding: 0.3em 0.5em;
             border: none;
             background-color: transparent;
@@ -2229,6 +2230,10 @@ a#next-img:hover {
             margin-bottom: 2px;
         }
 
+        .col-sm-3.clearfix {
+            background-color: rgba(255, 255, 255, .8);
+        }
+
         .k-dropdown-wrap {
             padding-left: 30px;
             border-left: 0px solid #cccccc !important;
@@ -2251,4 +2256,75 @@ a#next-img:hover {
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
+}
+
+@media screen and (min-width: 1367px) {
+
+    #scrollview > div {
+        height: 780px !important;
+
+        img {
+            height: 780px;
+        }
+    }
+
+    #destinationMediaPlayer {
+        height: 778px !important;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1366px) {
+    #scrollview > div {
+        height: 550px !important;
+
+        img {
+            height: 550px;
+        }
+    }
+
+    #destinationMediaPlayer {
+        height: 548px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #scrollview > div {
+        height: 300px !important;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    #destinationMediaPlayer {
+        height: 298px !important;
+    }
+
+    #DetailsLayout .t-row.tx_media_row .scrollview-col {
+        box-sizing: border-box;
+        position: relative;
+        float: left;
+        min-height: 1px;
+        padding: 0;
+        padding-right: 0;
+        width: 100%;
+    }
+
+    #DetailsLayout .t-row.tx_media_row .cal-row {
+        position: static;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        padding: 10px 30px;
+        margin-bottom: 30px;
+    }
+
+    #DetailsLayout .t-row.tx_media_row .cal-row .tx_buttons {
+        position: static;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
 }
