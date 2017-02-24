@@ -313,6 +313,8 @@ div.k-overflow-wrapper .k-list-container {
   margin-top: 1.4444em; }
 
 .tx-about h3 {
+  margin-left: 10px;
+  text-align: left;
   padding-bottom: 1em;
   font-size: 1.3em; }
 
@@ -394,6 +396,8 @@ div.k-overflow-wrapper .k-list-container {
   margin-bottom: 1.875em; }
 
 .tx-about .tx-container h3 {
+  text-align: left;
+  margin-left: 10px;
   width: 320px;
   background: #ffffff none repeat scroll 0 0;
   box-sizing: border-box;
@@ -1459,6 +1463,7 @@ a#next-img:hover {
     .tx-about-wrapper .tx-row .tx-left-content .tx-support {
       display: inline-block; }
   .tx-about-wrapper .tx-row .tx-right-content {
+    text-align: center;
     position: absolute;
     right: 0;
     width: 380px; }
@@ -1594,9 +1599,9 @@ a#next-img:hover {
 /* Custom, iPhone Retina */
 @media screen and (min-width: 1367px) {
   #scrollview > div {
-    height: 780px !important; }
+    height: 680px !important; }
   #destinationMediaPlayer {
-    height: 778px !important; } }
+    height: 678px !important; } }
 
 @media screen and (min-width: 769px) and (max-width: 1366px) {
   #scrollview > div {
