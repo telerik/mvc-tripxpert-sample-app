@@ -5,6 +5,7 @@
 @model TripXpert.Models.DestinationViewModel
 
 <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.3.1118/styles/kendo.nova.mobile.min.css" /> 
+
 <div id="DetailsLayout" class="t-container t-container-fluid container-fluid">
     <div class="t-row tx_destination_title">
         <div class="t-col t-col-12">
@@ -22,6 +23,41 @@
                 </div>
                 <p class="title">#: Description #</p>
             </script>
+            <script>
+                $(document).ready(function () {
+                    var dataSource = new kendo.data.DataSource({
+                        transport: {
+                            read: {
+                                url: ('@Url.Action("GetDestinationImages", new { destinationId = Model.DestinationID })'),
+                                dataType: "json"
+                            }
+                        }
+                    });
+
+                    $("#scrollview").kendoMobileScrollView({
+                        dataSource: dataSource,
+                        contentHeight: "500px",
+                        change: function () {
+                            updateImage();
+                        },
+                        enablePager: true,
+                        itemsPerPage: 1,
+                        pageSize: 6,
+                        template: kendo.template($("#template").html())
+                    });
+
+                    $("#prev-img").click(function (e) {
+                        var scrollView = $("#scrollview").data("kendoMobileScrollView");
+                        scrollView.prev();
+                    });
+
+                    $("#next-img").click(function (e) {
+                        var scrollView = $("#scrollview").data("kendoMobileScrollView");
+                        scrollView.next();
+                    });
+                });
+                             
+            </script>
 
             <div>
                 @(Html.Kendo().TabStrip()
@@ -37,35 +73,7 @@
                                 <a id="prev-img" title="Previous Image"><span class="k-icon k-i-arrow-chevron-left"></span></a>
                                 <a id="next-img" title="Next Image"><span class="k-icon k-i-arrow-chevron-right"></span></a>
                             </div>
-                            <script>
-                                var dataSource = new kendo.data.DataSource({
-                                    transport: {
-                                        read: {
-                                            url: ('@Url.Action("GetDestinationImages", new { destinationId = Model.DestinationID })'),
-                                            dataType: "json"
-                                        }
-                                    }
-                                });
-
-                                $("#scrollview").kendoMobileScrollView({
-                                    dataSource: dataSource,
-                                    contentHeight: "100%",
-                                    enablePager: true,
-                                    itemsPerPage: 1,
-                                    pageSize: 6,
-                                    template: kendo.template($("#template").html())
-                                });
-
-                                $("#prev-img").click(function (e) {
-                                    var scrollView = $("#scrollview").data("kendoMobileScrollView");
-                                    scrollView.prev();
-                                });
-
-                                $("#next-img").click(function (e) {
-                                    var scrollView = $("#scrollview").data("kendoMobileScrollView");
-                                    scrollView.next();
-                                });
-                            </script>
+                           
                         </text>);
                     items.Add().Text("Play video")
                         .Content(@<text>
@@ -118,10 +126,10 @@
                 # var tourDatesRaw=[] #
                 # var tours= @Html.Raw(Json.Encode(Model.TourInfos)) #
                 # for (var i=0; i < tours.length; i++ ) { #
-                # $.each(tours[i].TourDates, function(index, val) {tourDatesRaw.push(+kendo.parseDate(val)) } ) #
+                # $.each(tours[i].TourDates, function(index, val) {tourDatesRaw.push(kendo.parseDate(val).toLocaleDateString()) } ) #
                 # } #
                 ##
-                # if ($.inArray(+data.date, tourDatesRaw) != -1) { #
+                # if ($.inArray(data.date.toLocaleDateString(), tourDatesRaw) != -1) { #
                 <div class="tourDate"> #: data.value # </div>
                 # } else { #
                 #: data.value #
