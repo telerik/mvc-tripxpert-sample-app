@@ -1583,7 +1583,7 @@ a#next-img:hover {
   #scrollview .k-pages.km-pages {
     position: absolute;
     top: auto;
-    bottom: 35px;
+    bottom: 80px;
     width: 100%; } }
 
 /* Extra Small Devices, Phones */
@@ -1595,24 +1595,18 @@ a#next-img:hover {
 @media screen and (min-width: 1367px) {
   #scrollview > div {
     height: 780px !important; }
-    #scrollview > div img {
-      height: 780px; }
   #destinationMediaPlayer {
     height: 778px !important; } }
 
 @media screen and (min-width: 769px) and (max-width: 1366px) {
   #scrollview > div {
     height: 550px !important; }
-    #scrollview > div img {
-      height: 550px; }
   #destinationMediaPlayer {
     height: 548px !important; } }
 
 @media screen and (max-width: 768px) {
   #scrollview > div {
     height: 300px !important; }
-    #scrollview > div img {
-      width: 100%; }
   #destinationMediaPlayer {
     height: 298px !important; }
   #DetailsLayout .t-row.tx_media_row .scrollview-col {

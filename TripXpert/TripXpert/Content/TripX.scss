@@ -2299,7 +2299,7 @@ a#next-img:hover {
     #scrollview .k-pages.km-pages {
         position: absolute;
         top: auto;
-        bottom: 35px;
+        bottom: 80px;
         width: 100%;
     }
 }
@@ -2319,9 +2319,7 @@ a#next-img:hover {
     #scrollview > div {
         height: 780px !important;
 
-        img {
-            height: 780px;
-        }
+
     }
 
     #destinationMediaPlayer {
@@ -2333,9 +2331,7 @@ a#next-img:hover {
     #scrollview > div {
         height: 550px !important;
 
-        img {
-            height: 550px;
-        }
+
     }
 
     #destinationMediaPlayer {
@@ -2348,9 +2344,7 @@ a#next-img:hover {
     #scrollview > div {
         height: 300px !important;
 
-        img {
-            width: 100%;
-        }
+
     }
 
     #destinationMediaPlayer {
