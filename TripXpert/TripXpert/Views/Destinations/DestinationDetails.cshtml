@@ -461,7 +461,12 @@
         largeMap.setOptions({
             zoom: smallMap.zoom() + 1
         });
-        updateImage()
+
+        $("#scrollview").bind("dragstart", function (e) {
+            e.preventDefault();
+        })
+
+        updateImage();
     });
      
     $(window).resize(function () {
@@ -494,4 +499,12 @@
         display: inline-block;
         position: relative;
         }
+
+    .k-virtual-page.km-virtual-page {
+        width: 100%!important;    
+}
+
+   .k-virtual-page.km-virtual-page, .k-virtual-page.km-virtual-page > div {
+        height:100%!important; 
+}
 </style>
