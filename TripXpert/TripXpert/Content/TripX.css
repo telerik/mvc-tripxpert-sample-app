@@ -882,7 +882,8 @@ a#next-img:hover {
           background-color: transparent;
           border-top: 1px solid #ccc; }
         #DetailsLayout .t-row.tx_media_row .cal-row #toursCalendar .k-content tbody td {
-          text-align: center; }
+          text-align: center;
+          border-radius: 0; }
           #DetailsLayout .t-row.tx_media_row .cal-row #toursCalendar .k-content tbody td.k-state-focused {
             box-shadow: none; }
             #DetailsLayout .t-row.tx_media_row .cal-row #toursCalendar .k-content tbody td.k-state-focused a {
