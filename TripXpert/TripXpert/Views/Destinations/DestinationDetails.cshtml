@@ -400,10 +400,15 @@
         -webkit-box-shadow: none;
         box-shadow: none;
     }
-    
+     
 </style>
 
 <script>
+
+    $(function () {
+        $("#tabStripInfo .k-link").removeAttr("href");
+    });
+
     $(".selectGallery").on("click", function () {
         $(this).siblings(".tsSelected").removeClass("tsSelected");
         $(this).addClass("tsSelected");
