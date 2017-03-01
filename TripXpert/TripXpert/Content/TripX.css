@@ -693,6 +693,13 @@ input.k-input.k-invalid {
     border-width: 0;
     color: black; }
 
+  .tx-about .tx-about-wrapper{
+  margin-bottom: 40px;
+}
+  #main-content .contact-title{
+	background-color: #efefef;
+}
+
 #scrollview .title {
   font-weight: normal;
   text-align: left;
