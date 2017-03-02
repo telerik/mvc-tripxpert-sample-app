@@ -37,8 +37,8 @@
                     $("#scrollview").kendoMobileScrollView({
                         dataSource: dataSource,
                         contentHeight: "500px",
-                        change: function () {
-                            updateImage();
+                        change: function (e) {
+                            updateImage();                            
                         },
                         enablePager: true,
                         itemsPerPage: 1,
@@ -155,6 +155,7 @@
         <div class="t-col t-col-12">
             @(Html.Kendo().TabStrip()
                 .Animation(false)
+                .Scrollable(true)
                 .Name("tabStripInfo")
                 .Items(items =>
                 {
@@ -470,12 +471,14 @@
         $("#scrollview").bind("dragstart", function (e) {
             e.preventDefault();
         })
-
+        
         updateImage();
     });
      
     $(window).resize(function () {
         $("#scrollview").data("kendoMobileScrollView").refresh();
+        var tabstrip = $("#tabStripInfo").data("kendoTabStrip");
+        tabstrip.resize();
         updateImage();
     });
 
