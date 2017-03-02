@@ -952,6 +952,19 @@ input.k-input.k-invalid {
     }
 }
 
+.k-state-selected  {
+    background: #25a0da!important;
+    width: 100%!important;
+    
+}
+    .k-state-selected a {
+        color: #fff!important;
+    }
+
+	.destination-combo-template .k-i-star {
+    color: #25a0da;
+}
+
 .tx-about .tx-about-wrapper{
   margin-bottom: 40px;
 }

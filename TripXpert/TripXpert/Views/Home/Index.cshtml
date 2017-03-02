@@ -20,9 +20,9 @@
             })
             .Events(ev=>ev.Select("destinationsSelect").Change("destinationsChange"))
             .Height(400)
-            //.SelectedIndex(0) //Select the first item.
             .Template(@"<div class='destination-combo-template clearfix'>
                 <span class='tx_icon tx_left_arrow_icon'></span><img src='#=data.DefaultImage#' title='#=data.Title#' /><h4>#=data.Title#</h4>
+                <span>#=getRating(data.Rating)#</span>                
                 <span class='info'>from #:kendo.toString(data.LowestPrice, 'c0')#</span></div>
         ")
             )
@@ -111,16 +111,20 @@
     var priceRange = "";
     var ids = "1";
 
+    function getRating(rating) {
+        var count = Math.floor(rating);
+        var result = "";
+        for (var i = 0; i < count; i++) {
+            result += "<span class='k-icon k-i-star'></span>";
+        }
+        return result;
+    }
     function destinationsSelect(e) {
         selectedID = e.dataItem.DestinationID;
-        //$("#OfferType").data("kendoDropDownList").enable(false);
-        //$("#PriceRange").data("kendoDropDownList").enable(false);
     }
 
     function destinationsChange(e) {
         if (e.sender.select() < 0) {
-            //$("#OfferType").data("kendoDropDownList").enable(true);
-            //$("#PriceRange").data("kendoDropDownList").enable(true);
             selectedID = "";
         }
     }
@@ -192,10 +196,19 @@
                 widget.open();
             });
         });
+
+        var scrollView = $("#scrollview").data("kendoMobileScrollView");        
+        scrollView.pane.userEvents.bind("move", function (е) {
+            scrollView.pane.movable.y = 0;
+        });
+
+        scrollView.refresh();
     });
 
     $(window).resize(function () {
-        $("#scrollview").data("kendoMobileScrollView").refresh();
+        var scrollView = $("#scrollview").data("kendoMobileScrollView");
+        scrollView.refresh();
+
         updateImage();
     });
 

@@ -693,6 +693,15 @@ input.k-input.k-invalid {
     border-width: 0;
     color: black; }
 
+.k-state-selected  {
+    background: #25a0da!important;
+    width: 100%!important;
+    
+}
+    .k-state-selected a {
+        color: #fff!important;
+    }
+    
   .tx-about .tx-about-wrapper{
   margin-bottom: 40px;
 }
@@ -979,6 +988,9 @@ a#next-img:hover {
       #DetailsLayout .t-row.tx_media_row .scrollview-col #tabstripMain-2 #destinationMediaPlayer {
         background-color: black; }
 
+.destination-combo-template .k-i-star {
+    color: #25a0da;
+}
 #DetailsLayout .tabstrip_row {
   margin-top: 30px;
   /*HERE!*/ }
