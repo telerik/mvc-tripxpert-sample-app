@@ -17,6 +17,7 @@ namespace TripXpert.Models
         public string FullDescription { get; set; }
         public short? Duration { get; set; }
         public string VideoURL { get; set; }
+        public decimal? Rating { get; set; }
 
         public IEnumerable<TourInfo> TourInfos { get; set; }
 

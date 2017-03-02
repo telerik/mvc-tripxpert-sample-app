@@ -988,8 +988,20 @@ a#next-img:hover {
       #DetailsLayout .t-row.tx_media_row .scrollview-col #tabstripMain-2 #destinationMediaPlayer {
         background-color: black; }
 
-.destination-combo-template .k-i-star {
+.k-i-star {
+    color: #25a0da!important;
+}
+.destination-rating {
+    display: inline-block;
+    width: 90px;
+    vertical-align: bottom;
+}
+
+#listView .tx_destination .tx_price {
     color: #25a0da;
+    font-weight: normal;
+    float: right;
+    padding-top: 2px;
 }
 #DetailsLayout .tabstrip_row {
   margin-top: 30px;

@@ -101,6 +101,7 @@ namespace TripXpert.Controllers
                 FullDescription = s.FullDescription,
                 Duration = s.Duration,
                 VideoURL = s.VideoURL,
+                Rating = s.Rating
             });
 
             if (ids != null)

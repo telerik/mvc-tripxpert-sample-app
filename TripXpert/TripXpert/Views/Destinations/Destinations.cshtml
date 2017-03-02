@@ -16,6 +16,15 @@
 )
 
 <script>
+    function getRating(rating) {
+        var count = Math.floor(rating);
+        var result = "";
+        for (var i = 0; i < count; i++) {
+            result += "<span class='k-icon k-i-star'></span>";
+        }
+        return result;
+    }
+
     function getIds() {
         var urlParams = getQueryString("Ids");
         var idList;
@@ -50,6 +59,7 @@
             <h3>
                 <a href="@Url.Action("DestinationDetails", "Destinations")/#:data.DestinationID#">#:data.Title#</a>
             </h3>
+            <span class='destination-rating'>#=getRating(data.Rating)#</span>
             <label id="priceLabel" class="tx_price">from #:kendo.toString(data.LowestPrice, "c", "en-US")#</label>
             <hr />
             <p class="tx_places">
