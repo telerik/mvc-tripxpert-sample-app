@@ -208,8 +208,7 @@
                                             foreach (var marker in Model.MapInfo.Markers)
                                             {
                                                 markers.Add()
-                                                    .Location(marker.LatLng)
-                                                    .Title(marker.Name);
+                                                    .Location(marker.LatLng);
                                             }
                                         }
                                         )
@@ -376,9 +375,9 @@
                                                 foreach (var marker in Model.MapInfo.Markers)
                                                 {
                                                     markers.Add()
-                                                        .Location(marker.LatLng)
-                                                        .Title(marker.Name);
+                                                        .Location(marker.LatLng);
                                                 }
+
                                             }
                                             )
                                         )
