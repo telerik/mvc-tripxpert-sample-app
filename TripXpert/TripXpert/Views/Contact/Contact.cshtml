@@ -34,7 +34,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <label>Email *</label>
-                                <input type="text" class="k-input" required />
+                                <input type="email" class="k-input" required />
                             </div>
                         </div>
                     </div>
@@ -42,13 +42,22 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <label>Phone </label>
-                                <input type="text" class="k-input" />
+                                
+                                @(Html.Kendo().MaskedTextBox()
+                                    .Name("phone")
+                                    .Mask("(999) 000000")
+                                    .HtmlAttributes(new { @class = "k-input" })
+                                )
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
                                 <label>Mobile *</label>
-                                <input type="text" class="k-input" required />
+                                @(Html.Kendo().MaskedTextBox()
+                                    .Name("mobile")
+                                    .Mask("(999) 000-0000")
+                                    .HtmlAttributes(new {@class= "k-input" })
+                                )
                             </div>
                         </div>
                         <div class="row">
