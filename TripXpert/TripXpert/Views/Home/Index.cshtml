@@ -206,6 +206,14 @@
     });
 
     $(window).resize(function () {
+        var destinationCombo = $("#Destinations").data("kendoComboBox");
+        var priceDropDown = $("#PriceRange").data("kendoDropDownList");
+        var offerDropDown = $("#OfferType").data("kendoDropDownList");
+
+        destinationCombo.close();
+        priceDropDown.close();
+        offerDropDown.close();
+
         var scrollView = $("#scrollview").data("kendoMobileScrollView");
         scrollView.refresh();
 
