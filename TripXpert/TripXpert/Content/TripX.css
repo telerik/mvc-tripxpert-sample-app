@@ -614,6 +614,8 @@ input.k-input.k-invalid {
     float: right; }
     .t-row.tx_search .k-button:hover {
       background-color: #25a0da; }
+    .t-row.tx_search .k-button:active {
+      color: white; }
 
 .k-animation-container {
   margin-top: 8px; }

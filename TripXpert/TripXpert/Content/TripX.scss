@@ -835,6 +835,10 @@ input.k-input.k-invalid {
         &:hover {
             background-color: $button-blue;
         }
+
+        &:active {
+            color: white;
+        }
     }
 }
 
