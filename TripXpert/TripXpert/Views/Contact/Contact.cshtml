@@ -65,6 +65,7 @@
                                 <label>Where are you from *</label>
                                 @(Html.Kendo().DropDownList()
                                .Name("country")
+                                .Height(192)
                                .DataSource(source =>
                                {
                                    source.Read(read =>
@@ -180,3 +181,10 @@
              .ToHtmlString()
              )
 )
+
+<style>
+    .k-animation-container {
+        margin-left: 3px;   
+        margin-top: 0px;
+    }
+</style>

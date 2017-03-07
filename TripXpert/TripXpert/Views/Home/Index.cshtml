@@ -19,7 +19,7 @@
                 });
             })
             .Events(ev=>ev.Select("destinationsSelect").Change("destinationsChange"))
-            .Height(400)
+            .Height(442)
             .Template(@"<div class='destination-combo-template clearfix'>
                 <span class='tx_icon tx_left_arrow_icon'></span><img src='#=data.DefaultImage#' title='#=data.Title#' /><h4>#=data.Title#</h4>
                 <span>#=getRating(data.Rating)#</span>                
