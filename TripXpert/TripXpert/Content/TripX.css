@@ -1680,3 +1680,7 @@ a#next-img:hover {
     overflow: visible;
     -ms-high-contrast-adjust: none;
 }
+
+#toursCalendar .k-month{
+    pointer-events:none;
+}
