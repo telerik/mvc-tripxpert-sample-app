@@ -1666,3 +1666,21 @@ a#next-img:hover {
     text-align: center;
     margin-top: 30px; } }
 
+.k-i-information{
+    padding-right:20px;
+}
+
+.k-i-download {
+    padding-right: 20px;
+}
+
+.tx_detailed_info_row.tx_clearfix.tabstrip_row .k-sprite {
+    width: auto;
+    font-size: 16px;
+    overflow: visible;
+    -ms-high-contrast-adjust: none;
+}
+
+#toursCalendar .k-month{
+    pointer-events:none;
+}
