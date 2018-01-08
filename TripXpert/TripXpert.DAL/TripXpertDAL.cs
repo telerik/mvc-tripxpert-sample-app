@@ -87,7 +87,7 @@ namespace TripXpert.DAL
         #endregion
 
         #region DestinationsImages
-        public const string domainURL = @"http://demos.telerik.com/aspnet-ajax/imagegallery/images/gallery/";
+        public const string domainURL = @"https://demos.telerik.com/aspnet-ajax/imagegallery/images/gallery/";
         public static string GetDestinationsQueryString(string title, string typeOfOffer, string priceRange)
         {
 
