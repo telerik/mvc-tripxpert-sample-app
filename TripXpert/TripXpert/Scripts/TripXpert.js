@@ -1,5 +1,17 @@
 ﻿/*global window */
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('./service-worker.js', { scope: './' })
+        .then(function (reg) {
+            console.log('Registered!')
+        })
+        .catch(function (err) {
+            console.log(err);
+        })
+}
+
+
 (function (TX, $) {
     var url = "";
     TX.showDialog = function (sender) {
