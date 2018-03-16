@@ -9,24 +9,20 @@ var getPath = function (href) {
 };
 
 self.addEventListener('install', function (e) {
-    console.log('Installed!');
 
     e.waitUntil(
         caches.open(cacheName).then(function (cache) {
-            console.log("Caching...")
             return cache.addAll(cachedFiles);
         })
     )
 })
 
 self.addEventListener('activate', function (e) {
-    console.log('Activated!');
 
     e.waitUntil(
         caches.keys().then(function (cachedNames) {
             cachedNames.forEach(function (currentCache) {
                 if (currentCache != cacheName) {
-                    console.log('deleting cache')
                     caches.delete(currentCache);
                 }
             }, this);
