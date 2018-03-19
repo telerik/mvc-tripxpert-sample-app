@@ -1,25 +1,30 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-6X92');</script>
-<!-- End Google Tag Manager -->
-
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    	<link href="@Url.Content("~/Content/kendo/2018.1.221/kendo.common-bootstrap.min.css")" rel="stylesheet" type="text/css" />
-	<link href="@Url.Content("~/Content/kendo/2018.1.221/kendo.bootstrap.min.css")" rel="stylesheet" type="text/css" />
-	<script src="@Url.Content("~/Scripts/kendo/2018.1.221/jquery.min.js")"></script>
-	<script src="@Url.Content("~/Scripts/kendo/2018.1.221/kendo.all.min.js")"></script>
-	<script src="@Url.Content("~/Scripts/kendo/2018.1.221/kendo.aspnetmvc.min.js")"></script>
-<script src="~/Scripts/TripXpert.js"></script>
+    <link href="@Url.Content("~/Content/kendo/2018.1.221/kendo.common-bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2018.1.221/kendo.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/kendo/2018.1.221/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2018.1.221/kendo.all.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2018.1.221/kendo.aspnetmvc.min.js")"></script>
+    <script src="~/Scripts/TripXpert.js"></script>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#858585" />
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
