@@ -87,7 +87,7 @@ namespace TripXpert.DAL
         #endregion
 
         #region DestinationsImages
-        public const string domainURL = @"https://demos.telerik.com/aspnet-ajax/imagegallery/images/gallery/";
+        public const string domainURL = @"/images/gallery/";
         public static string GetDestinationsQueryString(string title, string typeOfOffer, string priceRange)
         {
 
@@ -148,7 +148,7 @@ namespace TripXpert.DAL
                                            Author = image.Author,
                                            ImageURL = domainURL + image.FolderName.Trim() + "/2000x1125/" + image.ImageURL,
                                            DestinationID = image.DestinationID
-                                       }).ToList().OrderBy(x => rnd.Next()).Take(5);
+                                       }).ToList().Take(5);
 
                 var imagesToReturn = (from imageData in imagesExtracted
                                       select new Image()
