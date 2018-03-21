@@ -6,9 +6,8 @@ var cachedFiles = [
     '/Scripts/modernizr-2.6.2.js',
     '/Content/kendo/2018.1.221/kendo.common-bootstrap.min.css',
     '/Content/kendo/2018.1.221/kendo.bootstrap.min.css',
-    '/Scripts/kendo/2018.1.221/jquery.min.js',
-    '/Scripts/kendo/2018.1.221/kendo.all.min.js',
-    '/Scripts/kendo/2018.1.221/kendo.aspnetmvc.min.js',
+    '/Scripts/jquery-3.1.1.min.js',
+    '/Scripts/kendo/2018.1.221/kendo.custom.min.js',
     '/Scripts/TripXpert.js',
     'https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.nova.mobile.min.css',
     '/Images/App/trip_xpert_logo.png',
@@ -59,24 +58,24 @@ self.addEventListener('install', function (e) {
         caches.open(cacheName).then(function (cache) {
             return cache.addAll(cachedFiles);
         })
-    )
-})
+    );
+});
 
 self.addEventListener('activate', function (e) {
 
     e.waitUntil(
         caches.keys().then(function (cachedNames) {
             cachedNames.forEach(function (currentCache) {
-                if (currentCache != cacheName) {
+                if (currentCache !== cacheName) {
                     caches.delete(currentCache);
                 }
             }, this);
         })
-    )
-})
+    );
+});
 
 self.addEventListener('fetch', function (e) {
-    if (cachedFiles.indexOf(e.request.url) != -1 || cachedFiles.indexOf(getPath(e.request.url)) != -1) {
+    if (cachedFiles.indexOf(e.request.url) !== -1 || cachedFiles.indexOf(getPath(e.request.url)) !== -1) {
         e.respondWith(
             caches.match(e.request).then(function (resp) {
                 return resp || fetch(e.request).then(function (response) {
