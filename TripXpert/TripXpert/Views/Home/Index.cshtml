@@ -209,10 +209,15 @@
         var destinationCombo = $("#Destinations").data("kendoComboBox");
         var priceDropDown = $("#PriceRange").data("kendoDropDownList");
         var offerDropDown = $("#OfferType").data("kendoDropDownList");
+            destinationCombo.close();
 
-        destinationCombo.close();
-        priceDropDown.close();
-        offerDropDown.close();
+      //  if (priceDropDown) {
+            priceDropDown.close();
+     //   }
+
+     //   if (offerDropDown) {
+            offerDropDown.close();
+     //   }
 
         var scrollView = $("#scrollview").data("kendoMobileScrollView");
         scrollView.refresh();

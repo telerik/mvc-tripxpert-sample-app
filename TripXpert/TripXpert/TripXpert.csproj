@@ -245,22 +245,27 @@
     <Content Include="Content\kendo\2018.1.221\fonts\glyphs\WebComponentsIcons.eot" />
     <Content Include="Content\kendo\2018.1.221\fonts\glyphs\WebComponentsIcons.ttf" />
     <Content Include="Content\kendo\2018.1.221\fonts\glyphs\WebComponentsIcons.woff" />
+    <Content Include="manifest.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\kendo\2018.1.221\jquery.min.js" />
-    <Content Include="Scripts\kendo\2018.1.221\kendo.all.min.js" />
-    <Content Include="Scripts\kendo\2018.1.221\kendo.aspnetmvc.min.js" />
+    <Content Include="Scripts\kendo\2018.1.221\kendo.custom.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\TripXpert.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="service-worker.js" />
     <Content Include="Videos\Barcelona and Tenerife\BarcelonaAndTenerife.mp4" />
     <Content Include="Videos\Brazil and Argentina Iguazu Falls\IguazuFalls.mp4" />
     <Content Include="Videos\Classic Tour of Peru\MachuPicchu.mp4" />
@@ -328,7 +333,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TripXpert.DAL\TripXpert.DAL.csproj">
