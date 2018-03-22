@@ -286,6 +286,8 @@ namespace TripXpert.DAL
                         where image.AttractionID != null
                         select new
                         {
+                            Title = image.Title,
+                            ImageID = image.ImageID,
                             ImageURL = domainURL + image.FolderName.Trim() + "/138x138/" + image.ImageURL
                         }).ToList();
             }
@@ -328,6 +330,7 @@ namespace TripXpert.DAL
                             {
                                 DestinationTitle = destination.Title,
                                 ImageURL =  domainURL+attractionImage.FolderName.Trim() + "/320x320/" + attractionImage.ImageURL,
+                                ImageTitle = attractionImage.Title,
                                 Location = attraction.Location,
                                 Description = attraction.Description,
                                 AttractionTitle = attraction.Title,

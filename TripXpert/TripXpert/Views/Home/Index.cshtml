@@ -5,7 +5,9 @@
     <div class="col-xs-12 col-sm-3">
         <span class="k-icon k-i-marker-pin"></span>
         <span class="searchbox-wrapper">
-            @(Html.Kendo().ComboBox()
+            @*The label is needed for accessibility https://docs.telerik.com/kendo-ui/accessibility/section-508#label-element-support*@
+            <label style="margin-bottom:0;width: 100%;">
+                @(Html.Kendo().ComboBox()
             .Name("Destinations") //The name of the ComboBox is mandatory. It specifies the "id" attribute of the widget.
             .Placeholder("All types")
             .DataTextField("Title") //Specify which property of the Product to be used by the ComboBox as a text.
@@ -18,14 +20,15 @@
                     read.Action("GetDestinations", "Home"); //Set the Action and Controller names.
                 });
             })
-            .Events(ev=>ev.Select("destinationsSelect").Change("destinationsChange"))
+            .Events(ev => ev.Select("destinationsSelect").Change("destinationsChange"))
             .Height(442)
             .Template(@"<div class='destination-combo-template clearfix'>
-                <span class='tx_icon tx_left_arrow_icon'></span><img src='#=data.DefaultImage#' title='#=data.Title#' /><h4>#=data.Title#</h4>
-                <span>#=getRating(data.Rating)#</span>                
-                <span class='info'>from #:kendo.toString(data.LowestPrice, 'c0')#</span></div>
-        ")
-            )
+            <span class='tx_icon tx_left_arrow_icon'></span><img src='#=data.DefaultImage#' title='#=data.Title#' /><h4>#=data.Title#</h4>
+            <span>#=getRating(data.Rating)#</span>
+            <span class='info'>from #:kendo.toString(data.LowestPrice, 'c0')#</span></div>
+    ")
+                )
+            </label>
         </span>
     </div>
     <div class="col-sm-3">
@@ -100,7 +103,7 @@
 <script id="template" type="text/x-kendo-template">
     <div>
         <div class="image-wrapper">
-            <img src="#:ImageURL #" />
+            <img src="#:ImageURL #" alt="#:Title#"/>
         </div>
         <p class="title">#: Description #</p>
     </div>
