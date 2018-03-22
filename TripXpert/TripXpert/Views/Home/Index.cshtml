@@ -10,6 +10,7 @@
                 @(Html.Kendo().ComboBox()
             .Name("Destinations") //The name of the ComboBox is mandatory. It specifies the "id" attribute of the widget.
             .Placeholder("All types")
+            .AutoBind(false)
             .DataTextField("Title") //Specify which property of the Product to be used by the ComboBox as a text.
             .DataValueField("Title") //Specify which property of the Product to be used by the ComboBox as a value.
             .HtmlAttributes(new { style = "width: 100%" })
@@ -166,6 +167,7 @@
                 }
             }
         });
+
         $("#scrollview").kendoMobileScrollView({
             dataSource: dataSource,
             contentHeight: "100%",
@@ -212,15 +214,10 @@
         var destinationCombo = $("#Destinations").data("kendoComboBox");
         var priceDropDown = $("#PriceRange").data("kendoDropDownList");
         var offerDropDown = $("#OfferType").data("kendoDropDownList");
-            destinationCombo.close();
 
-      //  if (priceDropDown) {
-            priceDropDown.close();
-     //   }
-
-     //   if (offerDropDown) {
+            destinationCombo.close();        
+            priceDropDown.close();        
             offerDropDown.close();
-     //   }
 
         var scrollView = $("#scrollview").data("kendoMobileScrollView");
         scrollView.refresh();
@@ -281,4 +278,3 @@
   text-transform: none;
   font-size: 1.1em; }
 </style>
-
