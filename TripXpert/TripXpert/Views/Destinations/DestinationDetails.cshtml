@@ -320,24 +320,6 @@
 </style>
 
 <script>
-
-    $(function () {
-        $("#tabStripInfo .k-link").removeAttr("href");
-    });
-
-    $(".selectGallery").on("click", function () {
-        $(this).siblings(".tsSelected").removeClass("tsSelected");
-        $(this).addClass("tsSelected");
-        var tabStrip = $("#tabstripMain").data("kendoTabStrip");
-        tabStrip.select(0);
-    });
-    $(".selectMediaPlayer").on("click", function () {
-        $(this).siblings(".tsSelected").removeClass("tsSelected");
-        $(this).addClass("tsSelected");
-        var tabStrip = $("#tabstripMain").data("kendoTabStrip");
-        tabStrip.select(1);
-    });
-
     $("#pricesButton").on("click", function (e) {
         $("#windowPriceInfo").data("kendoWindow").center().open();
     });
@@ -382,11 +364,6 @@
         largeMap.setOptions({
             zoom: smallMap.zoom() + 1
         });
-    });
-
-    $(window).resize(function () {
-        var tabstrip = $("#tabStripInfo").data("kendoTabStrip");
-        tabstrip.resize();
     });
 </script>
 
