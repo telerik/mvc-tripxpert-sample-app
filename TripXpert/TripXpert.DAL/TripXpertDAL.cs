@@ -220,6 +220,38 @@ namespace TripXpert.DAL
             }
         }
 
+        public static string GetDestinationDetailImage(int id, char size)
+        {
+            TripXpertEntities entity = new TripXpertEntities();
+            string sizeString = "138x138";
+            switch (size)
+            {
+                case 'M':
+                    sizeString = "/320x320/";
+                    break;
+                case 'S':
+                    sizeString = "/138x138/";
+                    break;
+                case 'L':
+                    sizeString = "/2000x1125/";
+                    break;
+                default:
+                    break;
+            }
+
+            using (entity)
+            {
+                var rnd = new Random();
+                var detailImages = (from image in entity.Images
+                                      where image.DestinationID == id && image.AttractionID != null
+                                      select image).ToList();
+                int randomIndex = rnd.Next(detailImages.Count);
+                var detailImage = detailImages[randomIndex];
+
+                return String.Format("{0}{1}{2}{3}", domainURL, detailImage.FolderName.Trim(), sizeString, detailImage.ImageURL);
+            }
+        }
+
         public static Destination GetDestinationById(string id)
         {
             TripXpertEntities entity = new TripXpertEntities();

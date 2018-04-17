@@ -17,79 +17,40 @@
 
     <div class="t-row tx_media_row row">
         <div class="t-col t-col-9 t-col-xs-12 t-col-sm-12 t-col-md-7 t-col-lg-8 scrollview-col">
-            <script id="template" type="text/x-kendo-template">
-                <div class="image-wrapper">
-                    <img src="#:ImageURL #" alt="#:Title#" />
-                </div>
-                <p class="title">#: Description #</p>
-            </script>
-            <script>
-                $(document).ready(function () {
-                    var dataSource = new kendo.data.DataSource({
-                        transport: {
-                            read: {
-                                url: ('@Url.Action("GetDestinationImages", new { destinationId = Model.DestinationID })'),
-                                dataType: "json"
-                            }
-                        }
-                    });
-
-                    $("#scrollview").kendoMobileScrollView({
-                        dataSource: dataSource,
-                        contentHeight: "500px",
-                        change: function (e) {
-                            updateImage();
-                        },
-                        enablePager: true,
-                        itemsPerPage: 1,
-                        pageSize: 6,
-                        template: kendo.template($("#template").html())
-                    });
-
-                    $("#prev-img").click(function (e) {
-                        var scrollView = $("#scrollview").data("kendoMobileScrollView");
-                        scrollView.prev();
-                    });
-
-                    $("#next-img").click(function (e) {
-                        var scrollView = $("#scrollview").data("kendoMobileScrollView");
-                        scrollView.next();
-                    });
-                });
-
-            </script>
-
+            <div class="image-wrapper">
+                @*should decide on height of image here*@ 
+              <img src="@Model.DetailImage" alt="@Model.Title" style="height:950px;" />               
+            </div>
+            <p class="title">@Model.Title</p>
             <div>
                 @(Html.Kendo().TabStrip()
                     .Name("tabstripMain")
                     .Animation(false)
                     .Items(items =>
                     {
-                    items.Add().Text("View gallery")
-                        .Selected(true)
-                        .Content(@<text>
-                            <div class="demo-section hidden-on-narrow k-content">
-                                <div id="scrollview"></div>
-                                <a id="prev-img" title="Previous Image"><span class="k-icon k-i-arrow-chevron-left"></span></a>
-                                <a id="next-img" title="Next Image"><span class="k-icon k-i-arrow-chevron-right"></span></a>
-                            </div>
-
-                        </text>);
-                    items.Add().Text("Play video")
-                        .Content(@<text>
-                            @(Html.Kendo().MediaPlayer()
-                                    .Name("destinationMediaPlayer")
-                                    .Media(m => m
-                                        .Title(Model.Title)
-                                        .Source(Url.Content("~/Videos/" + Model.VideoURL))
-                                    )
-                                    .HtmlAttributes(new { style = "height:500px" })
-                            )
-                        </text>);
-                        })
+                        items.Add().Text("View gallery")
+                            .Selected(true)
+                            .Content(@<text>
+                                <div class="demo-section hidden-on-narrow k-content">
+                                    <div id="scrollview"></div>
+                                    <a id="prev-img" title="Previous Image"><span class="k-icon k-i-arrow-chevron-left"></span></a>
+                                    <a id="next-img" title="Next Image"><span class="k-icon k-i-arrow-chevron-right"></span></a>
+                                </div>
+                            </text>);
+                items.Add().Text("Play video")
+                    .Content(@<text>
+                        @(Html.Kendo().MediaPlayer()
+                                .Name("destinationMediaPlayer")
+                                .Media(m => m
+                                    .Title(Model.Title)
+                                    .Source(Url.Content("~/Videos/" + Model.VideoURL))
+                                )
+                                .HtmlAttributes(new { style = "height:500px" })
+                        )
+                    </text>);
+    })
                 )
             </div>
-
         </div>
         <div class="t-col t-col-3 t-col-xs-12 t-col-sm-12 t-col-md-5 t-col-lg-4 tx_brief_info cal-row">
 
@@ -460,34 +421,12 @@
         largeMap.setOptions({
             zoom: smallMap.zoom() + 1
         });
-
-        $("#scrollview").bind("dragstart", function (e) {
-            e.preventDefault();
-        })
-
-        updateImage();
     });
 
     $(window).resize(function () {
-        $("#scrollview").data("kendoMobileScrollView").refresh();
         var tabstrip = $("#tabStripInfo").data("kendoTabStrip");
         tabstrip.resize();
-        updateImage();
     });
-
-    function updateImage() {
-        var img = $(".image-wrapper img");
-        var contHeight = $("#scrollview").height();
-        var contWidth = $("#scrollview").width();
-        var ratio1 = contWidth / contHeight;
-        var ratio2 = 1.777;
-        if (ratio2 > ratio1) {
-            img.height(contHeight);
-        }
-        else {
-            img.height(contWidth / ratio2);
-        }
-    }
 </script>
 
 

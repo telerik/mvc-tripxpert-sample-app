@@ -23,6 +23,7 @@ namespace TripXpert.Controllers
             {
                 DestinationID = s.DestinationID,
                 DefaultImage = TripXpertDAL.GetDestinationDefaultImage(s.DestinationID, 'M'),
+                DetailImage = TripXpertDAL.GetDestinationDetailImage(s.DestinationID, 'L'),
                 LowestPrice = TripXpertDAL.GetLowestPriceForDestination(s.DestinationID, null, null),
                 TestimonialID = s.TestimonialID,
                 IsSpecial = s.IsSpecial,
