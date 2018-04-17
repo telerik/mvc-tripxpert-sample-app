@@ -251,5 +251,6 @@ paket-files/
 .idea/
 *.sln.iml
 
-TripXpert/TripXpert/bin/*
+TripXpert/TripXpert/bin/
+TripXpert/TripXpert.DAL/bin/
 TripXpert/TripXpert/Web.config
