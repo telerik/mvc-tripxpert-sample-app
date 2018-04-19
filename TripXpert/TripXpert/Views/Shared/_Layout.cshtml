@@ -17,8 +17,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link href="@Url.Content("~/Content/kendo/2018.1.221/kendo.common-bootstrap.min.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/kendo/2018.1.221/kendo.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/theme.css")" rel="stylesheet" type="text/css" />
     <script src="@Url.Content("~/Scripts/jquery-3.1.1.min.js")"></script>
     <script src="@Url.Content("~/Scripts/kendo/2018.1.221/kendo.custom.min.js")"></script>
     <script src="~/Scripts/TripXpert.js"></script>
@@ -45,7 +44,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         {
                             innerChildren.Add().Text("Home").Route("Home");
                             innerChildren.Add().Text("Destinations").Route("Destinations");
-                            innerChildren.Add().Text("Attractions").Route("Attractions");
                             innerChildren.Add().Text("Contact").Route("Contact");
                         });
                     })
@@ -61,7 +59,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                        {
                            items.Add().Text("Home").Route("Home");
                            items.Add().Text("Destinations").Route("Destinations");
-                           items.Add().Text("Attractions").Route("Attractions");
                            items.Add().Text("Contact").Route("Contact");
                            items.Add().Text("Source Code").SpriteCssClasses("k-icon k-i-download")
                            .HtmlAttributes(new { @class = "rightAlignedItem" }).Url("https://github.com/telerik/mvc-tripxpert-sample-app");
