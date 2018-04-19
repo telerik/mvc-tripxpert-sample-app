@@ -91,7 +91,23 @@
         )
     </div>
 </div>
+
 <div class="main-background"></div>
+
+<script type="text/x-kendo-tmpl" id="kendo-card-template">
+    <div class="k-card k-card-type-rich">
+        <img src="#:DefaultImage#" class="k-card-image" />
+        <div class="k-card-body">
+            <h5 class="k-card-title">#:Title#</h5>
+            <h6 class="k-card-subtitle">#:ShortDescription#</h6>
+        </div>
+        <div class="k-card-actions">
+            <span class="k-card-action" onclick="location.href='/Destination/#:DestinationID#'"><span class="k-button k-flat k-primary">View Details</span></span>
+        </div>
+    </div>
+</script>
+
+
 <div id="example" style="height: 100%">
     <div class="responsive-message"></div>
 </div>
