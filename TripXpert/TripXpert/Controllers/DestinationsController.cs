@@ -102,7 +102,8 @@ namespace TripXpert.Controllers
                 FullDescription = s.FullDescription,
                 Duration = s.Duration,
                 VideoURL = s.VideoURL,
-                Rating = s.Rating
+                Rating = s.Rating,
+                DetailImage = TripXpertDAL.GetDestinationDefaultImage(s.DestinationID, 'L'),
             });
 
             if (ids != null)

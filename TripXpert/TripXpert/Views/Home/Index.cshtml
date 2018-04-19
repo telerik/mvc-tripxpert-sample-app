@@ -94,12 +94,61 @@
 
 <div class="main-background"></div>
 
+<div class="row">
+    <div class="recommends">
+        <h2>Tripxpert Recommends</h2>
+    </div>
+    @(Html.Kendo().ListView<TripXpert.Models.DestinationViewModel>()
+                    .Name("listView")
+                    .TagName("div")
+                    .ClientTemplateId("bootstrap-card-template")
+                    .DataSource(dataSource =>
+                    {
+                        dataSource.Read(read => read.Action("Destinations_Read", "Destinations"));
+                        dataSource.PageSize(3);
+                    })
+    )
+</div>
+
+<script type="text/x-kendo-tmpl" id="bootstrap-card-template">
+        <div class="card" style="width: 35rem; height: 35rem;">
+            <div class="image-container" style="background-image:url('#:DetailImage.replace(/ /g , `%20`)#')">
+                 @*<img class="card-img-top" src="#:DefaultImage#" alt="#:Title#">*@
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">#:Title#</h5>
+                <p class="card-text">
+                    # for (var i=0; i < data.ShortDescription.length; i++) {#
+                        # if (i > 0) { #
+                            <span class="tx_dot_separator" style="display: inline-block"></span>
+                        #}#
+                        #:data.ShortDescription[i]#
+                    #}#
+                </p>
+                <div class="card-actions">
+                    <label class="price">from #:kendo.toString(data.LowestPrice, "c", "en-US")#</label>
+                    <a href="/Destination/#:DestinationID#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+
+</script>
+
+
+
 <script type="text/x-kendo-tmpl" id="kendo-card-template">
     <div class="k-card k-card-type-rich">
         <img src="#:DefaultImage#" class="k-card-image" />
         <div class="k-card-body">
             <h5 class="k-card-title">#:Title#</h5>
-            <h6 class="k-card-subtitle">#:ShortDescription#</h6>
+            <h6 class="k-card-subtitle">
+                # for (var i=0; i < data.ShortDescription.length; i++) {#
+                    # if (i > 0) { #
+                        <span class="tx_dot_separator" style="display: inline-block"></span>
+                    #}#
+                    #:data.ShortDescription[i]#
+                #}#
+            </h6>
         </div>
         <div class="k-card-actions">
             <span class="k-card-action" onclick="location.href='/Destination/#:DestinationID#'"><span class="k-button k-flat k-primary">View Details</span></span>
@@ -234,10 +283,54 @@
 
     .main-background {
         background-image: url("/images/gallery/France%20-%20A%20Grand%20Tour/2000x1125/Eiffel-Tower_Attraction.jpg");
-        height: 50%;
+        height: 45%;
         width: 100%;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
     }
+
+    .body-content .row {
+        background-color: #F8F8F8;
+    }
+
+   .row #listView{
+        padding-left:0;
+        padding-top: 1rem;
+        padding-bottom:5rem;
+        display:flex;
+        justify-content:space-evenly;     
+        background-color: #F8F8F8;
+    }
+
+    .card-actions{
+        display:flex;
+        justify-content:space-between;
+    }
+
+    #listView .card{
+        border-radius: 2px;
+        background-color:#fff;
+    }
+
+    #listView .card .card-body{
+        padding:2rem;
+    }
+
+    #listView .card .image-container{
+        height:60%;
+        background-size:cover;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+ 
+
+    #listView .card:hover{
+        box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    .recommends h2{
+        text-align:center;
+    }
+
 </style>
