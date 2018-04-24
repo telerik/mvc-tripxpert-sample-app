@@ -58,28 +58,48 @@
     <div class="col-sm-3">
         <span class="k-icon k-i-currency"></span>
         <span class="searchbox-wrapper">
-            @(Html.Kendo().DropDownList()
-                                    .Name("PriceRange")
-                                    .OptionLabel("Select price range")
-                                    .DataTextField("Text")
-                                    .DataValueField("Value")
-                                    .BindTo(new List<SelectListItem>() {
-                          new SelectListItem() {
-                            Text = "Any price range", Value = "0"
-                          },
-                          new SelectListItem() {
-                            Text = "from $0 to $999", Value = "0-999"
-                          },
-                          new SelectListItem() {
-                            Text = "from $1000 to $1999", Value = "1000-1999"
-                          },
-                          new SelectListItem() {
-                            Text = "from $2000 to $2999", Value = "2000-2999"
-                          }
-                                  })
-                                  .HtmlAttributes(new { style = "width:100%;" })
-                                  .Height(150)
-            )
+            <input id="PriceRange" type="hidden" />
+
+            <span class="k-price-range-slider-wrapper">
+                @(Html.Kendo().RangeSlider()
+                 .Name("PriceRangeSlider")
+                 .Min(0)
+                 .Max(3000)
+                 .SmallStep(100)
+                 .LargeStep(1000)
+                 .Events(events => events
+                     .Change("priceRangeSliderChange"))
+                 .Deferred()
+                )
+            </span>
+
+            <span class="k-price-range-drop-down-wrapper">
+                @(Html.Kendo().DropDownList()
+                    .Name("PriceRangeDropDown")
+                    .OptionLabel("Select price range")
+                    .DataTextField("Text")
+                    .DataValueField("Value")
+                    .BindTo(new List<SelectListItem>() {
+                        new SelectListItem() {
+                        Text = "Any price range", Value = "0"
+                        },
+                        new SelectListItem() {
+                        Text = "from $0 to $999", Value = "0-999"
+                        },
+                        new SelectListItem() {
+                        Text = "from $1000 to $1999", Value = "1000-1999"
+                        },
+                        new SelectListItem() {
+                        Text = "from $2000 to $2999", Value = "2000-2999"
+                        }
+                    })
+                    .HtmlAttributes(new { style = "width:100%;" })
+                    .Height(150)
+                    .Events(x => x.Change("priceRangeDropDownChange"))
+                    .Deferred()
+                )
+            </span>
+
         </span>
     </div>
     <div class="col-sm-3 clearfix">
@@ -161,6 +181,7 @@
     <div class="responsive-message"></div>
 </div>
 <script>
+
     var selectedID = "";
     var offerType = "";
     var priceRange = "";
@@ -189,7 +210,7 @@
             url: '@Url.Action("GetDestinationsQuery","Home")',
             type: 'GET',
             data: {
-                priceRange:  $("#PriceRange").data("kendoDropDownList").value(),
+                priceRange:  $("#PriceRange").val(),
                 offerType: $("#OfferType").data("kendoDropDownList").value()
             },
             success: function (data) {
@@ -209,7 +230,23 @@
 
     }
 
+    function priceRangeDropDownChange() {
+        $("#PriceRange").val(this.value());
+    }
+
+    function priceRangeSliderChange(e) {
+        $("#PriceRange").val(e.values.toString().replace(",", "-"));
+    }
+
     $(function () {
+         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            @Html.Kendo().DeferredScriptsFor("PriceRangeSlider", false)
+            $('.k-price-range-slider-wrapper').show();
+        } else {
+            @Html.Kendo().DeferredScriptsFor("PriceRangeDropDown", false)
+            $('.k-price-range-drop-down-wrapper').show();
+        }
+
         dataSource = new kendo.data.DataSource({
             transport: {
                 read: {
@@ -232,12 +269,12 @@
 
     $(window).resize(function () {
         var destinationCombo = $("#Destinations").data("kendoComboBox");
-        var priceDropDown = $("#PriceRange").data("kendoDropDownList");
+        var priceDropDown = $("#PriceRangeDropDown").data("kendoDropDownList");
         var offerDropDown = $("#OfferType").data("kendoDropDownList");
 
-            destinationCombo.close();
-            priceDropDown.close();
-            offerDropDown.close();
+        destinationCombo.close();
+        priceDropDown? priceDropDown.close():'';
+        offerDropDown.close();
 
         updateImage();
     });
@@ -331,6 +368,10 @@
     }
     .recommends h2{
         text-align:center;
+    }
+
+    .k-price-range-drop-down-wrapper, .k-price-range-slider-wrapper{
+        display:none;
     }
 
 </style>
