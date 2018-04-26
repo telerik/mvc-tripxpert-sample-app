@@ -7,7 +7,7 @@
 @(Html.Kendo().ListView<TripXpert.Models.DestinationViewModel>()
             .Name("listView")
             .TagName("div")
-            .ClientTemplateId("template")
+            .ClientTemplateId("bootstrap-card-template")
             .DataSource(dataSource =>
             {
                 dataSource.Read(read => read.Action("Destinations_Read", "Destinations").Data("getIds"));
@@ -44,35 +44,12 @@
     };
 </script>
 
-<script type="text/x-kendo-tmpl" id="template">
-    <div class="tx_destination tx_clearfix">
-        <div class="tx_image_wrapper">
-            <a href='@Url.Action("DestinationDetails", "Destinations")/#:data.DestinationID#'>
-                <img src="#=data.DefaultImage#" alt="#:data.Title# image" />
-            </a>
-            <span class="tx_icon tx_left_arrow_icon">
-                <span class="k-icon k-i-arrow-60-left"></span>
-            </span>
-            <span class="tx_icon tx_up_arrow_icon"></span>
-        </div>
-        <div class="tx_destination_info">
-            <h3>
-                <a href="@Url.Action("DestinationDetails", "Destinations")/#:data.DestinationID#">#:data.Title#</a>
-            </h3>
-            <span class='destination-rating'>#=getRating(data.Rating)#</span>
-            <label id="priceLabel" class="tx_price">from #:kendo.toString(data.LowestPrice, "c", "en-US")#</label>
-            <hr />
-            <p class="tx_places">
-                # for (var i=0; i < data.ShortDescription.length; i++) {#
-                    # if (i > 0) { #
-                        <span class="tx_dot_separator" style="display: inline-block"></span>
-                    #}#
-                    #:data.ShortDescription[i]#
-                #}#
-            </p>
-            <div class="tx_dest_footer">
-                <button id="btn_ViewDetails" class="tx_btn" onclick="location.href='@Url.Action("DestinationDetails", "Destinations")/#:data.DestinationID#'">View Details</button>
-            </div>
-        </div>
-    </div>
-</script>
+
+<style>
+    #listView .card .image-container {
+        height: 60%;
+        background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+</style>
