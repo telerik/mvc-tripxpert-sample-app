@@ -31,25 +31,8 @@
                                 <input type="text" class="k-input" required />
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <label>Email *</label>
-                                <input type="email" class="k-input" required />
-                            </div>
-                        </div>
                     </div>
                     <div class="col-xs-6">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <label>Phone </label>
-                                
-                                @(Html.Kendo().MaskedTextBox()
-                                    .Name("phone")
-                                    .Mask("(999) 000000")
-                                    .HtmlAttributes(new { @class = "k-input" })
-                                )
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="col-xs-12">
                                 <label>Mobile *</label>
@@ -107,13 +90,6 @@
                         <span class="tx-address-line">33 Al Malinov Blvd</span>
                         <span class="tx-address-line">Sofia 1729</span>
                         <span class="tx-address-line">Bulgaria</span>
-                    </address>
-                </div>
-                <div class="col-xs-6 tx-address">
-                    <address>
-                        <span class="tx-address-line"><strong>GPS Coordinates</strong></span>
-                        <span class="tx-address-line">Latitude: 42.650680</span>
-                        <span class="tx-address-line">Longitude: 23.379321</span>
                     </address>
                 </div>
             </div>
