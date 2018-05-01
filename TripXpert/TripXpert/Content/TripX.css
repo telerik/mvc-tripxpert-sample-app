@@ -721,78 +721,6 @@ input.k-input.k-invalid {
 #main-content .contact-title {
   background-color: #efefef; }
 
-#scrollview .title {
-  font-weight: normal;
-  text-align: left;
-  color: black;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  box-sizing: border-box;
-  padding-left: 20px;
-  background-color: rgba(255, 255, 255, 0.7);
-  text-transform: none;
-  font-size: 1.1em; }
-
-#scrollview .k-pages.km-pages {
-  position: absolute;
-  top: 100px;
-  bottom: auto;
-  width: 100%; }
-  #scrollview .k-pages.km-pages li {
-    background-color: white;
-    border: 1px solid rgba(203, 203, 203, 0.9);
-    width: 10px;
-    height: 10px;
-    margin: 0 .5em;
-    position: relative;
-    box-sizing: content-box;
-    background-clip: content-box; }
-    #scrollview .k-pages.km-pages li.k-current-page.km-current-page {
-      background-color: white; }
-    #scrollview .k-pages.km-pages li.k-current-page.km-current-page:after {
-      width: 6px;
-      height: 6px;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      content: "";
-      border: 2px solid white;
-      background-color: #25a0da;
-      border-radius: 50%;
-      box-sizing: inherit; }
-
-#prev-img,
-#next-img {
-  display: block;
-  position: fixed;
-  top: 50%;
-  height: 50px;
-  width: 50px;
-  margin-top: -25px;
-  opacity: 0.6;
-  background-color: white;
-  text-align: center;
-  line-height: 45px;
-  cursor: pointer; }
-  #prev-img .k-icon,
-  #next-img .k-icon {
-    font-size: 32px;
-    color: black; }
-
-#prev-img {
-  left: 0; }
-
-#next-img {
-  left: auto;
-  right: 0; }
-
-a#prev-img:hover {
-  opacity: 1; }
-
-a#next-img:hover {
-  opacity: 1; }
-
 #listView {
   border-width: 0; }
 
@@ -1614,11 +1542,7 @@ a#next-img:hover {
   .t-row.tx_search .k-dropdown-wrap {
     padding-left: 30px;
     border-left: 0px solid #cccccc !important; }
-  #scrollview .k-pages.km-pages {
-    position: absolute;
-    top: auto;
-    bottom: 80px;
-    width: 100%; } }
+ }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 620px) {
@@ -1627,20 +1551,14 @@ a#next-img:hover {
 
 /* Custom, iPhone Retina */
 @media screen and (min-width: 1367px) {
-  #scrollview > div {
-    height: 680px !important; }
   #destinationMediaPlayer {
     height: 678px !important; } }
 
 @media screen and (min-width: 769px) and (max-width: 1366px) {
-  #scrollview > div {
-    height: 550px !important; }
   #destinationMediaPlayer {
     height: 548px !important; } }
 
 @media screen and (max-width: 768px) {
-  #scrollview > div {
-    height: 300px !important; }
   #destinationMediaPlayer {
     height: 298px !important; }
   #DetailsLayout .t-row.tx_media_row .scrollview-col {

@@ -1,50 +1,54 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-6X92');</script>
-<!-- End Google Tag Manager -->
-
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-6X92');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    	<link href="@Url.Content("~/Content/kendo/2017.3.913/kendo.common-bootstrap.min.css")" rel="stylesheet" type="text/css" />
-	<link href="@Url.Content("~/Content/kendo/2017.3.913/kendo.bootstrap.min.css")" rel="stylesheet" type="text/css" />
-	<script src="@Url.Content("~/Scripts/kendo/2017.3.913/jquery.min.js")"></script>
-	<script src="@Url.Content("~/Scripts/kendo/2017.3.913/kendo.all.min.js")"></script>
-	<script src="@Url.Content("~/Scripts/kendo/2017.3.913/kendo.aspnetmvc.min.js")"></script>
-<script src="~/Scripts/TripXpert.js"></script>
+    <link href="@Url.Content("~/Content/theme.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-3.1.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2018.1.221/kendo.custom.min.js")"></script>
+    <script src="~/Scripts/TripXpert.js"></script>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#858585" />
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-6X92"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-6X92"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <div id="wrapper" class="container-fluid" style="position: relative;">
         <div id="header" class="row">
             <div class="col-sm-12">
                 <div class="navbar">
                     @(Html.Kendo().Menu()
-                    .Name("responsiveMenu")
-                    .OpenOnClick(true)
-                    .Items(items =>
-                    {
-                        items.Add().Text("").SpriteCssClasses("k-icon", "k-i-menu")
-                        .Items(innerChildren =>
-                        {
-                            innerChildren.Add().Text("Home").Route("Home");
-                            innerChildren.Add().Text("Destinations").Route("Destinations");
-                            innerChildren.Add().Text("Attractions").Route("Attractions");
-                            innerChildren.Add().Text("Contact").Route("Contact");
-                        });
-                    })
+                            .Name("responsiveMenu")
+                            .OpenOnClick(true)
+                            .Items(items =>
+                            {
+                                items.Add().Text("").SpriteCssClasses("k-icon", "k-i-menu")
+                                .Items(innerChildren =>
+                                {
+                                    innerChildren.Add().Text("Home").Route("Home");
+                                    innerChildren.Add().Text("Destinations").Route("Destinations");
+                                    innerChildren.Add().Text("Contact").Route("Contact");
+                                });
+                            })
                     )
                     <div class="navbar-header">
                         <a href="@Url.Action("Index", "Home")">
@@ -52,18 +56,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </a>
                     </div>
                     @(Html.Kendo().Menu()
-                       .Name("Menu1")
-                       .Items(items =>
-                       {
-                           items.Add().Text("Home").Route("Home");
-                           items.Add().Text("Destinations").Route("Destinations");
-                           items.Add().Text("Attractions").Route("Attractions");
-                           items.Add().Text("Contact").Route("Contact");
-                           items.Add().Text("Source Code").SpriteCssClasses("k-icon k-i-download")
-                           .HtmlAttributes(new { @class = "rightAlignedItem" }).Url("https://github.com/telerik/mvc-tripxpert-sample-app");
-                           items.Add().Text("About this Sample App").Route("About").SpriteCssClasses("k-icon k-i-information")
-                            .HtmlAttributes(new { @class = "rightAlignedItem" });
-                       })
+                               .Name("Menu1")
+                               .Items(items =>
+                               {
+                                   items.Add().Text("Home").Route("Home");
+                                   items.Add().Text("Destinations").Route("Destinations");
+                                   items.Add().Text("Contact").Route("Contact");
+                                   items.Add().Text("Source Code").SpriteCssClasses("k-icon k-i-download")
+                                   .HtmlAttributes(new { @class = "rightAlignedItem" }).Url("https://github.com/telerik/mvc-tripxpert-sample-app");
+                                   items.Add().Text("About this Sample App").Route("About").SpriteCssClasses("k-icon k-i-information")
+                                    .HtmlAttributes(new { @class = "rightAlignedItem" });
+                               })
                     )
                 </div>
             </div>
@@ -71,8 +74,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div id="main-content" class="row">
             <div class="col-sm-12 tx-col">
                 <div class="body-content">
-                        <!--<img src="http://demos.telerik.com/aspnet-ajax/imagegallery/images/gallery/The%20best%20of%20Japan/2000x1125/Kinkaku-ji-Temple_Ivan-zhekov_Attraction.JPG" />-->
-                            @RenderBody()
+                    @*  <img src="/images/gallery/UNESCO%20sites%20in%20Bulgaria/138x138/Alexander-Nevsky-Cathedral_Svetlin-Nikolaev_Attraction.jpg" style="height:50%;width:100%;" />*@
+                    @RenderBody()
                     @*<div class="tx-description-box" style="display: block;">
                             <h4 class="tx-description-title">Brazil and Argentina Iguazu Falls - Cristo Redentor (Christ the Redeemer)</h4>
                             <p class="tx-description">A world famous symbol of the city, Christo Redentor towers 710m over the city as an ever present reminder of its heritage.</p>
@@ -89,5 +92,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
     @RenderSection("scripts", required: false)
+
+    <script type="text/x-kendo-tmpl" id="bootstrap-card-template">
+        <div class="card" style="width: 35rem; height: 35rem;">
+            <div class="image-container" style="background-image:url('#:DetailImage.replace(/ /g , `%20`)#')">
+                @*<img class="card-img-top" src="#:DefaultImage#" alt="#:Title#">*@
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">#:Title#</h5>
+                <p class="card-text">
+                    # for (var i=0; i < data.ShortDescription.length; i++) {#
+                    # if (i > 0) { #
+                    <span class="tx_dot_separator" style="display: inline-block"></span>
+                    #}#
+                    #:data.ShortDescription[i]#
+                    #}#
+                </p>
+                <div class="card-actions">
+                    <label class="price">from #:kendo.toString(data.LowestPrice, "c", "en-US")#</label>
+                    <a href="/Destination/#:DestinationID#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+
+    </script>
 </body>
 </html>

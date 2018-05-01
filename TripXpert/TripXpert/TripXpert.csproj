@@ -46,10 +46,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Kendo.Mvc, Version=2017.3.913.545, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\KENDOUIMVC\2017.3.913.545\Kendo.Mvc.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>..\LIB\Kendo.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -195,29 +193,28 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Kendo.Mvc.dll" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\kendo\2017.3.913\Bootstrap\editor.png" />
-    <Content Include="Content\kendo\2017.3.913\Bootstrap\imagebrowser.png" />
-    <Content Include="Content\kendo\2017.3.913\Bootstrap\indeterminate.gif" />
-    <Content Include="Content\kendo\2017.3.913\Bootstrap\loading-image.gif" />
-    <Content Include="Content\kendo\2017.3.913\Bootstrap\loading.gif" />
-    <Content Include="Content\kendo\2017.3.913\Bootstrap\loading_2x.gif" />
-    <Content Include="Content\kendo\2017.3.913\Bootstrap\markers.png" />
-    <Content Include="Content\kendo\2017.3.913\Bootstrap\markers_2x.png" />
-    <Content Include="Content\kendo\2017.3.913\Bootstrap\slider-h.gif" />
-    <Content Include="Content\kendo\2017.3.913\Bootstrap\slider-v.gif" />
-    <Content Include="Content\kendo\2017.3.913\Bootstrap\sprite.png" />
-    <Content Include="Content\kendo\2017.3.913\Bootstrap\sprite_2x.png" />
-    <Content Include="Content\kendo\2017.3.913\Bootstrap\sprite_kpi.png" />
-    <Content Include="Content\kendo\2017.3.913\Bootstrap\sprite_kpi_2x.png" />
-    <Content Include="Content\kendo\2017.3.913\fonts\DejaVu\LICENSE.txt" />
-    <Content Include="Content\kendo\2017.3.913\fonts\glyphs\KendoUIGlyphs.svg" />
-    <Content Include="Content\kendo\2017.3.913\fonts\glyphs\WebComponentsIcons.svg" />
-    <Content Include="Content\kendo\2017.3.913\kendo.bootstrap.min.css" />
-    <Content Include="Content\kendo\2017.3.913\kendo.bootstrap.mobile.min.css" />
-    <Content Include="Content\kendo\2017.3.913\kendo.common-bootstrap.min.css" />
+    <Content Include="Content\kendo\2018.1.221\Bootstrap\editor.png" />
+    <Content Include="Content\kendo\2018.1.221\Bootstrap\imagebrowser.png" />
+    <Content Include="Content\kendo\2018.1.221\Bootstrap\indeterminate.gif" />
+    <Content Include="Content\kendo\2018.1.221\Bootstrap\loading-image.gif" />
+    <Content Include="Content\kendo\2018.1.221\Bootstrap\loading.gif" />
+    <Content Include="Content\kendo\2018.1.221\Bootstrap\loading_2x.gif" />
+    <Content Include="Content\kendo\2018.1.221\Bootstrap\markers.png" />
+    <Content Include="Content\kendo\2018.1.221\Bootstrap\markers_2x.png" />
+    <Content Include="Content\kendo\2018.1.221\Bootstrap\slider-h.gif" />
+    <Content Include="Content\kendo\2018.1.221\Bootstrap\slider-v.gif" />
+    <Content Include="Content\kendo\2018.1.221\Bootstrap\sprite.png" />
+    <Content Include="Content\kendo\2018.1.221\Bootstrap\sprite_2x.png" />
+    <Content Include="Content\kendo\2018.1.221\Bootstrap\sprite_kpi.png" />
+    <Content Include="Content\kendo\2018.1.221\Bootstrap\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2018.1.221\fonts\DejaVu\LICENSE.txt" />
+    <Content Include="Content\kendo\2018.1.221\fonts\glyphs\KendoUIGlyphs.svg" />
+    <Content Include="Content\kendo\2018.1.221\fonts\glyphs\WebComponentsIcons.svg" />
+    <Content Include="Content\kendo\2018.1.221\kendo.bootstrap.min.css" />
+    <Content Include="Content\kendo\2018.1.221\kendo.bootstrap.mobile.min.css" />
+    <Content Include="Content\kendo\2018.1.221\kendo.common-bootstrap.min.css" />
     <Content Include="Content\TripX.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -226,41 +223,46 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\TripX.scss" />
-    <Content Include="Content\kendo\2017.3.913\fonts\DejaVu\DejaVuSans-Bold.ttf" />
-    <Content Include="Content\kendo\2017.3.913\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
-    <Content Include="Content\kendo\2017.3.913\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
-    <Content Include="Content\kendo\2017.3.913\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
-    <Content Include="Content\kendo\2017.3.913\fonts\DejaVu\DejaVuSans.ttf" />
-    <Content Include="Content\kendo\2017.3.913\fonts\DejaVu\DejaVuSansMono-Bold.ttf" />
-    <Content Include="Content\kendo\2017.3.913\fonts\DejaVu\DejaVuSansMono-BoldOblique.ttf" />
-    <Content Include="Content\kendo\2017.3.913\fonts\DejaVu\DejaVuSansMono-Oblique.ttf" />
-    <Content Include="Content\kendo\2017.3.913\fonts\DejaVu\DejaVuSansMono.ttf" />
-    <Content Include="Content\kendo\2017.3.913\fonts\DejaVu\DejaVuSerif-Bold.ttf" />
-    <Content Include="Content\kendo\2017.3.913\fonts\DejaVu\DejaVuSerif-BoldItalic.ttf" />
-    <Content Include="Content\kendo\2017.3.913\fonts\DejaVu\DejaVuSerif-Italic.ttf" />
-    <Content Include="Content\kendo\2017.3.913\fonts\DejaVu\DejaVuSerif.ttf" />
-    <Content Include="Content\kendo\2017.3.913\fonts\glyphs\KendoUIGlyphs.eot" />
-    <Content Include="Content\kendo\2017.3.913\fonts\glyphs\KendoUIGlyphs.ttf" />
-    <Content Include="Content\kendo\2017.3.913\fonts\glyphs\KendoUIGlyphs.woff" />
-    <Content Include="Content\kendo\2017.3.913\fonts\glyphs\WebComponentsIcons.eot" />
-    <Content Include="Content\kendo\2017.3.913\fonts\glyphs\WebComponentsIcons.ttf" />
-    <Content Include="Content\kendo\2017.3.913\fonts\glyphs\WebComponentsIcons.woff" />
+    <Content Include="Content\kendo\2018.1.221\fonts\DejaVu\DejaVuSans-Bold.ttf" />
+    <Content Include="Content\kendo\2018.1.221\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
+    <Content Include="Content\kendo\2018.1.221\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
+    <Content Include="Content\kendo\2018.1.221\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
+    <Content Include="Content\kendo\2018.1.221\fonts\DejaVu\DejaVuSans.ttf" />
+    <Content Include="Content\kendo\2018.1.221\fonts\DejaVu\DejaVuSansMono-Bold.ttf" />
+    <Content Include="Content\kendo\2018.1.221\fonts\DejaVu\DejaVuSansMono-BoldOblique.ttf" />
+    <Content Include="Content\kendo\2018.1.221\fonts\DejaVu\DejaVuSansMono-Oblique.ttf" />
+    <Content Include="Content\kendo\2018.1.221\fonts\DejaVu\DejaVuSansMono.ttf" />
+    <Content Include="Content\kendo\2018.1.221\fonts\DejaVu\DejaVuSerif-Bold.ttf" />
+    <Content Include="Content\kendo\2018.1.221\fonts\DejaVu\DejaVuSerif-BoldItalic.ttf" />
+    <Content Include="Content\kendo\2018.1.221\fonts\DejaVu\DejaVuSerif-Italic.ttf" />
+    <Content Include="Content\kendo\2018.1.221\fonts\DejaVu\DejaVuSerif.ttf" />
+    <Content Include="Content\kendo\2018.1.221\fonts\glyphs\KendoUIGlyphs.eot" />
+    <Content Include="Content\kendo\2018.1.221\fonts\glyphs\KendoUIGlyphs.ttf" />
+    <Content Include="Content\kendo\2018.1.221\fonts\glyphs\KendoUIGlyphs.woff" />
+    <Content Include="Content\kendo\2018.1.221\fonts\glyphs\WebComponentsIcons.eot" />
+    <Content Include="Content\kendo\2018.1.221\fonts\glyphs\WebComponentsIcons.ttf" />
+    <Content Include="Content\kendo\2018.1.221\fonts\glyphs\WebComponentsIcons.woff" />
+    <Content Include="manifest.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\kendo\2017.3.913\jquery.min.js" />
-    <Content Include="Scripts\kendo\2017.3.913\kendo.all.min.js" />
-    <Content Include="Scripts\kendo\2017.3.913\kendo.aspnetmvc.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\kendo\2018.1.221\kendo.custom.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\TripXpert.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="service-worker.js" />
     <Content Include="Videos\Barcelona and Tenerife\BarcelonaAndTenerife.mp4" />
     <Content Include="Videos\Brazil and Argentina Iguazu Falls\IguazuFalls.mp4" />
     <Content Include="Videos\Classic Tour of Peru\MachuPicchu.mp4" />
@@ -328,7 +330,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TripXpert.DAL\TripXpert.DAL.csproj">

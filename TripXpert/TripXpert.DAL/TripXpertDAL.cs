@@ -87,7 +87,7 @@ namespace TripXpert.DAL
         #endregion
 
         #region DestinationsImages
-        public const string domainURL = @"https://demos.telerik.com/aspnet-ajax/imagegallery/images/gallery/";
+        public const string domainURL = @"/images/gallery/";
         public static string GetDestinationsQueryString(string title, string typeOfOffer, string priceRange)
         {
 
@@ -148,7 +148,7 @@ namespace TripXpert.DAL
                                            Author = image.Author,
                                            ImageURL = domainURL + image.FolderName.Trim() + "/2000x1125/" + image.ImageURL,
                                            DestinationID = image.DestinationID
-                                       }).ToList().OrderBy(x => rnd.Next()).Take(5);
+                                       }).ToList().Take(5);
 
                 var imagesToReturn = (from imageData in imagesExtracted
                                       select new Image()
@@ -220,6 +220,38 @@ namespace TripXpert.DAL
             }
         }
 
+        public static string GetDestinationDetailImage(int id, char size)
+        {
+            TripXpertEntities entity = new TripXpertEntities();
+            string sizeString = "138x138";
+            switch (size)
+            {
+                case 'M':
+                    sizeString = "/320x320/";
+                    break;
+                case 'S':
+                    sizeString = "/138x138/";
+                    break;
+                case 'L':
+                    sizeString = "/2000x1125/";
+                    break;
+                default:
+                    break;
+            }
+
+            using (entity)
+            {
+                var rnd = new Random();
+                var detailImages = (from image in entity.Images
+                                      where image.DestinationID == id && image.AttractionID != null
+                                      select image).ToList();
+                int randomIndex = rnd.Next(detailImages.Count);
+                var detailImage = detailImages[randomIndex];
+
+                return String.Format("{0}{1}{2}{3}", domainURL, detailImage.FolderName.Trim(), sizeString, detailImage.ImageURL);
+            }
+        }
+
         public static Destination GetDestinationById(string id)
         {
             TripXpertEntities entity = new TripXpertEntities();
@@ -286,6 +318,8 @@ namespace TripXpert.DAL
                         where image.AttractionID != null
                         select new
                         {
+                            Title = image.Title,
+                            ImageID = image.ImageID,
                             ImageURL = domainURL + image.FolderName.Trim() + "/138x138/" + image.ImageURL
                         }).ToList();
             }
@@ -328,6 +362,7 @@ namespace TripXpert.DAL
                             {
                                 DestinationTitle = destination.Title,
                                 ImageURL =  domainURL+attractionImage.FolderName.Trim() + "/320x320/" + attractionImage.ImageURL,
+                                ImageTitle = attractionImage.Title,
                                 Location = attraction.Location,
                                 Description = attraction.Description,
                                 AttractionTitle = attraction.Title,
